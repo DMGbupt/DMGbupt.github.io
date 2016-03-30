@@ -15,7 +15,7 @@
 <meta property="og:description" content="JavaScript中对象的属性可以用点操作符（.）和中括号操作符（[]）访问，在正常访问和给属性赋值时，两者是等价的。
 
 正常操作时效果一样（访问和赋值）12345var foo = &amp;#123;name: &apos;lm&apos;&amp;#125;foo.name; // &quot;lm&quot;foo[&apos;name&apos;]; // &quot;lm&quot;foo.age = 20; // 20foo[&apos;hobby&apos;] = &apos;coding&apos;; // &quot;">
-<meta property="og:updated_time" content="2016-03-30T11:30:12.137Z">
+<meta property="og:updated_time" content="2016-03-30T14:28:04.061Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用JavaScript的点和中括号操作符访问对象属性的比较">
 <meta name="twitter:description" content="JavaScript中对象的属性可以用点操作符（.）和中括号操作符（[]）访问，在正常访问和给属性赋值时，两者是等价的。
@@ -60,7 +60,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -98,10 +98,10 @@
 </ul>
 <p>他们的区别在于：<strong>用点操作符的时候，后面必须是一个指定的有效的属性名</strong>！所以下面两种场景中，点操作符不会正常运行，而中括号依然有效。</p>
 <ul>
-<li>属性名不是有效标识符，点操作符报错，而中括号有效<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">foo<span class="number">.2</span>a; <span class="comment">// SyntaxError</span></span><br><span class="line">foo[<span class="string">'2a'</span>]; <span class="comment">// undefined</span></span><br><span class="line">foo[<span class="string">'you and me'</span>]; <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+<li>属性名不是合法标识符，点操作符报错，而中括号有效<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">foo<span class="number">.2</span>a; <span class="comment">// SyntaxError</span></span><br><span class="line">foo[<span class="string">'2a'</span>]; <span class="comment">// undefined</span></span><br><span class="line">foo[<span class="string">'you and me'</span>]; <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>当属性名是以数字开头或者包含空格的无效标识符时，点操作符会报错，而中括号依然能访问到，并且可以正常操作如赋值等。</p>
+<p>当属性名是以数字开头或者包含空格或者是包含关键字的无效标识符时，使用点操作符会报错，而中括号依然能访问到，因为中括号强制使用了引号括住属性名，所以可以正常操作如赋值等。</p>
 <ul>
 <li>动态设置属性，点操作符无法解析属性名变量，访问无效，而中括号有效<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> dynamic = <span class="string">'name'</span>;</span><br><span class="line">foo.dynamic; <span class="comment">// undefined</span></span><br><span class="line">foo[dynamic]; <span class="comment">// "lm"</span></span><br></pre></td></tr></table></figure>
 </li>
@@ -111,7 +111,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/07/30/使用JavaScript的点和中括号操作符访问对象属性的比较/" data-id="cimerg07f0000asodvpxks0f5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/07/30/使用JavaScript的点和中括号操作符访问对象属性的比较/" data-id="cimeyxcme0000c0ode7cguayp" class="article-share-link">Delen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -132,7 +132,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
+    <h3 class="widget-title">Labels</h3>
     <div class="widget">
       <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
     </div>
@@ -151,7 +151,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Archieven</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a></li></ul>
     </div>
@@ -161,7 +161,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Recente berichten</h3>
     <div class="widget">
       <ul>
         
