@@ -3,18 +3,33 @@
 <head>
   <meta charset="utf-8">
   
-  <title>JavaScript原型链初探 | liming&#39;s cookbook</title>
+  <title>Javasccript数组操作 | liming&#39;s cookbook</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="JavaScript 不包含传统的类继承模型，而是使用 prototype 原型模型。虽然这经常被当作是 JavaScript 的缺点被提及，其实基于原型的继承模型比传统的类继承还要强大。 实现传统的类继承模型是很简单，但是实现 JavaScript 中的原型继承则要困难的多。">
+  <meta name="description" content="常用原生数组操作
+array.(**)
+array.concat(item,…) 将数组浅复制，拼接item（按元素），返回新数组
+12var arr = [&apos;a&apos;,&apos;b&apos;,&apos;c&apos;];arr.concat(&apos;d&apos;,[&apos;e&apos;,&apos;f&apos;]); // [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;, &quot;f&quot;]
+
+array.join(sep) 将数组中每个元素转换为字符串，用sep把他们连接起来，返回新">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript原型链初探">
-<meta property="og:url" content="http://yoursite.com/2015/08/10/JavaScript原型链初探/index.html">
+<meta property="og:title" content="Javasccript数组操作">
+<meta property="og:url" content="http://yoursite.com/2015/09/12/Javasccript数组操作/index.html">
 <meta property="og:site_name" content="liming's cookbook">
-<meta property="og:description" content="JavaScript 不包含传统的类继承模型，而是使用 prototype 原型模型。虽然这经常被当作是 JavaScript 的缺点被提及，其实基于原型的继承模型比传统的类继承还要强大。 实现传统的类继承模型是很简单，但是实现 JavaScript 中的原型继承则要困难的多。">
-<meta property="og:updated_time" content="2016-03-30T15:18:06.376Z">
+<meta property="og:description" content="常用原生数组操作
+array.(**)
+array.concat(item,…) 将数组浅复制，拼接item（按元素），返回新数组
+12var arr = [&apos;a&apos;,&apos;b&apos;,&apos;c&apos;];arr.concat(&apos;d&apos;,[&apos;e&apos;,&apos;f&apos;]); // [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;, &quot;f&quot;]
+
+array.join(sep) 将数组中每个元素转换为字符串，用sep把他们连接起来，返回新">
+<meta property="og:updated_time" content="2016-03-31T16:29:03.041Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript原型链初探">
-<meta name="twitter:description" content="JavaScript 不包含传统的类继承模型，而是使用 prototype 原型模型。虽然这经常被当作是 JavaScript 的缺点被提及，其实基于原型的继承模型比传统的类继承还要强大。 实现传统的类继承模型是很简单，但是实现 JavaScript 中的原型继承则要困难的多。">
+<meta name="twitter:title" content="Javasccript数组操作">
+<meta name="twitter:description" content="常用原生数组操作
+array.(**)
+array.concat(item,…) 将数组浅复制，拼接item（按元素），返回新数组
+12var arr = [&apos;a&apos;,&apos;b&apos;,&apos;c&apos;];arr.concat(&apos;d&apos;,[&apos;e&apos;,&apos;f&apos;]); // [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;, &quot;f&quot;]
+
+array.join(sep) 将数组中每个元素转换为字符串，用sep把他们连接起来，返回新">
   
     <link rel="alternate" href="/atom.xml" title="liming&#39;s cookbook" type="application/atom+xml">
   
@@ -63,10 +78,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-JavaScript原型链初探" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Javasccript数组操作" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2015/08/10/JavaScript原型链初探/" class="article-date">
-  <time datetime="2015-08-10T14:52:24.000Z" itemprop="datePublished">2015-08-10</time>
+    <a href="/2015/09/12/Javasccript数组操作/" class="article-date">
+  <time datetime="2015-09-12T04:09:29.000Z" itemprop="datePublished">2015-09-12</time>
 </a>
     
   </div>
@@ -77,7 +92,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      JavaScript原型链初探
+      Javasccript数组操作
     </h1>
   
 
@@ -85,12 +100,23 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>JavaScript 不包含传统的类继承模型，而是使用 prototype 原型模型。<br>虽然这经常被当作是 JavaScript 的缺点被提及，其实基于原型的继承模型比传统的类继承还要强大。 实现传统的类继承模型是很简单，但是实现 JavaScript 中的原型继承则要困难的多。</p>
+        <h2 id="常用原生数组操作"><a href="#常用原生数组操作" class="headerlink" title="常用原生数组操作"></a>常用原生数组操作</h2><ul>
+<li><em>array</em>.(**)</li>
+<li><p><em>array</em>.concat(<em>item,…</em>) 将数组浅复制，拼接<em>item</em>（按元素），返回新数组</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>];</span><br><span class="line">arr.concat(<span class="string">'d'</span>,[<span class="string">'e'</span>,<span class="string">'f'</span>]); <span class="comment">// ["a", "b", "c", "d", "e", "f"]</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><em>array</em>.join(<em>sep</em>) 将数组中每个元素转换为字符串，用<em>sep</em>把他们连接起来，返回新字符串</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>];</span><br><span class="line">arr.join(<span class="string">'.'</span>); <span class="comment">// "a.b.c"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><em>array</em>.pop() 移除数组最后一个元素并返回该元素，数组为空则返回undefined</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>];</span><br><span class="line">arr.pop(); <span class="comment">// "c"</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/08/10/JavaScript原型链初探/" data-id="cimghm9su0004lwod3pm4pvpk" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/09/12/Javasccript数组操作/" data-id="cimghm9su0001lwod95gtfpa2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -101,19 +127,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2015/09/05/JavaScript字符串处理方法/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          JavaScript字符串处理方法
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/07/30/使用JavaScript的点和中括号操作符访问对象属性的比较/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2015/09/05/JavaScript字符串处理方法/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">使用JavaScript的点和中括号操作符访问对象属性的比较</div>
+      <div class="article-nav-title">JavaScript字符串处理方法</div>
     </a>
   
 </nav>
