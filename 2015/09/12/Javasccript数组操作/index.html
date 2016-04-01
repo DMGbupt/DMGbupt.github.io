@@ -6,9 +6,8 @@
   <title>Javasccript数组操作 | liming&#39;s cookbook</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="常用原生数组操作
-array.(**)
 array.concat(item,…) 将数组浅复制，拼接item（按元素），返回新数组
-12var arr = [&apos;a&apos;,&apos;b&apos;,&apos;c&apos;];arr.concat(&apos;d&apos;,[&apos;e&apos;,&apos;f&apos;]); // [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;, &quot;f&quot;]
+12var arr = [&apos;a&apos;,&apos;b&apos;,&apos;c&apos;];arr.concat(&apos;d&apos;,[&apos;e&apos;,&apos;f&apos;],true); // [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;, &quot;f&quot;, true]
 
 array.join(sep) 将数组中每个元素转换为字符串，用sep把他们连接起来，返回新">
 <meta property="og:type" content="article">
@@ -16,18 +15,16 @@ array.join(sep) 将数组中每个元素转换为字符串，用sep把他们连�
 <meta property="og:url" content="http://yoursite.com/2015/09/12/Javasccript数组操作/index.html">
 <meta property="og:site_name" content="liming's cookbook">
 <meta property="og:description" content="常用原生数组操作
-array.(**)
 array.concat(item,…) 将数组浅复制，拼接item（按元素），返回新数组
-12var arr = [&apos;a&apos;,&apos;b&apos;,&apos;c&apos;];arr.concat(&apos;d&apos;,[&apos;e&apos;,&apos;f&apos;]); // [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;, &quot;f&quot;]
+12var arr = [&apos;a&apos;,&apos;b&apos;,&apos;c&apos;];arr.concat(&apos;d&apos;,[&apos;e&apos;,&apos;f&apos;],true); // [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;, &quot;f&quot;, true]
 
 array.join(sep) 将数组中每个元素转换为字符串，用sep把他们连接起来，返回新">
-<meta property="og:updated_time" content="2016-03-31T16:29:03.041Z">
+<meta property="og:updated_time" content="2016-04-01T15:07:07.406Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Javasccript数组操作">
 <meta name="twitter:description" content="常用原生数组操作
-array.(**)
 array.concat(item,…) 将数组浅复制，拼接item（按元素），返回新数组
-12var arr = [&apos;a&apos;,&apos;b&apos;,&apos;c&apos;];arr.concat(&apos;d&apos;,[&apos;e&apos;,&apos;f&apos;]); // [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;, &quot;f&quot;]
+12var arr = [&apos;a&apos;,&apos;b&apos;,&apos;c&apos;];arr.concat(&apos;d&apos;,[&apos;e&apos;,&apos;f&apos;],true); // [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;, &quot;f&quot;, true]
 
 array.join(sep) 将数组中每个元素转换为字符串，用sep把他们连接起来，返回新">
   
@@ -101,22 +98,37 @@ array.join(sep) 将数组中每个元素转换为字符串，用sep把他们连�
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="常用原生数组操作"><a href="#常用原生数组操作" class="headerlink" title="常用原生数组操作"></a>常用原生数组操作</h2><ul>
-<li><em>array</em>.(**)</li>
 <li><p><em>array</em>.concat(<em>item,…</em>) 将数组浅复制，拼接<em>item</em>（按元素），返回新数组</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>];</span><br><span class="line">arr.concat(<span class="string">'d'</span>,[<span class="string">'e'</span>,<span class="string">'f'</span>]); <span class="comment">// ["a", "b", "c", "d", "e", "f"]</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>];</span><br><span class="line">arr.concat(<span class="string">'d'</span>,[<span class="string">'e'</span>,<span class="string">'f'</span>],<span class="literal">true</span>); <span class="comment">// ["a", "b", "c", "d", "e", "f", true]</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><em>array</em>.join(<em>sep</em>) 将数组中每个元素转换为字符串，用<em>sep</em>把他们连接起来，返回新字符串</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>];</span><br><span class="line">arr.join(<span class="string">'.'</span>); <span class="comment">// "a.b.c"</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p><em>array</em>.pop() 移除数组最后一个元素并返回该元素，数组为空则返回undefined</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>];</span><br><span class="line">arr.pop(); <span class="comment">// "c"</span></span><br></pre></td></tr></table></figure>
+<li><p><em>array</em>.pop() 移除原数组最后一个元素并返回该元素，数组为空则返回undefined</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>];</span><br><span class="line">arr.pop(); <span class="comment">// "c" （arr变成["a","b"]）</span></span><br></pre></td></tr></table></figure>
 </li>
+<li><p><em>array</em>.push(<em>itme,…</em>) 在原数组尾部添加每个<em>item</em>，返回数组的新长度</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>];</span><br><span class="line">arr.push(<span class="string">'d'</span>,[<span class="string">'e'</span>,<span class="string">'f'</span>],<span class="literal">true</span>); <span class="comment">// 6 （arr变成了["a", "b", "c", "d",["e", "f"], true]）</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><em>array</em>.reverse() 把原数组里的元素顺序反转</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">'a'</span>,[<span class="string">'b'</span>,<span class="string">'c'</span>],<span class="string">'e'</span>];</span><br><span class="line">arr.reverse(); <span class="comment">// ["e",["b","c"],"a"]</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><em>array</em>.shift() 移除原数组第一个元素，返回该元素</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>];</span><br><span class="line">arr.shift(); <span class="comment">// "a"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><em>array</em>.unshift(<em>item,…</em>) 将<em>item</em>按参数顺序插入原数组头部，返回数组新长度</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>];</span><br><span class="line">arr.unshift(<span class="string">'d'</span>,[<span class="string">'e'</span>,<span class="string">'f'</span>]); <span class="comment">// ["d", ["e", "f"], "a", "b", "c"]</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><em>array</em>.slice(<em>start,end</em>) </p>
+</li>
+<li><em>array</em>.splice(<em>dels,delc,item,…</em>) </li>
+<li><em>array</em>.sort(<em>fn</em>)</li>
 </ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/09/12/Javasccript数组操作/" data-id="cimghm9su0001lwod95gtfpa2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/09/12/Javasccript数组操作/" data-id="cimhue3840000c8oda1qb8980" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
