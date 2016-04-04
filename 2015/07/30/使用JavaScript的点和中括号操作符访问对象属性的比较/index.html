@@ -15,7 +15,7 @@
 <meta property="og:description" content="JavaScript中对象的属性可以用点操作符（.）和中括号操作符（[]）访问，在正常访问和给属性赋值时，两者是等价的。
 
 正常操作时效果一样（访问和赋值）12345var foo = &amp;#123;name: &apos;lm&apos;&amp;#125;foo.name; // &quot;lm&quot;foo[&apos;name&apos;]; // &quot;lm&quot;foo.age = 20; // 20foo[&apos;hobby&apos;] = &apos;coding&apos;; // &quot;">
-<meta property="og:updated_time" content="2016-03-30T14:28:04.061Z">
+<meta property="og:updated_time" content="2016-04-04T08:08:14.637Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用JavaScript的点和中括号操作符访问对象属性的比较">
 <meta name="twitter:description" content="JavaScript中对象的属性可以用点操作符（.）和中括号操作符（[]）访问，在正常访问和给属性赋值时，两者是等价的。
@@ -96,7 +96,7 @@
 <li>正常操作时效果一样（访问和赋值）<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> foo = &#123;name: <span class="string">'lm'</span>&#125;</span><br><span class="line">foo.name; <span class="comment">// "lm"</span></span><br><span class="line">foo[<span class="string">'name'</span>]; <span class="comment">// "lm"</span></span><br><span class="line">foo.age = <span class="number">20</span>; <span class="comment">// 20</span></span><br><span class="line">foo[<span class="string">'hobby'</span>] = <span class="string">'coding'</span>; <span class="comment">// "coding"</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>他们的区别在于：<strong>用点操作符的时候，后面必须是一个指定的有效的属性名</strong>！所以下面两种场景中，点操作符不会正常运行，而中括号依然有效。</p>
+<p>他们的区别在于：<strong>用点操作符的时候，后面必须是一个指定的有效的属性名</strong>！所以下面两种场景中，点操作符不会正常运行，而中括号依然有效。<br><a id="more"></a></p>
 <ul>
 <li>属性名不是合法标识符，点操作符报错，而中括号有效<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">foo<span class="number">.2</span>a; <span class="comment">// SyntaxError</span></span><br><span class="line">foo[<span class="string">'2a'</span>]; <span class="comment">// undefined</span></span><br><span class="line">foo[<span class="string">'you and me'</span>]; <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
 </li>
@@ -111,7 +111,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/07/30/使用JavaScript的点和中括号操作符访问对象属性的比较/" data-id="cimlplnxh000kloodxnysu5kr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/07/30/使用JavaScript的点和中括号操作符访问对象属性的比较/" data-id="cimlpt40u000kbgodaycr8ja5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -148,7 +148,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-prototype/">JavaScript prototype</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-prototype/">JavaScript prototype</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sort/">sort</a></li></ul>
     </div>
   </div>
 
@@ -158,7 +158,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/JavaScript-prototype/" style="font-size: 10px;">JavaScript prototype</a>
+      <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/JavaScript-prototype/" style="font-size: 10px;">JavaScript prototype</a> <a href="/tags/algorithm/" style="font-size: 10px;">algorithm</a> <a href="/tags/sort/" style="font-size: 10px;">sort</a>
     </div>
   </div>
 
