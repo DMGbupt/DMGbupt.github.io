@@ -90,7 +90,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/09/27/JavaScript实现常用排序算法/" data-id="cimlpt3zz0008bgodorrrcpwc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/09/27/JavaScript实现常用排序算法/" data-id="cimlpwdnt0009ywodxt9jn61l" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/">algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sort/">sort</a></li></ul>
@@ -128,10 +128,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/09/20/JavaScript查看对象的原型对象/" data-id="cimlpt40u000rbgodmy9a3c0a" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/09/20/JavaScript查看对象的原型对象/" data-id="cimlpwdnt000cywodpxa9wa78" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript-prototype/">JavaScript prototype</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/prototype/">prototype</a></li></ul>
 
     </footer>
   </div>
@@ -163,41 +163,18 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="常用原生数组操作"><a href="#常用原生数组操作" class="headerlink" title="常用原生数组操作"></a>常用原生数组操作</h2><ul>
-<li><p><em>array</em>.concat(<em>item,…</em>) 将数组浅复制，拼接<em>item</em>（按元素），返回新数组</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>];</span><br><span class="line">arr.concat(<span class="string">'d'</span>,[<span class="string">'e'</span>,<span class="string">'f'</span>],<span class="literal">true</span>); <span class="comment">// ["a", "b", "c", "d", "e", "f", true]</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><em>array</em>.join(<em>sep</em>) 将数组中每个元素转换为字符串，用<em>sep</em>把他们连接起来，返回新字符串</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>];</span><br><span class="line">arr.join(<span class="string">'.'</span>); <span class="comment">// "a.b.c"</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><em>array</em>.pop() 移除原数组最后一个元素并返回该元素，数组为空则返回undefined</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>];</span><br><span class="line">arr.pop(); <span class="comment">// "c" （arr变成["a","b"]）</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><em>array</em>.push(<em>itme,…</em>) 在原数组尾部添加每个<em>item</em>，返回数组的新长度</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>];</span><br><span class="line">arr.push(<span class="string">'d'</span>,[<span class="string">'e'</span>,<span class="string">'f'</span>],<span class="literal">true</span>); <span class="comment">// 6 （arr变成了["a", "b", "c", "d",["e", "f"], true]）</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><em>array</em>.reverse() 把原数组里的元素顺序反转</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">'a'</span>,[<span class="string">'b'</span>,<span class="string">'c'</span>],<span class="string">'e'</span>];</span><br><span class="line">arr.reverse(); <span class="comment">// ["e",["b","c"],"a"]</span></span><br><span class="line">arr[<span class="number">1</span>].reverse(); <span class="comment">// ["c", "b"]（arr变成了["e",["c","b"],"a"]）</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><em>array</em>.shift() 移除原数组第一个元素，返回该元素</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>];</span><br><span class="line">arr.shift(); <span class="comment">// "a"</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><em>array</em>.unshift(<em>item,…</em>) 将<em>item</em>按参数顺序插入原数组头部，返回数组新长度</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>];</span><br><span class="line">arr.unshift(<span class="string">'d'</span>,[<span class="string">'e'</span>,<span class="string">'f'</span>]); <span class="comment">// ["d", ["e", "f"], "a", "b", "c"]</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><em>array</em>.slice(<em>start,end</em>) 从<em>start</em>开始（包含）一直浅复制到<em>end</em>（不包含），返回新数组。参数中有负数则从数组最后开始倒数（最后一个元素位置-1），范围越界则返回空数组。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>];</span><br><span class="line">arr.slice(<span class="number">1</span>); <span class="comment">// ["b","c"]</span></span><br><span class="line">arr.slice(<span class="number">1</span>,<span class="number">-1</span>); <span class="comment">// ["b"]</span></span><br><span class="line">arr.slice(<span class="number">4</span>,<span class="number">5</span>); <span class="comment">// []</span></span><br><span class="line">arr.slice(<span class="number">2</span>,<span class="number">-2</span>); <span class="comment">// []</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><em>array</em>.splice(<em>dels,count,item,…</em>) 从<em>dels</em>开始（包含）删除<em>count</em>个(未指定则默认剩余所有元素个数，不合法输入则默认转换为0)元素，再把所有的<em>item</em>按顺序插入到<em>dels</em>位置，返回由被删除元素组成的数组。splice最主要用于删除元素。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>];</span><br><span class="line">arr.splice(<span class="number">1</span>,<span class="number">1</span>); <span class="comment">//["b"]（arr变成["a","c"]）</span></span><br><span class="line">arr.splice(<span class="number">1</span>,<span class="number">0</span>,<span class="string">'d'</span>,[<span class="string">'e'</span>,<span class="string">'f'</span>]); <span class="comment">// ["b"]（arr变成["a","d",["e","f"],"c"]）</span></span><br><span class="line">arr.splice(<span class="number">2</span>); <span class="comment">// [["e","f"],"c"] （arr变成["a","d"]）</span></span><br><span class="line">arr.splice(<span class="number">-1</span>,<span class="number">1</span>); <span class="comment">// ["d"]（arr变成了["a"]）</span></span><br><span class="line">arr.splice(<span class="number">-1</span>,<span class="number">-1</span>); <span class="comment">// []（arr依然是["a"]）</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><em>array</em>.sort(<em>fn</em>) 默认不带参数的函数会把待排序的元素视为字符串，所以通常不能正确排序。自定义的比较函数<em>fn</em>接受两个参数，需要符合以下原则：如果两个参数相等则返回0；如果第一个参数应该排在前面，则返回一个负数；如果第一个参数应该排在后面，则返回一个正数。</p>
+<li><em>array</em>.concat(<em>item,…</em>) 将数组浅复制，拼接<em>item</em>（按元素），返回新数组<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>];</span><br><span class="line">arr.concat(<span class="string">'d'</span>,[<span class="string">'e'</span>,<span class="string">'f'</span>],<span class="literal">true</span>); <span class="comment">// ["a", "b", "c", "d", "e", "f", true]</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-
+        
+          <p class="article-more-link">
+            <a href="/2015/09/12/JavaScript数组操作/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/09/12/JavaScript数组操作/" data-id="cimlpt3zz0009bgod82tkyal1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/09/12/JavaScript数组操作/" data-id="cimlpwdnt000aywod9vhyntiy" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -232,45 +209,18 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="常用原生字符串处理函数"><a href="#常用原生字符串处理函数" class="headerlink" title="常用原生字符串处理函数"></a>常用原生字符串处理函数</h2><ul>
-<li><p><em>string</em>.charAt(<em>pos</em>) 返回<em>pos</em>位置的字符组成的字符串，越界则返回空串</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"hello,world!"</span>;</span><br><span class="line">str.charAt(<span class="number">0</span>); <span class="comment">// "h"</span></span><br><span class="line">str.charAt(<span class="number">-1</span>); <span class="comment">// ""</span></span><br></pre></td></tr></table></figure>
+<li><em>string</em>.charAt(<em>pos</em>) 返回<em>pos</em>位置的字符组成的字符串，越界则返回空串<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"hello,world!"</span>;</span><br><span class="line">str.charAt(<span class="number">0</span>); <span class="comment">// "h"</span></span><br><span class="line">str.charAt(<span class="number">-1</span>); <span class="comment">// ""</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p><em>string</em>.charCodeAt(<em>pos</em>) 返回<em>pos</em>位置字符串的ASCII码，越界则返回NaN</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"hello,world!"</span>;</span><br><span class="line">str.charCodeAt(<span class="number">0</span>); <span class="comment">// 104</span></span><br><span class="line">str.charCodeAt(<span class="number">13</span>); <span class="comment">// NaN</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><em>string</em>.concat(<em>str,…</em>) 连接字符串，返回新串。最好用+代替，更方便</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"hello,world!"</span>;</span><br><span class="line">str.concat(<span class="string">'a'</span>,<span class="string">'bc'</span>); <span class="comment">// "hello,world!abc"</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><em>string</em>.indexOf(<em>str,pos</em>) 返回从<em>pos</em>位置（包含）起正向查找匹配<em>str</em>的第一个字符位置，没有则返回-1</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"hello,world!"</span>;</span><br><span class="line">str.indexOf(<span class="string">'ll'</span>); <span class="comment">// 2</span></span><br><span class="line">str.indexOf(<span class="string">'ll'</span>,<span class="number">2</span>); <span class="comment">// 2</span></span><br><span class="line">str.indexOf(<span class="string">'ll'</span>,<span class="number">15</span>); <span class="comment">// -1</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><em>string</em>.lastIndexOf(<em>str,pos</em>) 与indexOf()类似，逆向查找</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"hello,world!"</span>;</span><br><span class="line">str.lastIndexOf(<span class="string">'o'</span>); <span class="comment">// 7</span></span><br><span class="line">str.lastIndexOf(<span class="string">'o'</span>,<span class="number">7</span>); <span class="comment">// 7</span></span><br><span class="line">str.lastIndexOf(<span class="string">'o'</span>,<span class="number">5</span>); <span class="comment">// 4</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><em>string</em>.localeCompare(<em>str</em>) 比较字符串大小，大于<em>str</em>返回正数，小于返回负数，相等返回0，但是字符串比较的规则没有详细说明</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"hello,world!"</span>;</span><br><span class="line">str.localeCompare(<span class="string">'a'</span>); <span class="comment">// 1, chrome</span></span><br><span class="line">str.localeCompare(<span class="string">'hello,world!'</span>); <span class="comment">// 0, chrome</span></span><br><span class="line">str.localeCompare(<span class="string">'Hello,world!'</span>); <span class="comment">// -1, chrome</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><em>string</em>.match(<em>reg</em>) 与正则表达式匹配，较复杂，将在正则里细说</p>
-</li>
-<li><em>string</em>.replace(<em>str,repl</em>) 支持正则匹配替换</li>
-<li><em>string</em>.search(<em>reg</em>) 正则搜索</li>
-<li><p><em>string</em>.slice(<em>start,end</em>) 复制字符串从<em>start</em>开始（包含）到<em>end</em>结束（不包含）的部分，返回新串。起止位置为负数时则表示从串尾开始数（最后一个字符位置是-1）</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"hello,world!"</span>;</span><br><span class="line">str.slice(<span class="number">2</span>); <span class="comment">// "llo,world!"</span></span><br><span class="line">str.slice(<span class="number">2</span>,<span class="number">6</span>); <span class="comment">// "llo,"</span></span><br><span class="line">str.slice(<span class="number">-4</span>,<span class="number">-2</span>); <span class="comment">// "rl"</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><em>string</em>.split(<em>sep,lim</em>) 按<em>sep</em>分割字符串，用<em>lim</em>限制最多返回的数量。如果<em>seq</em>为空，则返回单字符的数组。支持正则</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"hello,world!"</span>;</span><br><span class="line">str.split(<span class="string">','</span>); <span class="comment">// ["hello", "world!"]</span></span><br><span class="line">str.split(<span class="string">','</span>,<span class="number">4</span>); <span class="comment">// ["hello", "world!"]</span></span><br><span class="line">str.split(<span class="string">''</span>,<span class="number">4</span>); <span class="comment">// ["h", "e", "l", "l"]</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><em>string</em>.substring(<em>start,end</em>) 和slice一样，只是参数不能为负，用slice替代</p>
-</li>
-<li><em>string</em>.toLowerCase() 返回小写的新串</li>
-<li><em>string</em>.toUpperCase() 返回小写的新串</li>
-<li><em>string</em>.fromCharCode(<em>num,…</em>) 根据一串字符码返回字符串</li>
 </ul>
-
+        
+          <p class="article-more-link">
+            <a href="/2015/09/05/JavaScript字符串处理方法/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/09/05/JavaScript字符串处理方法/" data-id="cimlpt3zj0006bgodlszws21l" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/09/05/JavaScript字符串处理方法/" data-id="cimlpwdmy0007ywodtapo3csa" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -309,7 +259,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/08/10/JavaScript原型链初探/" data-id="cimlpt3z40005bgodpl606oh1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/08/10/JavaScript原型链初探/" data-id="cimlpwdmy0006ywodu5ph7m9o" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -357,7 +307,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/07/30/使用JavaScript的点和中括号操作符访问对象属性的比较/" data-id="cimlpt40u000kbgodaycr8ja5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/07/30/使用JavaScript的点和中括号操作符访问对象属性的比较/" data-id="cimlpwdoo000mywodjcg89cs3" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -385,7 +335,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-prototype/">JavaScript prototype</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sort/">sort</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/prototype/">prototype</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sort/">sort</a></li></ul>
     </div>
   </div>
 
@@ -395,7 +345,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/JavaScript-prototype/" style="font-size: 10px;">JavaScript prototype</a> <a href="/tags/algorithm/" style="font-size: 10px;">algorithm</a> <a href="/tags/sort/" style="font-size: 10px;">sort</a>
+      <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/algorithm/" style="font-size: 10px;">algorithm</a> <a href="/tags/prototype/" style="font-size: 10px;">prototype</a> <a href="/tags/sort/" style="font-size: 10px;">sort</a>
     </div>
   </div>
 
