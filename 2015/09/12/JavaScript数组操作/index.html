@@ -19,7 +19,7 @@ array.concat(item,…) 将数组浅复制，拼接item（按元素），返回�
 12var arr = [&apos;a&apos;,&apos;b&apos;,&apos;c&apos;];arr.concat(&apos;d&apos;,[&apos;e&apos;,&apos;f&apos;],true); // [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;, &quot;f&quot;, true]
 
 array.join(sep) 将数组中每个元素转换为字符串，用sep把他们连接起来，返回新">
-<meta property="og:updated_time" content="2016-04-04T04:15:35.557Z">
+<meta property="og:updated_time" content="2016-04-04T05:37:18.659Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript数组操作">
 <meta name="twitter:description" content="常用原生数组操作
@@ -125,14 +125,14 @@ array.join(sep) 将数组中每个元素转换为字符串，用sep把他们连�
 <li><p><em>array</em>.splice(<em>dels,count,item,…</em>) 从<em>dels</em>开始（包含）删除<em>count</em>个(未指定则默认剩余所有元素个数，不合法输入则默认转换为0)元素，再把所有的<em>item</em>按顺序插入到<em>dels</em>位置，返回由被删除元素组成的数组。splice最主要用于删除元素。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>];</span><br><span class="line">arr.splice(<span class="number">1</span>,<span class="number">1</span>); <span class="comment">//["b"]（arr变成["a","c"]）</span></span><br><span class="line">arr.splice(<span class="number">1</span>,<span class="number">0</span>,<span class="string">'d'</span>,[<span class="string">'e'</span>,<span class="string">'f'</span>]); <span class="comment">// ["b"]（arr变成["a","d",["e","f"],"c"]）</span></span><br><span class="line">arr.splice(<span class="number">2</span>); <span class="comment">// [["e","f"],"c"] （arr变成["a","d"]）</span></span><br><span class="line">arr.splice(<span class="number">-1</span>,<span class="number">1</span>); <span class="comment">// ["d"]（arr变成了["a"]）</span></span><br><span class="line">arr.splice(<span class="number">-1</span>,<span class="number">-1</span>); <span class="comment">// []（arr依然是["a"]）</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p><em>array</em>.sort(<em>fn</em>) 默认不带参数的函数会把待排序的元素视为字符串，所以通常不能正确排序。自定义的比较函数接受两个参数，需要符合以下原则：如果两个参数相等则返回0；如果第一个参数应该排在前面，则返回一个负数；如果第一个参数应该排在后面，则返回一个正数。</p>
+<li><p><em>array</em>.sort(<em>fn</em>) 默认不带参数的函数会把待排序的元素视为字符串，所以通常不能正确排序。自定义的比较函数<em>fn</em>接受两个参数，需要符合以下原则：如果两个参数相等则返回0；如果第一个参数应该排在前面，则返回一个负数；如果第一个参数应该排在后面，则返回一个正数。</p>
 </li>
 </ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/09/12/JavaScript数组操作/" data-id="cimlhj4cz0000gkod22zx9pm6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/09/12/JavaScript数组操作/" data-id="cimlkkfsg000a6godkk50vyro" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -206,23 +206,23 @@ array.join(sep) 将数组中每个元素转换为字符串，用sep把他们连�
       <ul>
         
           <li>
-            <a href="/2016/04/04/JavaScript查看对象的原型对象/">JavaScript查看对象的原型对象</a>
+            <a href="/2016/04/04/JavaScript的new关键字/">JavaScript的new关键字</a>
           </li>
         
           <li>
-            <a href="/2015/09/12/JavaScript数组操作/">JavaScript数组操作</a>
+            <a href="/2016/04/04/HTML5新增API/">HTML5新增API</a>
           </li>
         
           <li>
-            <a href="/2015/09/05/JavaScript字符串处理方法/">JavaScript字符串处理方法</a>
+            <a href="/2016/04/04/JavaScript跨域原理/">JavaScript跨域原理</a>
           </li>
         
           <li>
-            <a href="/2015/08/10/JavaScript原型链初探/">JavaScript原型链初探</a>
+            <a href="/2016/04/04/DOM常用操作/">DOM常用操作</a>
           </li>
         
           <li>
-            <a href="/2015/07/30/使用JavaScript的点和中括号操作符访问对象属性的比较/">使用JavaScript的点和中括号操作符访问对象属性的比较</a>
+            <a href="/2016/04/04/CSS水平居中和垂直居中/">CSS水平居中和垂直居中</a>
           </li>
         
       </ul>
