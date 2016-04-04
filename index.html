@@ -64,6 +64,42 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-JavaScript查看对象的原型对象" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/04/04/JavaScript查看对象的原型对象/" class="article-date">
+  <time datetime="2016-04-04T03:47:42.000Z" itemprop="datePublished">2016-04-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/04/JavaScript查看对象的原型对象/">JavaScript查看对象的原型对象</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/04/04/JavaScript查看对象的原型对象/" data-id="cimlhj4de0003gkodfcqeiaxn" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-JavaScript数组操作" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/09/12/JavaScript数组操作/" class="article-date">
@@ -100,7 +136,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>];</span><br><span class="line">arr.push(<span class="string">'d'</span>,[<span class="string">'e'</span>,<span class="string">'f'</span>],<span class="literal">true</span>); <span class="comment">// 6 （arr变成了["a", "b", "c", "d",["e", "f"], true]）</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><em>array</em>.reverse() 把原数组里的元素顺序反转</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">'a'</span>,[<span class="string">'b'</span>,<span class="string">'c'</span>],<span class="string">'e'</span>];</span><br><span class="line">arr.reverse(); <span class="comment">// ["e",["b","c"],"a"]</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">'a'</span>,[<span class="string">'b'</span>,<span class="string">'c'</span>],<span class="string">'e'</span>];</span><br><span class="line">arr.reverse(); <span class="comment">// ["e",["b","c"],"a"]</span></span><br><span class="line">arr[<span class="number">1</span>].reverse(); <span class="comment">// ["c", "b"]（arr变成了["e",["c","b"],"a"]）</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><em>array</em>.shift() 移除原数组第一个元素，返回该元素</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>];</span><br><span class="line">arr.shift(); <span class="comment">// "a"</span></span><br></pre></td></tr></table></figure>
@@ -108,16 +144,20 @@
 <li><p><em>array</em>.unshift(<em>item,…</em>) 将<em>item</em>按参数顺序插入原数组头部，返回数组新长度</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>];</span><br><span class="line">arr.unshift(<span class="string">'d'</span>,[<span class="string">'e'</span>,<span class="string">'f'</span>]); <span class="comment">// ["d", ["e", "f"], "a", "b", "c"]</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p><em>array</em>.slice(<em>start,end</em>) </p>
+<li><p><em>array</em>.slice(<em>start,end</em>) 从<em>start</em>开始（包含）一直浅复制到<em>end</em>（不包含），返回新数组。参数中有负数则从数组最后开始倒数（最后一个元素位置-1），范围越界则返回空数组。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>];</span><br><span class="line">arr.slice(<span class="number">1</span>); <span class="comment">// ["b","c"]</span></span><br><span class="line">arr.slice(<span class="number">1</span>,<span class="number">-1</span>); <span class="comment">// ["b"]</span></span><br><span class="line">arr.slice(<span class="number">4</span>,<span class="number">5</span>); <span class="comment">// []</span></span><br><span class="line">arr.slice(<span class="number">2</span>,<span class="number">-2</span>); <span class="comment">// []</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><em>array</em>.splice(<em>dels,delc,item,…</em>) </li>
-<li><em>array</em>.sort(<em>fn</em>)</li>
+<li><p><em>array</em>.splice(<em>dels,count,item,…</em>) 从<em>dels</em>开始（包含）删除<em>count</em>个(未指定则默认剩余所有元素个数，不合法输入则默认转换为0)元素，再把所有的<em>item</em>按顺序插入到<em>dels</em>位置，返回由被删除元素组成的数组。splice最主要用于删除元素。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>];</span><br><span class="line">arr.splice(<span class="number">1</span>,<span class="number">1</span>); <span class="comment">//["b"]（arr变成["a","c"]）</span></span><br><span class="line">arr.splice(<span class="number">1</span>,<span class="number">0</span>,<span class="string">'d'</span>,[<span class="string">'e'</span>,<span class="string">'f'</span>]); <span class="comment">// ["b"]（arr变成["a","d",["e","f"],"c"]）</span></span><br><span class="line">arr.splice(<span class="number">2</span>); <span class="comment">// [["e","f"],"c"] （arr变成["a","d"]）</span></span><br><span class="line">arr.splice(<span class="number">-1</span>,<span class="number">1</span>); <span class="comment">// ["d"]（arr变成了["a"]）</span></span><br><span class="line">arr.splice(<span class="number">-1</span>,<span class="number">-1</span>); <span class="comment">// []（arr依然是["a"]）</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><em>array</em>.sort(<em>fn</em>) 默认不带参数的函数会把待排序的元素视为字符串，所以通常不能正确排序。自定义的比较函数接受两个参数，需要符合以下原则：如果两个参数相等则返回0；如果第一个参数应该排在前面，则返回一个负数；如果第一个参数应该排在后面，则返回一个正数。</p>
+</li>
 </ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/09/12/JavaScript数组操作/" data-id="cimhuiwxk00033godq9w89jp7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/09/12/JavaScript数组操作/" data-id="cimlhj4cz0000gkod22zx9pm6" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -190,7 +230,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/09/05/JavaScript字符串处理方法/" data-id="cimhuiwx400013godztdluwqk" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/09/05/JavaScript字符串处理方法/" data-id="cimlhj4de0001gkodsh9hgm4a" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -229,7 +269,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/08/10/JavaScript原型链初探/" data-id="cimhuiwx400003godtflj2xqf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/08/10/JavaScript原型链初探/" data-id="cimlhj4du0004gkodzbtko89d" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -283,7 +323,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/07/30/使用JavaScript的点和中括号操作符访问对象属性的比较/" data-id="cimhuiwxk00043godpsbmuaym" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/07/30/使用JavaScript的点和中括号操作符访问对象属性的比较/" data-id="cimlhj4du0006gkodach1x5om" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -326,7 +366,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a></li></ul>
     </div>
   </div>
 
@@ -337,6 +377,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/04/04/JavaScript查看对象的原型对象/">JavaScript查看对象的原型对象</a>
+          </li>
         
           <li>
             <a href="/2015/09/12/JavaScript数组操作/">JavaScript数组操作</a>
