@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://yoursite.com/2015/09/27/JavaScript实现常用排序算法/index.html">
 <meta property="og:site_name" content="liming's cookbook">
 <meta property="og:description" content="冒泡排序12345678910111213Array.prototype.bubbleSort = function() &amp;#123;    var i, j, temp;    for (i = 0; i &amp;lt; this.length - 1; i++)        for (j = 0; j &amp;lt; this.length - 1 - i; j++)            if (th">
-<meta property="og:updated_time" content="2016-04-05T08:32:36.939Z">
+<meta property="og:updated_time" content="2016-04-16T16:42:08.588Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript实现常用排序算法">
 <meta name="twitter:description" content="冒泡排序12345678910111213Array.prototype.bubbleSort = function() &amp;#123;    var i, j, temp;    for (i = 0; i &amp;lt; this.length - 1; i++)        for (j = 0; j &amp;lt; this.length - 1 - i; j++)            if (th">
@@ -54,7 +54,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -87,11 +87,13 @@
       
         <h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Array</span>.prototype.bubbleSort = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> i, j, temp;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>.length - <span class="number">1</span>; i++)</span><br><span class="line">        <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; <span class="keyword">this</span>.length - <span class="number">1</span> - i; j++)</span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">this</span>[j] &gt; <span class="keyword">this</span>[j + <span class="number">1</span>]) &#123;</span><br><span class="line">                temp = <span class="keyword">this</span>[j];</span><br><span class="line">                <span class="keyword">this</span>[j] = <span class="keyword">this</span>[j + <span class="number">1</span>];</span><br><span class="line">                <span class="keyword">this</span>[j + <span class="number">1</span>] = temp;</span><br><span class="line">            &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> num = [<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">5</span>,<span class="number">3</span>,<span class="number">6</span>];</span><br><span class="line">num.bubbleSort(); <span class="comment">// [1, 2, 3, 3, 5, 6]</span></span><br></pre></td></tr></table></figure>
 <h2 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Array</span>.prototype.insertionSort = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> i, j, temp;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">1</span>; i &lt; <span class="keyword">this</span>.length; i++) &#123;</span><br><span class="line">		temp = <span class="keyword">this</span>[i];</span><br><span class="line">		<span class="keyword">for</span> (j = i - <span class="number">1</span>; j &gt;= <span class="number">0</span> &amp;&amp; <span class="keyword">this</span>[j] &gt; temp; j--)</span><br><span class="line">			<span class="keyword">this</span>[j + <span class="number">1</span>] = <span class="keyword">this</span>[j];</span><br><span class="line">		<span class="keyword">this</span>[j + <span class="number">1</span>] = temp;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> num = [<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">5</span>,<span class="number">3</span>,<span class="number">6</span>];</span><br><span class="line">num.insertionSort(); <span class="comment">// [1, 2, 3, 3, 5, 6]</span></span><br></pre></td></tr></table></figure>
-<h2 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h2><h2 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h2><h2 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h2><h2 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h2><h2 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h2><h2 id="计数排序"><a href="#计数排序" class="headerlink" title="计数排序"></a>计数排序</h2><h2 id="基数排序"><a href="#基数排序" class="headerlink" title="基数排序"></a>基数排序</h2>
+<h2 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h2><h2 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h2><h2 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h2><h2 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Array</span>.prototype.quick_sort = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> len = <span class="keyword">this</span>.length;</span><br><span class="line">    <span class="keyword">if</span> (len &lt;= <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.slice(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">var</span> left = [];</span><br><span class="line">    <span class="keyword">var</span> right = [];</span><br><span class="line">    <span class="keyword">var</span> mid = [<span class="keyword">this</span>[<span class="number">0</span>]];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt; len; i++)</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>[i] &lt; mid[<span class="number">0</span>])</span><br><span class="line">            left.push(<span class="keyword">this</span>[i]);</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            right.push(<span class="keyword">this</span>[i]);</span><br><span class="line">    <span class="keyword">return</span> left.quick_sort().concat(mid.concat(right.quick_sort()));</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">5</span>, <span class="number">3</span>, <span class="number">7</span>, <span class="number">4</span>, <span class="number">1</span>, <span class="number">9</span>, <span class="number">8</span>, <span class="number">6</span>, <span class="number">2</span>];</span><br><span class="line">arr = arr.quick_sort();</span><br></pre></td></tr></table></figure>
+<h2 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Array</span>.prototype.heap_sort = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> arr = <span class="keyword">this</span>.slice(<span class="number">0</span>);</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">swap</span>(<span class="params">i, j</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> tmp = arr[i];</span><br><span class="line">        arr[i] = arr[j];</span><br><span class="line">        arr[j] = tmp;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">max_heapify</span>(<span class="params">start, end</span>) </span>&#123;</span><br><span class="line">        <span class="comment">//建立父節點指標和子節點指標</span></span><br><span class="line">        <span class="keyword">var</span> dad = start;</span><br><span class="line">        <span class="keyword">var</span> son = dad * <span class="number">2</span> + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (son &gt;= end)<span class="comment">//若子節點指標超過範圍直接跳出函數</span></span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">if</span> (son + <span class="number">1</span> &lt; end &amp;&amp; arr[son] &lt; arr[son + <span class="number">1</span>])<span class="comment">//先比較兩個子節點大小，選擇最大的</span></span><br><span class="line">            son++;</span><br><span class="line">        <span class="keyword">if</span> (arr[dad] &lt;= arr[son]) &#123;<span class="comment">//如果父節點小於子節點時，交換父子內容再繼續子節點和孫節點比較</span></span><br><span class="line">            swap(dad, son);</span><br><span class="line">            max_heapify(son, end);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> len = arr.length;</span><br><span class="line">    <span class="comment">//初始化，i從最後一個父節點開始調整</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="built_in">Math</span>.floor(len / <span class="number">2</span>) - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--)</span><br><span class="line">        max_heapify(i, len);</span><br><span class="line">    <span class="comment">//先將第一個元素和已排好元素前一位做交換，再從新調整，直到排序完畢</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = len - <span class="number">1</span>; i &gt; <span class="number">0</span>; i--) &#123;</span><br><span class="line">        swap(<span class="number">0</span>, i);</span><br><span class="line">        max_heapify(<span class="number">0</span>, i);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> arr;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> a = [<span class="number">3</span>, <span class="number">5</span>, <span class="number">3</span>, <span class="number">0</span>, <span class="number">8</span>, <span class="number">6</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">6</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="number">4</span>, <span class="number">7</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">7</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">5</span>, <span class="number">9</span>, <span class="number">7</span>, <span class="number">4</span>, <span class="number">0</span>, <span class="number">2</span>, <span class="number">6</span>];</span><br><span class="line"><span class="built_in">console</span>.log(a.heap_sort());</span><br></pre></td></tr></table></figure>
+<h2 id="计数排序"><a href="#计数排序" class="headerlink" title="计数排序"></a>计数排序</h2><h2 id="基数排序"><a href="#基数排序" class="headerlink" title="基数排序"></a>基数排序</h2>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/09/27/JavaScript实现常用排序算法/" data-id="cimurvekv0009i4odgjgm9x4u" class="article-share-link">Delen</a>
+      <a data-url="http://yoursite.com/2015/09/27/JavaScript实现常用排序算法/" data-id="cin3ax5ny000dj0od82qgnx6a" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithm/">Algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sort/">sort</a></li></ul>
@@ -103,7 +105,7 @@
 <nav id="article-nav">
   
     <a href="/2015/10/12/JavaScript的对象和继承/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Nieuwer</strong>
+      <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
           JavaScript的对象和继承
@@ -113,7 +115,7 @@
   
   
     <a href="/2015/09/20/JavaScript查看对象的原型对象/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Ouder</strong>
+      <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title">JavaScript查看对象的原型对象</div>
     </a>
   
@@ -131,7 +133,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Labels</h3>
+    <h3 class="widget-title">Tags</h3>
     <div class="widget">
       <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm/">Algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Object/">Object</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/prototype/">prototype</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sort/">sort</a></li></ul>
     </div>
@@ -150,7 +152,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archieven</h3>
+    <h3 class="widget-title">Archives</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a></li></ul>
     </div>
@@ -160,28 +162,28 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recente berichten</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         
           <li>
-            <a href="/2016/04/10/待解决/">待解决</a>
+            <a href="/2016/04/16/js对象深度克隆/">js对象深度克隆</a>
           </li>
         
           <li>
-            <a href="/2016/04/04/JavaScript的new关键字/">JavaScript的new关键字</a>
+            <a href="/2016/04/16/js数组去重/">js数组去重</a>
           </li>
         
           <li>
-            <a href="/2016/04/04/HTML5新增API/">HTML5新增API</a>
+            <a href="/2016/04/16/原生js写通用事件侦听器/">原生js写通用事件侦听器</a>
           </li>
         
           <li>
-            <a href="/2016/04/04/JavaScript跨域原理/">JavaScript跨域原理</a>
+            <a href="/2016/04/16/CSRF/">CSRF</a>
           </li>
         
           <li>
-            <a href="/2016/04/04/DOM常用操作/">DOM常用操作</a>
+            <a href="/2016/04/16/原生js写ajax/">原生js写ajax</a>
           </li>
         
       </ul>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>CSS定位与浮动 | liming&#39;s cookbook</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="定位position属性值：
+
+static：默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right z-index 声明）。
+relative：生成相对定位的元素，相对于其在普通流中的位置进行定位。
+absolute：生成绝对定位的元素，相对于 static 定位以外的第一个祖先元素进行定位。 
+fixed：生成绝对定位的元素，相对于浏览器窗口进行定位（老">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS定位与浮动">
+<meta property="og:url" content="http://yoursite.com/2016/04/16/CSS定位与浮动/index.html">
+<meta property="og:site_name" content="liming's cookbook">
+<meta property="og:description" content="定位position属性值：
+
+static：默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right z-index 声明）。
+relative：生成相对定位的元素，相对于其在普通流中的位置进行定位。
+absolute：生成绝对定位的元素，相对于 static 定位以外的第一个祖先元素进行定位。 
+fixed：生成绝对定位的元素，相对于浏览器窗口进行定位（老">
+<meta property="og:updated_time" content="2016-04-16T07:47:03.313Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS定位与浮动">
+<meta name="twitter:description" content="定位position属性值：
+
+static：默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right z-index 声明）。
+relative：生成相对定位的元素，相对于其在普通流中的位置进行定位。
+absolute：生成绝对定位的元素，相对于 static 定位以外的第一个祖先元素进行定位。 
+fixed：生成绝对定位的元素，相对于浏览器窗口进行定位（老">
+  
+    <link rel="alternate" href="/atom.xml" title="liming&#39;s cookbook" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">liming&#39;s cookbook</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-CSS定位与浮动" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/04/16/CSS定位与浮动/" class="article-date">
+  <time datetime="2016-04-16T07:42:57.000Z" itemprop="datePublished">2016-04-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CSS定位与浮动
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h2><p><em>position</em>属性值：</p>
+<ul>
+<li>static：默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right z-index 声明）。</li>
+<li>relative：生成相对定位的元素，相对于其在普通流中的位置进行定位。</li>
+<li>absolute：生成绝对定位的元素，相对于 static 定位以外的第一个祖先元素进行定位。 </li>
+<li>fixed：生成绝对定位的元素，相对于浏览器窗口进行定位（老IE不支持）。 </li>
+<li>inherit 规定从父元素继承 position 属性的值。</li>
+</ul>
+<h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h2><p><a href="http://www.360doc.com/content/12/0328/15/306547_198606737.shtml" target="_blank" rel="external">http://www.360doc.com/content/12/0328/15/306547_198606737.shtml</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/04/16/CSS定位与浮动/" data-id="cin3ax5m20002j0od3uwokx03" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/04/16/网站资源优化/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          网站资源优化
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/04/16/CSS的display常用属性值/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">CSS的display常用属性值</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm/">Algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Object/">Object</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/prototype/">prototype</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sort/">sort</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Algorithm/" style="font-size: 10px;">Algorithm</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Object/" style="font-size: 10px;">Object</a> <a href="/tags/prototype/" style="font-size: 10px;">prototype</a> <a href="/tags/sort/" style="font-size: 10px;">sort</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/04/16/js对象深度克隆/">js对象深度克隆</a>
+          </li>
+        
+          <li>
+            <a href="/2016/04/16/js数组去重/">js数组去重</a>
+          </li>
+        
+          <li>
+            <a href="/2016/04/16/原生js写通用事件侦听器/">原生js写通用事件侦听器</a>
+          </li>
+        
+          <li>
+            <a href="/2016/04/16/CSRF/">CSRF</a>
+          </li>
+        
+          <li>
+            <a href="/2016/04/16/原生js写ajax/">原生js写ajax</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 LiMing<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
