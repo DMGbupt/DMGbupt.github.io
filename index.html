@@ -64,6 +64,80 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-js中null和undefined区别" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/04/19/js中null和undefined区别/" class="article-date">
+  <time datetime="2016-04-19T13:23:59.000Z" itemprop="datePublished">2016-04-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/19/js中null和undefined区别/">js中null和undefined区别</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在JAVASCRIPT里，null和undefined都表示不存在的数据，并且undefined也是从null中继承而来，那null是什么？undefined又是什么？它们两个又有什么共性和区别呢，请看下面的描述：<br>1.null和undefined都是表示没有的、不存在的值。它们两个在进行逻辑转换时都是false，这两个值进行比较是true。<br>2.null表示空引用，它是object类型。undefined表示未定义， 它是undefined类型。<br>3.如果一个变量的值是null，那么必须主动的给它赋值null。<br>4.一个变量未定义，或一个变量定义了未赋值，则是undefined。需要注意的是：一个变量如果没有定义，是不能直接在程序里使用的（就不是不能直接读取这个变量，但可以赋值）。比如说：本来没有定义一个叫a的变量  但我直接去alert(a);//在浏览器里这样是个语法错误，但是可用typeof去运算  但如果a定义了，未赋值，可以读，它的值就是undefined,如果用typeof去运算，那它的类型也是undefined。<br>5.对说属性来说：如果原来没有这个属性，根本就不存在这个属性，那么它的值就是undefined。对象的属性不需要定义，如果不存在也可以直接去读，不会报错，而会给出一个undefined的值来。<br>6.如果这个对象以后要用，但是现在还没有值，一般情况下，会给它一个null值。<br>7.在函数（方法）里，如果必须返回值，但是值又计算不出来，那就返回一个null（这是规范，而不是语法规定，JAVASCRIPT里遵循这一规范）。比如网页中没有一个id是div2的元素，则下面的这句脚本则返回null  document.getElementById(‘div2’);//返回null。 但是，没有返回值的函数，它的返回值都是undefined。</p>
+<h2 id="判断undefined"><a href="#判断undefined" class="headerlink" title="判断undefined"></a>判断undefined</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> a == <span class="string">"undefined"</span>;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/04/19/js中null和undefined区别/" data-id="cin7jarba000vegod390mwnu4" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-4月19网易游戏面" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/04/19/4月19网易游戏面/" class="article-date">
+  <time datetime="2016-04-19T13:02:35.000Z" itemprop="datePublished">2016-04-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/19/4月19网易游戏面/">4月19网易游戏面</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1.项目介绍，学到什么。<br>2.angularjs写服务，写指令。route可以有更好的替换吗，http模块呢。对angular理解。<br>3.css选择器。盒模型。background影响的区域。三栏布局（圣杯）。<br>4.css项目管理<br>5.输入网址到页面呈现过程。页面解析。css查找。优先级计算。css重绘与重排。<br>6.访问页面卡，优化性能。<br>7.http方法。用get传数据好吗。<br>8.js：null和undefined区别。如何检测是否undefined。全等的意义。<br>9.原型链实现方案。<br>10.一个ul里面很多li，js怎么获取点击的li的index。<br>11.js增加和删除节点。<br>12.可复用的表格<br>13.http怎么与后台交互做缓存。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/04/19/4月19网易游戏面/" data-id="cin7jar890000egod9pv08hw2" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-js对象深度克隆" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/04/16/js对象深度克隆/" class="article-date">
@@ -91,7 +165,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/16/js对象深度克隆/" data-id="cin660c0w000ux8odoyk1rv26" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/04/16/js对象深度克隆/" data-id="cin7jarba000tegodkjaey78s" class="article-share-link">Share</a>
       
       
     </footer>
@@ -128,7 +202,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/16/js数组去重/" data-id="cin660c0g000tx8odhfim75j8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/04/16/js数组去重/" data-id="cin7jarbq0010egodmlpcehu5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -164,7 +238,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/16/原生js写通用事件侦听器/" data-id="cin660c1c0014x8odhawryvg4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/04/16/原生js写通用事件侦听器/" data-id="cin7jarc50018egod2f1uv8om" class="article-share-link">Share</a>
       
       
     </footer>
@@ -204,7 +278,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/16/CSRF/" data-id="cin660bxf0000x8odnwkmesd9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/04/16/CSRF/" data-id="cin7jar8o0001egodkg6qt1x2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -248,7 +322,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/16/原生js写ajax/" data-id="cin660c1c0012x8odlcbm0hc3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/04/16/原生js写ajax/" data-id="cin7jarc50016egod1ydiv2q4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -296,7 +370,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/16/http状态码/" data-id="cin660c0g000px8odn4vi17qg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/04/16/http状态码/" data-id="cin7jarba000regod7sjtw7p4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -333,7 +407,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/16/从地址栏输入网址后发生的事/" data-id="cin660c0w000wx8odjw7ryxey" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/04/16/从地址栏输入网址后发生的事/" data-id="cin7jarbq000yegod3acmech4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -376,81 +450,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/16/性能优化方法/" data-id="cin660c1r0019x8odriehkrge" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-前端职位理解" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/04/16/前端职位理解/" class="article-date">
-  <time datetime="2016-04-16T14:13:53.000Z" itemprop="datePublished">2016-04-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/16/前端职位理解/">前端职位理解</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>前端是最贴近用户的程序员，比后端、数据库、产品经理、运营、安全都近。<br>1、实现界面交互<br>2、提升用户体验<br>3、有了Node.js，前端可以实现服务端的一些事情</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/16/前端职位理解/" data-id="cin660c1c0010x8od916ivvz5" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-网站资源优化" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/04/16/网站资源优化/" class="article-date">
-  <time datetime="2016-04-16T14:10:59.000Z" itemprop="datePublished">2016-04-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/16/网站资源优化/">网站资源优化</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>文件合并<br>文件最小化/文件压缩<br>使用 CDN 托管<br>缓存的使用（多个域名来提供缓存）</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/16/网站资源优化/" data-id="cin660c1r0018x8odfc8msn6h" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/04/16/性能优化方法/" data-id="cin7jarc5001aegod8govwvqv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -508,6 +508,14 @@
       <ul>
         
           <li>
+            <a href="/2016/04/19/js中null和undefined区别/">js中null和undefined区别</a>
+          </li>
+        
+          <li>
+            <a href="/2016/04/19/4月19网易游戏面/">4月19网易游戏面</a>
+          </li>
+        
+          <li>
             <a href="/2016/04/16/js对象深度克隆/">js对象深度克隆</a>
           </li>
         
@@ -517,14 +525,6 @@
         
           <li>
             <a href="/2016/04/16/原生js写通用事件侦听器/">原生js写通用事件侦听器</a>
-          </li>
-        
-          <li>
-            <a href="/2016/04/16/CSRF/">CSRF</a>
-          </li>
-        
-          <li>
-            <a href="/2016/04/16/原生js写ajax/">原生js写ajax</a>
           </li>
         
       </ul>
