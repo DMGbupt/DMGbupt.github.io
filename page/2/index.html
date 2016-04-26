@@ -64,6 +64,254 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-原生js写通用事件侦听器" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/04/16/原生js写通用事件侦听器/" class="article-date">
+  <time datetime="2016-04-16T14:55:00.000Z" itemprop="datePublished">2016-04-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/16/原生js写通用事件侦听器/">原生js写通用事件侦听器</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// event(事件)工具集，来源：github.com/markyun</span></span><br><span class="line">    markyun.Event = &#123;</span><br><span class="line">        <span class="comment">// 页面加载完成后</span></span><br><span class="line">        readyEvent : <span class="function"><span class="keyword">function</span>(<span class="params">fn</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (fn==<span class="literal">null</span>) &#123;</span><br><span class="line">                fn=<span class="built_in">document</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">var</span> oldonload = <span class="built_in">window</span>.onload;</span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="built_in">window</span>.onload != <span class="string">'function'</span>) &#123;</span><br><span class="line">                <span class="built_in">window</span>.onload = fn;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">                    oldonload();</span><br><span class="line">                    fn();</span><br><span class="line">                &#125;;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 视能力分别使用dom0||dom2||IE方式 来绑定事件</span></span><br><span class="line">        <span class="comment">// 参数： 操作的元素,事件名称 ,事件处理程序</span></span><br><span class="line">        addEvent : <span class="function"><span class="keyword">function</span>(<span class="params">element, type, handler</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (element.addEventListener) &#123;</span><br><span class="line">                <span class="comment">//事件类型、需要执行的函数、是否捕捉</span></span><br><span class="line">                element.addEventListener(type, handler, <span class="literal">false</span>);</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (element.attachEvent) &#123;</span><br><span class="line">                element.attachEvent(<span class="string">'on'</span> + type, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">                    handler.call(element);</span><br><span class="line">                &#125;);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                element[<span class="string">'on'</span> + type] = handler;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 移除事件</span></span><br><span class="line">        removeEvent : <span class="function"><span class="keyword">function</span>(<span class="params">element, type, handler</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (element.removeEnentListener) &#123;</span><br><span class="line">                element.removeEnentListener(type, handler, <span class="literal">false</span>);</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (element.datachEvent) &#123;</span><br><span class="line">                element.detachEvent(<span class="string">'on'</span> + type, handler);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                element[<span class="string">'on'</span> + type] = <span class="literal">null</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;, </span><br><span class="line"></span><br><span class="line">        <span class="comment">// 阻止事件 (主要是事件冒泡，因为IE不支持事件捕获)</span></span><br><span class="line">        stopPropagation : <span class="function"><span class="keyword">function</span>(<span class="params">ev</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (ev.stopPropagation) &#123;</span><br><span class="line">                ev.stopPropagation();</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                ev.cancelBubble = <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 取消事件的默认行为</span></span><br><span class="line">        preventDefault : <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (event.preventDefault) &#123;</span><br><span class="line">                event.preventDefault();</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                event.returnValue = <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 获取事件目标</span></span><br><span class="line">        getTarget : <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> event.target || event.srcElement;</span><br><span class="line">        &#125;,</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 获取event对象的引用，取到事件的所有信息，确保随时能使用event；</span></span><br><span class="line">        getEvent : <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> ev = e || <span class="built_in">window</span>.event;</span><br><span class="line">            <span class="keyword">if</span> (!ev) &#123;</span><br><span class="line">                <span class="keyword">var</span> c = <span class="keyword">this</span>.getEvent.caller;</span><br><span class="line">                <span class="keyword">while</span> (c) &#123;</span><br><span class="line">                    ev = c.arguments[<span class="number">0</span>];</span><br><span class="line">                    <span class="keyword">if</span> (ev &amp;&amp; Event == ev.constructor) &#123;</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    c = c.caller;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> ev;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/04/16/原生js写通用事件侦听器/" data-id="cinhn22pu0019n0od4hc8lz7m" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-CSRF" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/04/16/CSRF/" class="article-date">
+  <time datetime="2016-04-16T14:53:11.000Z" itemprop="datePublished">2016-04-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/16/CSRF/">CSRF</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>CSRF：是跨站请求伪造，很明显根据刚刚的解释，他的核心也就是请求伪造，通过伪造身份提交POST和GET请求来进行跨域的攻击。</p>
+<p>完成CSRF需要两个步骤：</p>
+<p>1.登陆受信任的网站A，在本地生成COOKIE</p>
+<p>2.在不登出A的情况下，或者本地COOKIE没有过期的情况下，访问危险网站B。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/04/16/CSRF/" data-id="cinhn22li0002n0odokmarwtg" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-原生js写ajax" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/04/16/原生js写ajax/" class="article-date">
+  <time datetime="2016-04-16T14:36:22.000Z" itemprop="datePublished">2016-04-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/16/原生js写ajax/">原生js写ajax</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>ajax过程:</p>
+<p>(1)创建XMLHttpRequest对象,也就是创建一个异步调用对象.</p>
+<p>(2)创建一个新的HTTP请求,并指定该HTTP请求的方法、URL及验证信息.</p>
+<p>(3)设置响应HTTP请求状态变化的函数.</p>
+<p>(4)发送HTTP请求.</p>
+<p>(5)获取异步调用返回的数据.</p>
+<p>(6)使用JavaScript和DOM实现局部刷新.</p>
+<p>原生代码：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ajax</span>(<span class="params"></span>)</span>&#123;  </span><br><span class="line">    <span class="keyword">var</span> xmlhttp;  </span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">window</span>.XMLHttpRequest)&#123;  </span><br><span class="line">        xmlhttp = <span class="keyword">new</span> XMLHttpRequest();  </span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;  </span><br><span class="line">        <span class="comment">// code for IE6, IE5  </span></span><br><span class="line">        xmlhttp = ActionXObject(<span class="string">"Microsoft.XMLHTTP"</span>);  </span><br><span class="line">    &#125;  </span><br><span class="line">      </span><br><span class="line">    <span class="comment">//判定执行状态  </span></span><br><span class="line">    xmlhttp.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  </span><br><span class="line">        <span class="comment">/* </span><br><span class="line">        readyState </span><br><span class="line">            0: 请求未初始化 </span><br><span class="line">            1: 服务器连接已建立 </span><br><span class="line">            2: 请求已接收 </span><br><span class="line">            3: 请求处理中 </span><br><span class="line">            4: 请求已完成，且响应已就绪 </span><br><span class="line">        status </span><br><span class="line">            200:请求成功 </span><br><span class="line">            404:未找到 </span><br><span class="line">            500:服务器内部错误 </span><br><span class="line">        */</span>  </span><br><span class="line">        <span class="keyword">if</span> (xmlhttp.readyState==<span class="number">4</span> &amp;&amp; xmlhttp.status==<span class="number">200</span>)&#123;  </span><br><span class="line">            <span class="built_in">document</span>.getElementById(<span class="string">"myDiv"</span>).innerHTML=xmlhttp.responseText;<span class="comment">//获得字符串形式的响应数据，如果返回的是XML需要单独解析  </span></span><br><span class="line">            <span class="comment">//responseXML       获得 XML 形式的响应数据  </span></span><br><span class="line">            <span class="keyword">var</span> xmlDoc = xmlhttp.responseXML;  </span><br><span class="line">            <span class="keyword">var</span> txt = <span class="string">""</span>;  </span><br><span class="line">            <span class="keyword">var</span> num = xmlDoc.getElementsByName(<span class="string">"value"</span>);<span class="comment">//获取节点name=value的值  </span></span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;num.length;i++)&#123;  </span><br><span class="line">                txt = txt+num[i].childNodes[<span class="number">0</span>].nodeValue+<span class="string">"&lt;br /&gt;"</span>;  </span><br><span class="line">            &#125;  </span><br><span class="line">            <span class="built_in">document</span>.getElementById(<span class="string">"myDiv2"</span>).innerHTML = txt;  </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">      </span><br><span class="line">    <span class="comment">//@param 最后一个参数表示是否是异步提交，为了避免使用缓存我们加上一个时间戳  </span></span><br><span class="line">    xmlhttp.open(<span class="string">"Get"</span>,<span class="string">"url"</span>+  </span><br><span class="line">        (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  </span><br><span class="line">            <span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>();  </span><br><span class="line">            <span class="keyword">return</span> date.getSeconds();     </span><br><span class="line">        &#125;)  </span><br><span class="line">    ,<span class="literal">true</span>);  </span><br><span class="line">      </span><br><span class="line">    <span class="comment">//设置头信息  </span></span><br><span class="line">    xmlhttp.setRequestHeader(<span class="string">"Content-type"</span>,<span class="string">"application/x-www-form-urlencoded"</span>);  </span><br><span class="line">      </span><br><span class="line">    <span class="comment">//将信息发送到服务器  </span></span><br><span class="line">    xmlhttp.send();   </span><br><span class="line">      </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/04/16/原生js写ajax/" data-id="cinhn22pu0016n0odli4oq26y" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-http状态码" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/04/16/http状态码/" class="article-date">
+  <time datetime="2016-04-16T14:21:55.000Z" itemprop="datePublished">2016-04-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/16/http状态码/">http状态码</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="常用状态码"><a href="#常用状态码" class="headerlink" title="常用状态码"></a>常用状态码</h1><p>100  Continue  继续，一般在发送post请求时，已发送了http header之后服务端将返回此信息，表示确认，之后发送具体参数信息<br>200  OK   正常返回信息<br>201  Created  请求成功并且服务器创建了新的资源<br>202  Accepted  服务器已接受请求，但尚未处理<br>301  Moved Permanently  请求的网页已永久移动到新位置。<br>302 Found  临时性重定向。<br>303 See Other  临时性重定向，且总是使用 GET 请求新的 URI。<br>304  Not Modified  自从上次请求后，请求的网页未修改过。</p>
+<p>400 Bad Request  服务器无法理解请求的格式，客户端不应当尝试再次使用相同的内容发起请求。<br>401 Unauthorized  请求未授权。<br>403 Forbidden  禁止访问。<br>404 Not Found  找不到如何与 URI 相匹配的资源。</p>
+<p>500 Internal Server Error  最常见的服务器端错误。<br>503 Service Unavailable 服务器端暂时无法处理请求（可能是过载或维护）。</p>
+<h1 id="全部状态码"><a href="#全部状态码" class="headerlink" title="全部状态码"></a>全部状态码</h1><p>1xx（临时响应）<br>表示临时响应并需要请求者继续执行操作的状态代码。</p>
+<p>代码 说明<br>100 （继续） 请求者应当继续提出请求。 服务器返回此代码表示已收到请求的第一部分，正在等待其余部分。<br>101 （切换协议） 请求者已要求服务器切换协议，服务器已确认并准备切换。 </p>
+<p>2xx （成功）<br>表示成功处理了请求的状态代码。<br>代码 说明<br>200 （成功） 服务器已成功处理了请求。 通常，这表示服务器提供了请求的网页。<br>201 （已创建） 请求成功并且服务器创建了新的资源。<br>202 （已接受） 服务器已接受请求，但尚未处理。<br>203 （非授权信息） 服务器已成功处理了请求，但返回的信息可能来自另一来源。<br>204 （无内容） 服务器成功处理了请求，但没有返回任何内容。<br>205 （重置内容） 服务器成功处理了请求，但没有返回任何内容。<br>206 （部分内容） 服务器成功处理了部分 GET 请求。 </p>
+<p>3xx （重定向）<br>表示要完成请求，需要进一步操作。 通常，这些状态代码用来重定向。</p>
+<p>代码 说明<br>300 （多种选择） 针对请求，服务器可执行多种操作。 服务器可根据请求者 (user agent) 选择一项操作，或提供操作列表供请求者选择。<br>301 （永久移动） 请求的网页已永久移动到新位置。 服务器返回此响应（对 GET 或 HEAD 请求的响应）时，会自动将请求者转到新位置。<br>302 （临时移动） 服务器目前从不同位置的网页响应请求，但请求者应继续使用原有位置来进行以后的请求。<br>303 （查看其他位置） 请求者应当对不同的位置使用单独的 GET 请求来检索响应时，服务器返回此代码。<br>304 （未修改） 自从上次请求后，请求的网页未修改过。 服务器返回此响应时，不会返回网页内容。<br>305 （使用代理） 请求者只能使用代理访问请求的网页。 如果服务器返回此响应，还表示请求者应使用代理。<br>307 （临时重定向） 服务器目前从不同位置的网页响应请求，但请求者应继续使用原有位置来进行以后的请求。 </p>
+<p>4xx（请求错误）<br>这些状态代码表示请求可能出错，妨碍了服务器的处理。</p>
+<p>代码 说明<br>400 （错误请求） 服务器不理解请求的语法。<br>401 （未授权） 请求要求身份验证。 对于需要登录的网页，服务器可能返回此响应。<br>403 （禁止） 服务器拒绝请求。<br>404 （未找到） 服务器找不到请求的网页。<br>405 （方法禁用） 禁用请求中指定的方法。<br>406 （不接受） 无法使用请求的内容特性响应请求的网页。<br>407 （需要代理授权） 此状态代码与 401（未授权）类似，但指定请求者应当授权使用代理。<br>408 （请求超时） 服务器等候请求时发生超时。<br>409 （冲突） 服务器在完成请求时发生冲突。 服务器必须在响应中包含有关冲突的信息。<br>410 （已删除） 如果请求的资源已永久删除，服务器就会返回此响应。<br>411 （需要有效长度） 服务器不接受不含有效内容长度标头字段的请求。<br>412 （未满足前提条件） 服务器未满足请求者在请求中设置的其中一个前提条件。<br>413 （请求实体过大） 服务器无法处理请求，因为请求实体过大，超出服务器的处理能力。<br>414 （请求的 URI 过长） 请求的 URI（通常为网址）过长，服务器无法处理。<br>415 （不支持的媒体类型） 请求的格式不受请求页面的支持。<br>416 （请求范围不符合要求） 如果页面无法提供请求的范围，则服务器会返回此状态代码。<br>417 （未满足期望值） 服务器未满足”期望”请求标头字段的要求。 </p>
+<p>5xx（服务器错误）<br>这些状态代码表示服务器在尝试处理请求时发生内部错误。 这些错误可能是服务器本身的错误，而不是请求出错。</p>
+<p>代码 说明<br>500 （服务器内部错误） 服务器遇到错误，无法完成请求。<br>501 （尚未实施） 服务器不具备完成请求的功能。 例如，服务器无法识别请求方法时可能会返回此代码。<br>502 （错误网关） 服务器作为网关或代理，从上游服务器收到无效响应。<br>503 （服务不可用） 服务器目前无法使用（由于超载或停机维护）。 通常，这只是暂时状态。<br>504 （网关超时） 服务器作为网关或代理，但是没有及时从上游服务器收到请求。<br>505 （HTTP 版本不受支持） 服务器不支持请求中所用的 HTTP 协议版本。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/04/16/http状态码/" data-id="cinhn22oz000vn0odgcczbxje" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-从地址栏输入网址后发生的事" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/04/16/从地址栏输入网址后发生的事/" class="article-date">
+  <time datetime="2016-04-16T14:16:03.000Z" itemprop="datePublished">2016-04-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/16/从地址栏输入网址后发生的事/">从地址栏输入网址后发生的事</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>分为4个步骤：<br>（1）当发送一个URL请求时，不管这个URL是Web页面的URL还是Web页面上每个资源的URL，浏览器都会开启一个线程来处理这个请求，同时在远程DNS服务器上启动一个DNS查询。这能使浏览器获得请求对应的IP地址。<br>（2）浏览器与远程Web服务器通过TCP三次握手协商来建立一个TCP/IP连接。该握手包括一个同步报文，一个同步-应答报文和一个应答报文，这三个报文在 浏览器和服务器之间传递。该握手首先由客户端尝试建立起通信，而后服务器应答并接受客户端的请求，最后由客户端发出该请求已经被接受的报文。<br>（3）一旦TCP/IP连接建立，浏览器会通过该连接向远程服务器发送HTTP的GET请求。远程服务器找到资源并使用HTTP响应返回该资源，值为200的HTTP响应状态表示一个正确的响应。<br>（4）此时，Web服务器提供资源服务，客户端开始下载资源。请求返回后，便进入了我们关注的前端模块<br>简单来说，浏览器会解析HTML生成DOM Tree，其次会根据CSS生成CSS Rule Tree，而javascript又可以根据DOM API操作DOM</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/04/16/从地址栏输入网址后发生的事/" data-id="cinhn22pf000zn0odn7x8c0wd" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-性能优化方法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/04/16/性能优化方法/" class="article-date">
+  <time datetime="2016-04-16T14:14:53.000Z" itemprop="datePublished">2016-04-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/16/性能优化方法/">性能优化方法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>（1） 减少http请求次数：CSS Sprites, JS、CSS源码压缩、图片大小控制合适；网页Gzip，CDN托管，data缓存 ，图片服务器。</p>
+<p>（2） 前端模板 JS+数据，减少由于HTML标签导致的带宽浪费，前端用变量保存AJAX请求结果，每次操作本地变量，不用请求，减少请求次数</p>
+<p>（3） 用innerHTML代替DOM操作，减少DOM操作次数，优化javascript性能。</p>
+<p>（4） 当需要设置的样式很多时设置className而不是直接操作style。</p>
+<p>（5） 少用全局变量、缓存DOM节点查找的结果。减少IO读取操作。</p>
+<p>（6） 避免使用CSS Expression（css表达式)又称Dynamic properties(动态属性)。</p>
+<p>（7） 图片预加载，将样式表放在顶部，将脚本放在底部  加上时间戳。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/04/16/性能优化方法/" data-id="cinhn22qa001cn0od77owxk61" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-前端职位理解" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/04/16/前端职位理解/" class="article-date">
@@ -91,7 +339,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/16/前端职位理解/" data-id="cin7jarc50012egodg1e1q50s" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/04/16/前端职位理解/" data-id="cinhn22pf0013n0od8cuifle3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -128,7 +376,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/16/网站资源优化/" data-id="cin7jarcl001begod8bsu0c45" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/04/16/网站资源优化/" data-id="cinhn22qa001dn0odzn1os3e1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -173,7 +421,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/16/CSS定位与浮动/" data-id="cin7jar8o0002egodriz4k3h7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/04/16/CSS定位与浮动/" data-id="cinhn22me0009n0od3ch72tr0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -215,248 +463,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/16/CSS的display常用属性值/" data-id="cin7jar940006egodqkpu1wlh" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-CSS伪类和伪元素" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/04/16/CSS伪类和伪元素/" class="article-date">
-  <time datetime="2016-04-16T02:52:39.000Z" itemprop="datePublished">2016-04-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/16/CSS伪类和伪元素/">CSS伪类和伪元素</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="伪类"><a href="#伪类" class="headerlink" title="伪类"></a>伪类</h1><h2 id="锚伪类（CSS1）"><a href="#锚伪类（CSS1）" class="headerlink" title="锚伪类（CSS1）"></a>锚伪类（CSS1）</h2><p>LVHA顺序：:link, :visited, :hover, :active。对大小写不敏感。</p>
-<h2 id="first-child-伪类（CSS2）"><a href="#first-child-伪类（CSS2）" class="headerlink" title=":first-child 伪类（CSS2）"></a>:first-child 伪类（CSS2）</h2><p>举例：<em>p:first-child</em>选择DOM中所有的作为第一个子元素的p标签元素。它会先遍历DOM中所有子结构中的第一个元素，判断是不是p元素，然后改变样式。<br>所以<em>:first-child</em>伪类是指元素作为第一个孩子，而不是指元素的第一个孩子。</p>
-<h2 id="nth-child-n-选择器（CSS3）"><a href="#nth-child-n-选择器（CSS3）" class="headerlink" title=":nth-child(n) 选择器（CSS3）"></a>:nth-child(<em>n</em>) 选择器（CSS3）</h2><p>作为<em>first-child</em>的升级版，选择作为某个元素的第<em>n</em>个子元素，n可以是数字或者表达式，如<em>3n+1</em>遍历从0开始的整数n。<br>举例：<em>p:nth-child(2)</em>，选择DOM中所有元素的第2个子元素，判断如果是p标签则起作用。<br>同理，<em>:nth-last-child(n)</em>选择某个元素的倒数第n个子元素。<br>CSS3中还有<em>:last-child</em>和<em>:only-child</em>。<br>比较有趣的是<em>p:only-child</em>，选择作为独生子的p标签~</p>
-<h2 id="nth-of-type-n-选择器（CSS3）"><a href="#nth-of-type-n-选择器（CSS3）" class="headerlink" title=":nth-of-type(n) 选择器（CSS3）"></a>:nth-of-type(<em>n</em>) 选择器（CSS3）</h2><p>和<em>:nth-child()</em>和类似，但是区别在于选择DOM中某个元素的指定类型的子元素中的第<em>n</em>个元素。<br>举例，<em>p:nth-of-type(2)</em>，选择DOM中所有子结构里的p元素集合里的第2个。<br>同理，<em>:nth-last-of-type(n)</em>是倒数的。<br>CSS3中还有<em>:first-of-type</em>、<em>:last-of-type</em>和<em>:only-of-type</em>。</p>
-<h1 id="伪元素"><a href="#伪元素" class="headerlink" title="伪元素"></a>伪元素</h1><h2 id="first-line-伪元素（CSS1）"><a href="#first-line-伪元素（CSS1）" class="headerlink" title=":first-line 伪元素（CSS1）"></a>:first-line 伪元素（CSS1）</h2><p><em>p:first-line</em>给p中的文本首行设置样式。</p>
-<h2 id="first-letter-伪元素（CSS1）"><a href="#first-letter-伪元素（CSS1）" class="headerlink" title=":first-letter 伪元素（CSS1）"></a>:first-letter 伪元素（CSS1）</h2><p><em>p:first-letter</em>给p中的文本首个字母设置样式。</p>
-<h2 id="before-伪元素"><a href="#before-伪元素" class="headerlink" title=":before 伪元素"></a>:before 伪元素</h2><p><em>p:before</em>伪元素在p元素的内容前面插入新内容。</p>
-<h2 id="after-伪元素"><a href="#after-伪元素" class="headerlink" title=":after 伪元素"></a>:after 伪元素</h2><p><em>p:after{<br>    clear:both;<br>    content:”.”;<br>    display:block;<br>    height:0;width:0;<br>    visibility:hidden;<br>}</em><br>元素后插入伪元素，清除浮动。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/16/CSS伪类和伪元素/" data-id="cin7jar8o0003egod1wjyped7" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-待解决" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/04/10/待解决/" class="article-date">
-  <time datetime="2016-04-10T14:17:58.000Z" itemprop="datePublished">2016-04-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/10/待解决/">待解决</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> F = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line">F.hasOwnProperty(<span class="string">"constructor"</span>); <span class="comment">// false</span></span><br><span class="line">F.hasOwnProperty(<span class="string">"prototype"</span>); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
-<p>F是个函数对象，创建时继承原型链上的constructor，这没问题。但是F.prototype不是继承自原型链的，那它是在什么时候创建的？</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/10/待解决/" data-id="cin7jarc50019egodew7hqe26" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-JavaScript的new关键字" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/04/04/JavaScript的new关键字/" class="article-date">
-  <time datetime="2016-04-04T05:36:47.000Z" itemprop="datePublished">2016-04-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/04/JavaScript的new关键字/">JavaScript的new关键字</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>1、创建一个空对象，并且 this 变量引用该对象，同时还继承了该函数的原型。<br>2、属性和方法被加入到 this 引用的对象中。<br>3、新创建的对象由 this 所引用，并且最后隐式的返回 this 。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj  = &#123;&#125;;</span><br><span class="line">obj.__proto__ = Base.prototype;</span><br><span class="line">Base.call(obj);</span><br></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/04/JavaScript的new关键字/" data-id="cin7jaraf000jegodcc0a5r5y" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-HTML5新增API" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/04/04/HTML5新增API/" class="article-date">
-  <time datetime="2016-04-04T05:34:15.000Z" itemprop="datePublished">2016-04-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/04/HTML5新增API/">HTML5新增API</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/04/HTML5新增API/" data-id="cin7jar9k000aegodw2ny01cg" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-JavaScript跨域原理" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/04/04/JavaScript跨域原理/" class="article-date">
-  <time datetime="2016-04-04T05:33:25.000Z" itemprop="datePublished">2016-04-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/04/JavaScript跨域原理/">JavaScript跨域原理</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/04/JavaScript跨域原理/" data-id="cin7jarau000oegodllu65j66" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-DOM常用操作" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/04/04/DOM常用操作/" class="article-date">
-  <time datetime="2016-04-04T05:30:48.000Z" itemprop="datePublished">2016-04-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/04/DOM常用操作/">DOM常用操作</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="操作document元素"><a href="#操作document元素" class="headerlink" title="操作document元素"></a>操作document元素</h2><ul>
-<li><p>创建新节点<br>createElement(<em>tagname</em>)   //创建一个名字为<em>tagname</em>的元素<br>createTextNode(<em>text</em>)   //创建一个文本节点，内容为<em>text</em>字符串<br>createDocumentFragment()    //创建一个DOM片段</p>
-</li>
-<li><p>添加、移除、替换、插入<br>appendChild()<br>removeChild()<br>replaceChild(<em>newnode,oldnode</em>)<br>insertBefore(<em>newItem,existingItem</em>) //在已有的子节点前插入一个新的子节点</p>
-</li>
-<li><p>查找<br>getElementsByTagName()    //通过标签名称<br>getElementsByName()    //通过元素的Name属性的值(IE容错能力较强，会得到一个数组，其中包括id等于name值的)<br>getElementById()    //通过元素Id，唯一性</p>
-</li>
-<li><p>父节点<br>parentNode</p>
-</li>
-<li><p>子节点<br>firstChild<br>lastChild<br>children // 节点的直接子节点数组<br>childNodes // 节点的所有子节点数组</p>
-</li>
-<li><p>兄弟节点<br>previousSibling<br>nextSibling</p>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/04/DOM常用操作/" data-id="cin7jar9k0009egod6lbvxclt" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/04/16/CSS的display常用属性值/" data-id="cinhn22n9000dn0odkjgwf204" class="article-share-link">Share</a>
       
       
     </footer>
@@ -514,23 +521,23 @@
       <ul>
         
           <li>
-            <a href="/2016/04/19/js中null和undefined区别/">js中null和undefined区别</a>
+            <a href="/2016/04/27/卡特兰数/">卡特兰数</a>
           </li>
         
           <li>
-            <a href="/2016/04/19/4月19网易游戏面/">4月19网易游戏面</a>
+            <a href="/2016/04/23/页面内跳转/">(no title)</a>
           </li>
         
           <li>
-            <a href="/2016/04/16/js对象深度克隆/">js对象深度克隆</a>
+            <a href="/2016/04/23/C++函数名/">(no title)</a>
           </li>
         
           <li>
-            <a href="/2016/04/16/js数组去重/">js数组去重</a>
+            <a href="/2016/04/23/引入css/">(no title)</a>
           </li>
         
           <li>
-            <a href="/2016/04/16/原生js写通用事件侦听器/">原生js写通用事件侦听器</a>
+            <a href="/2016/04/23/4月5号阿里面/">(no title)</a>
           </li>
         
       </ul>
