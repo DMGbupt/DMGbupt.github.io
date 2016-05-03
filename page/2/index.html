@@ -64,6 +64,117 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-4月19网易游戏面" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/04/19/4月19网易游戏面/" class="article-date">
+  <time datetime="2016-04-19T13:02:35.000Z" itemprop="datePublished">2016-04-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/19/4月19网易游戏面/">4月19网易游戏面</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1.项目介绍，学到什么。<br>2.angularjs写服务，写指令。route可以有更好的替换吗，http模块呢。对angular理解。<br>3.css选择器。盒模型。background影响的区域。三栏布局（圣杯）。<br>4.css项目管理<br>5.输入网址到页面呈现过程。页面解析。css查找。优先级计算。css重绘与重排。<br>6.访问页面卡，优化性能。<br>7.http方法。用get传数据好吗。<br>8.js：null和undefined区别。如何检测是否undefined。全等的意义。<br>9.原型链实现方案。<br>10.一个ul里面很多li，js怎么获取点击的li的index。<br>11.js增加和删除节点。<br>12.可复用的表格<br>13.http怎么与后台交互做缓存。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/04/19/4月19网易游戏面/" data-id="cinrmvcjr0008xkod29kv4m43" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-js对象深度克隆" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/04/16/js对象深度克隆/" class="article-date">
+  <time datetime="2016-04-16T15:17:56.000Z" itemprop="datePublished">2016-04-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/16/js对象深度克隆/">js对象深度克隆</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>深度克隆，非指针。采用递归形式。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">clone</span>(<span class="params">Obj</span>) </span>&#123;   </span><br><span class="line">    <span class="keyword">if</span> (Obj <span class="keyword">instanceof</span> <span class="built_in">Array</span>) &#123;   </span><br><span class="line">        <span class="keyword">var</span> buf = [];  <span class="comment">//创建一个空的数组 </span></span><br><span class="line">        <span class="keyword">var</span> i = Obj.length;   </span><br><span class="line">        <span class="keyword">while</span> (i--) &#123;   </span><br><span class="line">            buf[i] = clone(Obj[i]);   </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> buf;</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span> (Obj <span class="keyword">instanceof</span> <span class="built_in">Object</span>)&#123;   </span><br><span class="line">        <span class="keyword">var</span> buf = &#123;&#125;;  <span class="comment">//创建一个空对象 </span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> k <span class="keyword">in</span> Obj) &#123;  <span class="comment">//为这个对象添加新的属性 </span></span><br><span class="line">            buf[k] = clone(Obj[k]);   </span><br><span class="line">        &#125;   </span><br><span class="line">        <span class="keyword">return</span> buf;   </span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;   </span><br><span class="line">        <span class="keyword">return</span> Obj;   </span><br><span class="line">    &#125;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/04/16/js对象深度克隆/" data-id="cinrmvcn8000yxkodayr5qhro" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-js数组去重" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/04/16/js数组去重/" class="article-date">
+  <time datetime="2016-04-16T15:07:44.000Z" itemprop="datePublished">2016-04-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/16/js数组去重/">js数组去重</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>第1、2种方法利用indexOf()方法，第3种利用对象的hash特性。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Array</span>.prototype.unique1 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> n = []; <span class="comment">//一个新的临时数组</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>.length; i++) <span class="comment">//遍历当前数组</span></span><br><span class="line">  &#123;</span><br><span class="line">    <span class="comment">//如果当前数组的第i已经保存进了临时数组，那么跳过，</span></span><br><span class="line">    <span class="comment">//否则把当前项push到临时数组里面</span></span><br><span class="line">    <span class="keyword">if</span> (n.indexOf(<span class="keyword">this</span>[i]) == <span class="number">-1</span>) n.push(<span class="keyword">this</span>[i]);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> n;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Array</span>.prototype.unique2 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">var</span> n = [<span class="keyword">this</span>[<span class="number">0</span>]]; <span class="comment">//结果数组</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">1</span>; i &lt; <span class="keyword">this</span>.length; i++) <span class="comment">//从第二项开始遍历</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//如果当前数组的第i项在当前数组中第一次出现的位置不是i，</span></span><br><span class="line">        <span class="comment">//那么表示第i项是重复的，忽略掉。否则存入结果数组</span></span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>.indexOf(<span class="keyword">this</span>[i]) == i) n.push(<span class="keyword">this</span>[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> n;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Array</span>.prototype.unique3 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">var</span> h = &#123;&#125;,n=[]; <span class="comment">//h为hash表，n为结果数组</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>.length; i++) <span class="comment">//遍历当前数组</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (!h[<span class="keyword">this</span>[i]]) <span class="comment">//如果hash表中没有当前项</span></span><br><span class="line">        &#123;</span><br><span class="line">            h[<span class="keyword">this</span>[i]] = <span class="literal">true</span>; <span class="comment">//存入hash表</span></span><br><span class="line">            n.push(<span class="keyword">this</span>[i]); <span class="comment">//把当前数组的当前项push到结果数组里面</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> n;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/04/16/js数组去重/" data-id="cinrmvcno0014xkodrjcvm48j" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-原生js写通用事件侦听器" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/04/16/原生js写通用事件侦听器/" class="article-date">
@@ -90,7 +201,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/16/原生js写通用事件侦听器/" data-id="cinhn22pu0019n0od4hc8lz7m" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/04/16/原生js写通用事件侦听器/" data-id="cinrmvcoj001dxkod0rl9vlfm" class="article-share-link">Share</a>
       
       
     </footer>
@@ -130,7 +241,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/16/CSRF/" data-id="cinhn22li0002n0odokmarwtg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/04/16/CSRF/" data-id="cinrmvcjc0005xkodfj96c860" class="article-share-link">Share</a>
       
       
     </footer>
@@ -174,7 +285,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/16/原生js写ajax/" data-id="cinhn22pu0016n0odli4oq26y" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/04/16/原生js写ajax/" data-id="cinrmvco30019xkod9dpt801w" class="article-share-link">Share</a>
       
       
     </footer>
@@ -222,7 +333,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/16/http状态码/" data-id="cinhn22oz000vn0odgcczbxje" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/04/16/http状态码/" data-id="cinrmvcpe001ixkodxtogf4jv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -259,7 +370,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/16/从地址栏输入网址后发生的事/" data-id="cinhn22pf000zn0odn7x8c0wd" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/04/16/从地址栏输入网址后发生的事/" data-id="cinrmvcno0010xkodndjlptj6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -302,7 +413,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/16/性能优化方法/" data-id="cinhn22qa001cn0od77owxk61" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/04/16/性能优化方法/" data-id="cinrmvcoz001fxkodn4jlel1s" class="article-share-link">Share</a>
       
       
     </footer>
@@ -339,131 +450,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/16/前端职位理解/" data-id="cinhn22pf0013n0od8cuifle3" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-网站资源优化" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/04/16/网站资源优化/" class="article-date">
-  <time datetime="2016-04-16T14:10:59.000Z" itemprop="datePublished">2016-04-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/16/网站资源优化/">网站资源优化</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>文件合并<br>文件最小化/文件压缩<br>使用 CDN 托管<br>缓存的使用（多个域名来提供缓存）</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/16/网站资源优化/" data-id="cinhn22qa001dn0odzn1os3e1" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-CSS定位与浮动" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/04/16/CSS定位与浮动/" class="article-date">
-  <time datetime="2016-04-16T07:42:57.000Z" itemprop="datePublished">2016-04-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/16/CSS定位与浮动/">CSS定位与浮动</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h2><p><em>position</em>属性值：</p>
-<ul>
-<li>static：默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right z-index 声明）。</li>
-<li>relative：生成相对定位的元素，相对于其在普通流中的位置进行定位。</li>
-<li>absolute：生成绝对定位的元素，相对于 static 定位以外的第一个祖先元素进行定位。 </li>
-<li>fixed：生成绝对定位的元素，相对于浏览器窗口进行定位（老IE不支持）。 </li>
-<li>inherit 规定从父元素继承 position 属性的值。</li>
-</ul>
-<h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h2><p><a href="http://www.360doc.com/content/12/0328/15/306547_198606737.shtml" target="_blank" rel="external">http://www.360doc.com/content/12/0328/15/306547_198606737.shtml</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/16/CSS定位与浮动/" data-id="cinhn22me0009n0od3ch72tr0" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-CSS的display常用属性值" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/04/16/CSS的display常用属性值/" class="article-date">
-  <time datetime="2016-04-16T06:42:06.000Z" itemprop="datePublished">2016-04-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/16/CSS的display常用属性值/">CSS的display常用属性值</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li>none：不显示，文档流中不存在。（相对来说，<em>visibility:hidden</em>会在文档流中保留原来位置）</li>
-<li>block：块级元素<br>block元素会独占一行，多个block元素会各自新起一行。默认情况下，block元素宽度自动填满其父元素宽度。<br>block元素可以设置width,height属性。块级元素即使设置了宽度,仍然是独占一行。<br>block元素可以设置margin和padding属性。</li>
-<li>inline：行内元素<br>inline元素不会独占一行，多个相邻的行内元素会排列在同一行里，直到一行排列不下，才会新换一行，其宽度随元素的内容而变化。<br>inline元素设置width,height属性无效。<br>inline元素的margin和padding属性，水平方向的padding-left, padding-right, margin-left, margin-right都产生边距效果；但竖直方向的padding-top, padding-bottom, margin-top, margin-bottom不会产生边距效果。</li>
-<li>inline-block：行内块元素<br>对象表现为inline，但是内容表现为block。之后的内联对象会被排列在同一行内。<br>比如我们可以给a标签设置inline-block值，使其既具有block的宽度高度特性又具有inline的同行特性。<br>有点像浮动，但是不从文档流中删除。</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/16/CSS的display常用属性值/" data-id="cinhn22n9000dn0odkjgwf204" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/04/16/前端职位理解/" data-id="cinrmvco30017xkodlarh2vnf" class="article-share-link">Share</a>
       
       
     </footer>
@@ -476,7 +463,7 @@
 
 
   <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">__('next') &raquo;</a>
+    <a class="extend prev" rel="prev" href="/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">__('next') &raquo;</a>
   </nav>
 </section>
         
@@ -508,7 +495,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a></li></ul>
     </div>
   </div>
 
@@ -521,23 +508,23 @@
       <ul>
         
           <li>
+            <a href="/2016/05/04/C-虚析构函数/">C++虚析构函数</a>
+          </li>
+        
+          <li>
+            <a href="/2016/05/03/数据库索引/">数据库索引</a>
+          </li>
+        
+          <li>
+            <a href="/2016/05/03/C-中new和malloc区别/">C++中new和malloc区别</a>
+          </li>
+        
+          <li>
             <a href="/2016/04/27/卡特兰数/">卡特兰数</a>
           </li>
         
           <li>
             <a href="/2016/04/23/页面内跳转/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2016/04/23/C++函数名/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2016/04/23/引入css/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2016/04/23/4月5号阿里面/">(no title)</a>
           </li>
         
       </ul>

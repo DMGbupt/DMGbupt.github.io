@@ -3,17 +3,16 @@
 <head>
   <meta charset="utf-8">
   
-  <title>卡特兰数 | liming&#39;s cookbook</title>
+  <title>liming&#39;s cookbook</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description">
-<meta property="og:type" content="article">
-<meta property="og:title" content="卡特兰数">
-<meta property="og:url" content="http://yoursite.com/2016/04/27/卡特兰数/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="liming's cookbook">
+<meta property="og:url" content="http://yoursite.com/page/5/index.html">
 <meta property="og:site_name" content="liming's cookbook">
 <meta property="og:description">
-<meta property="og:updated_time" content="2016-04-26T16:07:34.133Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="卡特兰数">
+<meta name="twitter:title" content="liming's cookbook">
 <meta name="twitter:description">
   
     <link rel="alternate" href="/atom.xml" title="liming&#39;s cookbook" type="application/atom+xml">
@@ -63,10 +62,12 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-卡特兰数" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main">
+  
+    <article id="post-JavaScript原型链初探" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/04/27/卡特兰数/" class="article-date">
-  <time datetime="2016-04-26T16:07:34.000Z" itemprop="datePublished">2016-04-27</time>
+    <a href="/2015/08/10/JavaScript原型链初探/" class="article-date">
+  <time datetime="2015-08-10T14:52:24.000Z" itemprop="datePublished">2015-08-10</time>
 </a>
     
   </div>
@@ -76,8 +77,8 @@
       <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
-      卡特兰数
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/08/10/JavaScript原型链初探/">JavaScript原型链初探</a>
     </h1>
   
 
@@ -85,39 +86,76 @@
     
     <div class="article-entry" itemprop="articleBody">
       
+        <p>JavaScript 不包含传统的类继承模型，而是使用 prototype 原型模型。<br>虽然这经常被当作是 JavaScript 的缺点被提及，其实基于原型的继承模型比传统的类继承还要强大。 实现传统的类继承模型是很简单，但是实现 JavaScript 中的原型继承则要困难的多。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/08/10/JavaScript原型链初探/" data-id="cinrmvckn000cxkodxwu2gi54" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-使用JavaScript的点和中括号操作符访问对象属性的比较" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/07/30/使用JavaScript的点和中括号操作符访问对象属性的比较/" class="article-date">
+  <time datetime="2015-07-30T05:17:03.000Z" itemprop="datePublished">2015-07-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/07/30/使用JavaScript的点和中括号操作符访问对象属性的比较/">使用JavaScript的点和中括号操作符访问对象属性的比较</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>JavaScript中对象的属性可以用<em>点操作符</em>（.）和<em>中括号操作符</em>（[]）访问，在正常访问和给属性赋值时，两者是等价的。</p>
+<ul>
+<li>正常操作时效果一样（访问和赋值）<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> foo = &#123;name: <span class="string">'lm'</span>&#125;</span><br><span class="line">foo.name; <span class="comment">// "lm"</span></span><br><span class="line">foo[<span class="string">'name'</span>]; <span class="comment">// "lm"</span></span><br><span class="line">foo.age = <span class="number">20</span>; <span class="comment">// 20</span></span><br><span class="line">foo[<span class="string">'hobby'</span>] = <span class="string">'coding'</span>; <span class="comment">// "coding"</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>他们的区别在于：<strong>用点操作符的时候，后面必须是一个指定的有效的属性名</strong>！所以下面两种场景中，点操作符不会正常运行，而中括号依然有效。<br>
+        
+          <p class="article-more-link">
+            <a href="/2015/07/30/使用JavaScript的点和中括号操作符访问对象属性的比较/#more">Read More</a>
+          </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/27/卡特兰数/" data-id="cinrmvcno0012xkodlpza4dn2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/07/30/使用JavaScript的点和中括号操作符访问对象属性的比较/" data-id="cinrmvco30016xkodk61x14il" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
     </footer>
   </div>
   
-    
-<nav id="article-nav">
-  
-    <a href="/2016/05/03/C-中new和malloc区别/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          C++中new和malloc区别
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2016/04/23/页面内跳转/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title"></div>
-    </a>
-  
-</nav>
-
-  
 </article>
 
+
+  
+
+
+  <nav id="page-nav">
+    <a class="extend prev" rel="prev" href="/page/4/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span>
+  </nav>
 </section>
         
           <aside id="sidebar">
