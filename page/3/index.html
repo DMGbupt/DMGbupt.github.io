@@ -64,6 +64,86 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-从地址栏输入网址后发生的事" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/04/16/从地址栏输入网址后发生的事/" class="article-date">
+  <time datetime="2016-04-16T14:16:03.000Z" itemprop="datePublished">2016-04-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/16/从地址栏输入网址后发生的事/">从地址栏输入网址后发生的事</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>分为4个步骤：<br>（1）当发送一个URL请求时，不管这个URL是Web页面的URL还是Web页面上每个资源的URL，浏览器都会开启一个线程来处理这个请求，同时在远程DNS服务器上启动一个DNS查询。这能使浏览器获得请求对应的IP地址。<br>（2）浏览器与远程Web服务器通过TCP三次握手协商来建立一个TCP/IP连接。该握手包括一个同步报文，一个同步-应答报文和一个应答报文，这三个报文在 浏览器和服务器之间传递。该握手首先由客户端尝试建立起通信，而后服务器应答并接受客户端的请求，最后由客户端发出该请求已经被接受的报文。<br>（3）一旦TCP/IP连接建立，浏览器会通过该连接向远程服务器发送HTTP的GET请求。远程服务器找到资源并使用HTTP响应返回该资源，值为200的HTTP响应状态表示一个正确的响应。<br>（4）此时，Web服务器提供资源服务，客户端开始下载资源。请求返回后，便进入了我们关注的前端模块<br>简单来说，浏览器会解析HTML生成DOM Tree，其次会根据CSS生成CSS Rule Tree，而javascript又可以根据DOM API操作DOM</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/04/16/从地址栏输入网址后发生的事/" data-id="cinsl03mx00157ood5ambx3oh" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-性能优化方法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/04/16/性能优化方法/" class="article-date">
+  <time datetime="2016-04-16T14:14:53.000Z" itemprop="datePublished">2016-04-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/16/性能优化方法/">性能优化方法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>（1） 减少http请求次数：CSS Sprites, JS、CSS源码压缩、图片大小控制合适；网页Gzip，CDN托管，data缓存 ，图片服务器。</p>
+<p>（2） 前端模板 JS+数据，减少由于HTML标签导致的带宽浪费，前端用变量保存AJAX请求结果，每次操作本地变量，不用请求，减少请求次数</p>
+<p>（3） 用innerHTML代替DOM操作，减少DOM操作次数，优化javascript性能。</p>
+<p>（4） 当需要设置的样式很多时设置className而不是直接操作style。</p>
+<p>（5） 少用全局变量、缓存DOM节点查找的结果。减少IO读取操作。</p>
+<p>（6） 避免使用CSS Expression（css表达式)又称Dynamic properties(动态属性)。</p>
+<p>（7） 图片预加载，将样式表放在顶部，将脚本放在底部  加上时间戳。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/04/16/性能优化方法/" data-id="cinsl03nd001i7oodcici80km" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-前端职位理解" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/04/16/前端职位理解/" class="article-date">
@@ -91,7 +171,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/16/前端职位理解/" data-id="cinsh5xca001h7kodpw815mtj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/04/16/前端职位理解/" data-id="cinsl03mx00197ood6r2rgjbn" class="article-share-link">Share</a>
       
       
     </footer>
@@ -128,7 +208,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/16/网站资源优化/" data-id="cinsh5wnd001c7kodwk8l6572" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/04/16/网站资源优化/" data-id="cinsl03ns001m7oodfz34lkxz" class="article-share-link">Share</a>
       
       
     </footer>
@@ -173,7 +253,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/16/CSS定位与浮动/" data-id="cinsh5wjv00057kodpgoaw5j2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/04/16/CSS定位与浮动/" data-id="cinsl03jw00097oodhe0t9i4d" class="article-share-link">Share</a>
       
       
     </footer>
@@ -215,7 +295,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/16/CSS的display常用属性值/" data-id="cinsh5wm2000m7kodzk24zg00" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/04/16/CSS的display常用属性值/" data-id="cinsl03kr000d7ood2m2rxsii" class="article-share-link">Share</a>
       
       
     </footer>
@@ -259,7 +339,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/16/CSS伪类和伪元素/" data-id="cinsh5wl6000d7kod2tz4kp35" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/04/16/CSS伪类和伪元素/" data-id="cinsl03jw00087oodk1qep8vm" class="article-share-link">Share</a>
       
       
     </footer>
@@ -297,7 +377,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/10/待解决/" data-id="cinsh5wnd001b7kodg1lbfwgg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/04/10/待解决/" data-id="cinsl03nd001h7ooduwd10vsc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -334,7 +414,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/04/JavaScript的new关键字/" data-id="cinsh5wm2000j7kodkmw1883l" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/04/04/JavaScript的new关键字/" data-id="cinsl03m2000s7oodc3ywawry" class="article-share-link">Share</a>
       
       
     </footer>
@@ -370,93 +450,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/04/HTML5新增API/" data-id="cinsh5wl6000e7kodkdfsnq8v" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-JavaScript跨域原理" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/04/04/JavaScript跨域原理/" class="article-date">
-  <time datetime="2016-04-04T05:33:25.000Z" itemprop="datePublished">2016-04-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/04/JavaScript跨域原理/">JavaScript跨域原理</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/04/JavaScript跨域原理/" data-id="cinsh5wmi000t7kodi2kdougv" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-DOM常用操作" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/04/04/DOM常用操作/" class="article-date">
-  <time datetime="2016-04-04T05:30:48.000Z" itemprop="datePublished">2016-04-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/04/DOM常用操作/">DOM常用操作</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="操作document元素"><a href="#操作document元素" class="headerlink" title="操作document元素"></a>操作document元素</h2><ul>
-<li><p>创建新节点<br>createElement(<em>tagname</em>)   //创建一个名字为<em>tagname</em>的元素<br>createTextNode(<em>text</em>)   //创建一个文本节点，内容为<em>text</em>字符串<br>createDocumentFragment()    //创建一个DOM片段</p>
-</li>
-<li><p>添加、移除、替换、插入<br>appendChild()<br>removeChild()<br>replaceChild(<em>newnode,oldnode</em>)<br>insertBefore(<em>newItem,existingItem</em>) //在已有的子节点前插入一个新的子节点</p>
-</li>
-<li><p>查找<br>getElementsByTagName()    //通过标签名称<br>getElementsByName()    //通过元素的Name属性的值(IE容错能力较强，会得到一个数组，其中包括id等于name值的)<br>getElementById()    //通过元素Id，唯一性</p>
-</li>
-<li><p>父节点<br>parentNode</p>
-</li>
-<li><p>子节点<br>firstChild<br>lastChild<br>children // 节点的直接子节点数组<br>childNodes // 节点的所有子节点数组</p>
-</li>
-<li><p>兄弟节点<br>previousSibling<br>nextSibling</p>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/04/DOM常用操作/" data-id="cinsh5wkr000c7kod09sha2nr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/04/04/HTML5新增API/" data-id="cinsl03kr000g7oodxi1zmt5x" class="article-share-link">Share</a>
       
       
     </footer>
@@ -514,6 +508,14 @@
       <ul>
         
           <li>
+            <a href="/2016/05/04/数据库join操作/">数据库join操作</a>
+          </li>
+        
+          <li>
+            <a href="/2016/05/04/数据库范式/">数据库范式</a>
+          </li>
+        
+          <li>
             <a href="/2016/05/04/5月4号摩根电面/">5月4号摩根电面</a>
           </li>
         
@@ -523,14 +525,6 @@
         
           <li>
             <a href="/2016/05/03/数据库索引/">数据库索引</a>
-          </li>
-        
-          <li>
-            <a href="/2016/05/03/C-中new和malloc区别/">C++中new和malloc区别</a>
-          </li>
-        
-          <li>
-            <a href="/2016/04/27/卡特兰数/">卡特兰数</a>
           </li>
         
       </ul>
