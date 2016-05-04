@@ -3,21 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>liming&#39;s cookbook</title>
+  <title>5月4号摩根电面 | liming&#39;s cookbook</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="函数指针函数名作为值时，自动转换为指针。1234int fun(int, const bool &amp;amp;); // declareint (*p)(int, const bool &amp;amp;);p = fun;p = &amp;amp;fun;
-两者等价。fun作为函数名，是一个指针，存储函数入口。直接把fun值赋给p可以理解，但是取fun地址为什么等价？fun存储了函数入口，难道fun本身的地址就是函">
+  <meta name="description" content="全程英语，口语坑！还记得的问题：1.最有趣的项目，难点是什么2.为啥来摩根3.内存泄露，怎么阻止，智能指针，什么时候引用递增和递减，什么时候出作用域4.传值，传引用5.虚函数表，结构，继承时的表结构6.哈希表，怎么实现7.快排，归并，比归并好在哪8.开放题：设计一个有效内存存储方式，存10亿电话号。（bit hash）怎么提升？（prefix）9.对hr提问。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="liming's cookbook">
-<meta property="og:url" content="http://yoursite.com/2016/04/23/C++函数名/index.html">
+<meta property="og:title" content="5月4号摩根电面">
+<meta property="og:url" content="http://yoursite.com/2016/05/04/5月4号摩根电面/index.html">
 <meta property="og:site_name" content="liming's cookbook">
-<meta property="og:description" content="函数指针函数名作为值时，自动转换为指针。1234int fun(int, const bool &amp;amp;); // declareint (*p)(int, const bool &amp;amp;);p = fun;p = &amp;amp;fun;
-两者等价。fun作为函数名，是一个指针，存储函数入口。直接把fun值赋给p可以理解，但是取fun地址为什么等价？fun存储了函数入口，难道fun本身的地址就是函">
-<meta property="og:updated_time" content="2016-04-23T02:59:02.391Z">
+<meta property="og:description" content="全程英语，口语坑！还记得的问题：1.最有趣的项目，难点是什么2.为啥来摩根3.内存泄露，怎么阻止，智能指针，什么时候引用递增和递减，什么时候出作用域4.传值，传引用5.虚函数表，结构，继承时的表结构6.哈希表，怎么实现7.快排，归并，比归并好在哪8.开放题：设计一个有效内存存储方式，存10亿电话号。（bit hash）怎么提升？（prefix）9.对hr提问。">
+<meta property="og:updated_time" content="2016-05-04T06:20:19.921Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="liming's cookbook">
-<meta name="twitter:description" content="函数指针函数名作为值时，自动转换为指针。1234int fun(int, const bool &amp;amp;); // declareint (*p)(int, const bool &amp;amp;);p = fun;p = &amp;amp;fun;
-两者等价。fun作为函数名，是一个指针，存储函数入口。直接把fun值赋给p可以理解，但是取fun地址为什么等价？fun存储了函数入口，难道fun本身的地址就是函">
+<meta name="twitter:title" content="5月4号摩根电面">
+<meta name="twitter:description" content="全程英语，口语坑！还记得的问题：1.最有趣的项目，难点是什么2.为啥来摩根3.内存泄露，怎么阻止，智能指针，什么时候引用递增和递减，什么时候出作用域4.传值，传引用5.虚函数表，结构，继承时的表结构6.哈希表，怎么实现7.快排，归并，比归并好在哪8.开放题：设计一个有效内存存储方式，存10亿电话号。（bit hash）怎么提升？（prefix）9.对hr提问。">
   
     <link rel="alternate" href="/atom.xml" title="liming&#39;s cookbook" type="application/atom+xml">
   
@@ -66,25 +63,34 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-C++函数名" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-5月4号摩根电面" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/04/23/C++函数名/" class="article-date">
-  <time datetime="2016-04-23T02:59:02.391Z" itemprop="datePublished">2016-04-23</time>
+    <a href="/2016/05/04/5月4号摩根电面/" class="article-date">
+  <time datetime="2016-05-04T06:02:55.000Z" itemprop="datePublished">2016-05-04</time>
 </a>
     
   </div>
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      5月4号摩根电面
+    </h1>
+  
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="函数指针"><a href="#函数指针" class="headerlink" title="函数指针"></a>函数指针</h2><p>函数名作为值时，自动转换为指针。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fun</span><span class="params">(<span class="keyword">int</span>, <span class="keyword">const</span> <span class="keyword">bool</span> &amp;)</span></span>; <span class="comment">// declare</span></span><br><span class="line"><span class="keyword">int</span> (*p)(<span class="keyword">int</span>, <span class="keyword">const</span> <span class="keyword">bool</span> &amp;);</span><br><span class="line">p = fun;</span><br><span class="line">p = &amp;fun;</span><br></pre></td></tr></table></figure></p>
-<p>两者等价。fun作为函数名，是一个指针，存储函数入口。直接把fun值赋给p可以理解，但是取fun地址为什么等价？fun存储了函数入口，难道fun本身的地址就是函数入口？</p>
+        <p>全程英语，口语坑！<br>还记得的问题：<br>1.最有趣的项目，难点是什么<br>2.为啥来摩根<br>3.内存泄露，怎么阻止，智能指针，什么时候引用递增和递减，什么时候出作用域<br>4.传值，传引用<br>5.虚函数表，结构，继承时的表结构<br>6.哈希表，怎么实现<br>7.快排，归并，比归并好在哪<br>8.开放题：设计一个有效内存存储方式，存10亿电话号。（bit hash）怎么提升？（prefix）<br>9.对hr提问。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/23/C++函数名/" data-id="cinsh5wj000037kodjb96hd08" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/04/5月4号摩根电面/" data-id="cinsh5wgu00017kod4slf3gp7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -93,19 +99,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/04/23/页面内跳转/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          (no title)
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/04/23/引入css/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/05/04/C-虚析构函数/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title"></div>
+      <div class="article-nav-title">C++虚析构函数</div>
     </a>
   
 </nav>

@@ -64,6 +64,62 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-CSS水平居中和垂直居中" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/04/04/CSS水平居中和垂直居中/" class="article-date">
+  <time datetime="2016-04-04T05:28:32.000Z" itemprop="datePublished">2016-04-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/04/CSS水平居中和垂直居中/">CSS水平居中和垂直居中</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="垂直居中"><a href="#垂直居中" class="headerlink" title="垂直居中"></a>垂直居中</h2><ul>
+<li>最土的表格法<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;table&gt;</span><br><span class="line">	&lt;tr&gt;</span><br><span class="line">	&lt;/tr&gt;</span><br><span class="line">	&lt;td style="vertical-align:middle;"&gt;</span><br><span class="line">		&lt;div&gt;content&lt;/div&gt;</span><br><span class="line">	&lt;/td&gt;</span><br><span class="line">&lt;/table&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>使用一行一列的表格，把div内容放到td里，利用td的vertical-align属性垂直居中。<br>或者是div表现为单元格，完成水平和垂直居中。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: table-cell;</span><br><span class="line">  <span class="attribute">text-align</span>: center;</span><br><span class="line">  <span class="attribute">vertical-align</span>: middle;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>需要较多hack的inline-block法<br>基本思路是在父容器里设置行高line-height等于整体高度height</li>
+<li>绝对定位<br>最早的实现方法需要知道元素宽高。<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">margin-top</span>: -<span class="number">3em</span>; <span class="comment">/* 6/2 = 3 */</span></span><br><span class="line">    <span class="attribute">margin-left</span>: -<span class="number">9em</span>; <span class="comment">/* 18/2 = 9 */</span></span><br><span class="line">    <span class="attribute">width</span>: <span class="number">18em</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">6em</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>使用CSS3的transform属性可以操作未知宽高的元素移动相对自身宽高的距离。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translate</span>(-50%, -50%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>FlexBox，最好的解决方案<br>在需要垂直居中的父元素上设置<em>display:flex</em>并在垂直居中的元素上设置<em>margin:auto</em>，就完成了水平垂直居中。<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span><span class="selector-id">#sup</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">margin</span>: auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="水平居中"><a href="#水平居中" class="headerlink" title="水平居中"></a>水平居中</h2><ul>
+<li>行内元素，在其父元素上设置<em>text-align:center;</em></li>
+<li>块级元素，直接使用<em>margin: 0 auto;</em></li>
+</ul>
+<p>参考：<a href="http://www.tuicool.com/articles/INRzayM" target="_blank" rel="external">http://www.tuicool.com/articles/INRzayM</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/04/04/CSS水平居中和垂直居中/" data-id="cinsh5wkr000b7kodscnrcqvn" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-CSS常见多列布局" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/04/04/CSS常见多列布局/" class="article-date">
@@ -90,7 +146,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/04/CSS常见多列布局/" data-id="cinrmvcjr0007xkodj5rjzyko" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/04/04/CSS常见多列布局/" data-id="cinsh5wjv00067kodk2hhbyv3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -126,7 +182,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/04/JavaScript正则表达式/" data-id="cinrmvclx000gxkodju235bdi" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/04/04/JavaScript正则表达式/" data-id="cinsh5wm2000l7kodd5c00evr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -162,7 +218,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/04/jQuery的事件代理/" data-id="cinrmvcoz001exkodumsb300d" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/04/04/jQuery的事件代理/" data-id="cinsh5wmi000r7kod08lsrasf" class="article-share-link">Share</a>
       
       
     </footer>
@@ -198,7 +254,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/04/CSS的BFC初探/" data-id="cinrmvcmt000nxkodbnl3dqb1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/04/04/CSS的BFC初探/" data-id="cinsh5wm2000i7kodryolt23s" class="article-share-link">Share</a>
       
       
     </footer>
@@ -259,7 +315,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/04/CSS的浮动笔记/" data-id="cinrmvck70009xkodzowqp0z5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/04/04/CSS的浮动笔记/" data-id="cinsh5wkr000a7kodoh97903i" class="article-share-link">Share</a>
       
       
     </footer>
@@ -333,7 +389,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/10/20/JavaScript的Object对象/" data-id="cinrmvclx000kxkod1w7n4tiu" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/10/20/JavaScript的Object对象/" data-id="cinsh5wmi000p7kodvegu2hlz" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Object/">Object</a></li></ul>
@@ -469,7 +525,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/10/12/JavaScript的对象和继承/" data-id="cinrmvcmt000uxkod6ruzkzob" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/10/12/JavaScript的对象和继承/" data-id="cinsh5wmy000y7kodhkjq33pj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -509,7 +565,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/09/27/JavaScript实现常用排序算法/" data-id="cinrmvcli000fxkodunpwy2dx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/09/27/JavaScript实现常用排序算法/" data-id="cinsh5wl6000f7kodc8sh8oi2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithm/">Algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sort/">sort</a></li></ul>
@@ -555,53 +611,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/09/12/JavaScript数组操作/" data-id="cinrmvcmt000sxkodqxkws6br" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-JavaScript字符串处理方法" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/09/05/JavaScript字符串处理方法/" class="article-date">
-  <time datetime="2015-09-05T05:11:03.000Z" itemprop="datePublished">2015-09-05</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/09/05/JavaScript字符串处理方法/">JavaScript字符串处理方法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="常用原生字符串处理函数"><a href="#常用原生字符串处理函数" class="headerlink" title="常用原生字符串处理函数"></a>常用原生字符串处理函数</h2><ul>
-<li><em>string</em>.charAt(<em>pos</em>) 返回<em>pos</em>位置的字符组成的字符串，越界则返回空串<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"hello,world!"</span>;</span><br><span class="line">str.charAt(<span class="number">0</span>); <span class="comment">// "h"</span></span><br><span class="line">str.charAt(<span class="number">-1</span>); <span class="comment">// ""</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-        
-          <p class="article-more-link">
-            <a href="/2015/09/05/JavaScript字符串处理方法/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/09/05/JavaScript字符串处理方法/" data-id="cinrmvcmd000mxkoddot3w6kx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/09/12/JavaScript数组操作/" data-id="cinsh5wl6000g7kodh4zyon46" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -661,6 +671,10 @@
       <ul>
         
           <li>
+            <a href="/2016/05/04/5月4号摩根电面/">5月4号摩根电面</a>
+          </li>
+        
+          <li>
             <a href="/2016/05/04/C-虚析构函数/">C++虚析构函数</a>
           </li>
         
@@ -674,10 +688,6 @@
         
           <li>
             <a href="/2016/04/27/卡特兰数/">卡特兰数</a>
-          </li>
-        
-          <li>
-            <a href="/2016/04/23/页面内跳转/">(no title)</a>
           </li>
         
       </ul>
