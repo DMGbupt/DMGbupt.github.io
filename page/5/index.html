@@ -1,11 +1,90 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
+<!doctype html>
+
+
+
   
-  <title>liming&#39;s cookbook</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description">
 <meta property="og:type" content="website">
 <meta property="og:title" content="liming's cookbook">
 <meta property="og:url" content="http://yoursite.com/page/5/index.html">
@@ -14,151 +93,886 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="liming's cookbook">
 <meta name="twitter:description">
-  
-    <link rel="alternate" href="/atom.xml" title="liming&#39;s cookbook" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
-  
 
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> liming's cookbook </title>
 </head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">liming&#39;s cookbook</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-jQuery的事件代理" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/04/04/jQuery的事件代理/" class="article-date">
-  <time datetime="2016-04-04T04:26:45.000Z" itemprop="datePublished">2016-04-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/04/jQuery的事件代理/">jQuery的事件代理</a>
-    </h1>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
   
 
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left 
+   page-home 
+ ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">liming's cookbook</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/04/04/JavaScript跨域原理/" itemprop="url">
+                  JavaScript跨域原理
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-04T13:33:25+08:00" content="2016-04-04">
+              2016-04-04
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+
+    <div class="post-body" itemprop="articleBody">
+
       
+      
+
+      
+        
+          
+            
+          
         
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/04/jQuery的事件代理/" data-id="cioa6z1wu000yhsodujtv320l" class="article-share-link">Share</a>
+
+    <div>
       
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
       
     </footer>
-  </div>
-  
-</article>
+  </article>
 
 
+    
+      
+
   
-    <article id="post-CSS的BFC初探" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/04/04/CSS的BFC初探/" class="article-date">
-  <time datetime="2016-04-04T04:25:05.000Z" itemprop="datePublished">2016-04-04</time>
-</a>
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+      <header class="post-header">
+
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/04/CSS的BFC初探/">CSS的BFC初探</a>
-    </h1>
-  
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/04/04/DOM常用操作/" itemprop="url">
+                  DOM常用操作
+                </a>
+              
+            
+          </h1>
+        
 
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-04T13:30:48+08:00" content="2016-04-04">
+              2016-04-04
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+
+    <div class="post-body" itemprop="articleBody">
+
       
+      
+
+      
+        
+          
+            <h2 id="操作document元素"><a href="#操作document元素" class="headerlink" title="操作document元素"></a>操作document元素</h2><ul>
+<li><p>创建新节点<br>createElement(<em>tagname</em>)   //创建一个名字为<em>tagname</em>的元素<br>createTextNode(<em>text</em>)   //创建一个文本节点，内容为<em>text</em>字符串<br>createDocumentFragment()    //创建一个DOM片段</p>
+</li>
+<li><p>添加、移除、替换、插入<br>appendChild()<br>removeChild()<br>replaceChild(<em>newnode,oldnode</em>)<br>insertBefore(<em>newItem,existingItem</em>) //在已有的子节点前插入一个新的子节点</p>
+</li>
+<li><p>查找<br>getElementsByTagName()    //通过标签名称<br>getElementsByName()    //通过元素的Name属性的值(IE容错能力较强，会得到一个数组，其中包括id等于name值的)<br>getElementById()    //通过元素Id，唯一性</p>
+</li>
+<li><p>父节点<br>parentNode</p>
+</li>
+<li><p>子节点<br>firstChild<br>lastChild<br>children // 节点的直接子节点数组<br>childNodes // 节点的所有子节点数组</p>
+</li>
+<li><p>兄弟节点<br>previousSibling<br>nextSibling</p>
+</li>
+</ul>
+
+          
         
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/04/CSS的BFC初探/" data-id="cioa6z1tt0007hsodn9l8riu0" class="article-share-link">Share</a>
+
+    <div>
       
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
       
     </footer>
-  </div>
-  
-</article>
+  </article>
 
 
+    
+      
+
   
-    <article id="post-CSS的浮动笔记" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/04/04/CSS的浮动笔记/" class="article-date">
-  <time datetime="2016-04-04T04:24:23.000Z" itemprop="datePublished">2016-04-04</time>
-</a>
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+      <header class="post-header">
+
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/04/CSS的浮动笔记/">CSS的浮动笔记</a>
-    </h1>
-  
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/04/04/CSS水平居中和垂直居中/" itemprop="url">
+                  CSS水平居中和垂直居中
+                </a>
+              
+            
+          </h1>
+        
 
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-04T13:28:32+08:00" content="2016-04-04">
+              2016-04-04
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+
+    <div class="post-body" itemprop="articleBody">
+
       
-        <p>标准流中，块级元素总是独占一行。而复杂布局中，最基本的一个问题就是如何一行显示多个块级元素。显然标准流无法满足要求，所以我们才引入浮动。<br>浮动，正如其名字一样，使块级元素脱离标准流，“漂浮”在标准流之上，标准流中不再保存该元素位置，和标准流不在一个层次。</p>
+      
+
+      
+        
+          
+            <h2 id="垂直居中"><a href="#垂直居中" class="headerlink" title="垂直居中"></a>垂直居中</h2><ul>
+<li>最土的表格法<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;table&gt;</span><br><span class="line">	&lt;tr&gt;</span><br><span class="line">	&lt;/tr&gt;</span><br><span class="line">	&lt;td style="vertical-align:middle;"&gt;</span><br><span class="line">		&lt;div&gt;content&lt;/div&gt;</span><br><span class="line">	&lt;/td&gt;</span><br><span class="line">&lt;/table&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>使用一行一列的表格，把div内容放到td里，利用td的vertical-align属性垂直居中。<br>或者是div表现为单元格，完成水平和垂直居中。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: table-cell;</span><br><span class="line">  <span class="attribute">text-align</span>: center;</span><br><span class="line">  <span class="attribute">vertical-align</span>: middle;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>需要较多hack的inline-block法<br>基本思路是在父容器里设置行高line-height等于整体高度height</li>
+<li>绝对定位<br>最早的实现方法需要知道元素宽高。<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">margin-top</span>: -<span class="number">3em</span>; <span class="comment">/* 6/2 = 3 */</span></span><br><span class="line">    <span class="attribute">margin-left</span>: -<span class="number">9em</span>; <span class="comment">/* 18/2 = 9 */</span></span><br><span class="line">    <span class="attribute">width</span>: <span class="number">18em</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">6em</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>使用CSS3的transform属性可以操作未知宽高的元素移动相对自身宽高的距离。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translate</span>(-50%, -50%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>FlexBox，最好的解决方案<br>在需要垂直居中的父元素上设置<em>display:flex</em>并在垂直居中的元素上设置<em>margin:auto</em>，就完成了水平垂直居中。<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span><span class="selector-id">#sup</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">margin</span>: auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="水平居中"><a href="#水平居中" class="headerlink" title="水平居中"></a>水平居中</h2><ul>
+<li>行内元素，在其父元素上设置<em>text-align:center;</em></li>
+<li>块级元素，直接使用<em>margin: 0 auto;</em></li>
+</ul>
+<p>参考：<a href="http://www.tuicool.com/articles/INRzayM" target="_blank" rel="external">http://www.tuicool.com/articles/INRzayM</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/04/04/CSS常见多列布局/" itemprop="url">
+                  CSS常见多列布局
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-04T13:27:36+08:00" content="2016-04-04">
+              2016-04-04
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/04/04/JavaScript正则表达式/" itemprop="url">
+                  JavaScript正则表达式
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-04T13:26:49+08:00" content="2016-04-04">
+              2016-04-04
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/04/04/jQuery的事件代理/" itemprop="url">
+                  jQuery的事件代理
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-04T12:26:45+08:00" content="2016-04-04">
+              2016-04-04
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/04/04/CSS的BFC初探/" itemprop="url">
+                  CSS的BFC初探
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-04T12:25:05+08:00" content="2016-04-04">
+              2016-04-04
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/04/04/CSS的浮动笔记/" itemprop="url">
+                  CSS的浮动笔记
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-04T12:24:23+08:00" content="2016-04-04">
+              2016-04-04
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>标准流中，块级元素总是独占一行。而复杂布局中，最基本的一个问题就是如何一行显示多个块级元素。显然标准流无法满足要求，所以我们才引入浮动。<br>浮动，正如其名字一样，使块级元素脱离标准流，“漂浮”在标准流之上，标准流中不再保存该元素位置，和标准流不在一个层次。</p>
 <h2 id="定义浮动"><a href="#定义浮动" class="headerlink" title="定义浮动"></a>定义浮动</h2><p>我们通过定义float属性值来控制浮动。float默认是none，可以设置left和right。<br>如果浮动元素的前一个元素仍在标准流中，那么浮动元素相对垂直位置不会改变，也就是说浮动的顶部总是和上一个元素的底部对齐，左右则根据浮动设置相应贴边；如果前一个也是浮动元素，那就紧跟在前一个元素后边（根据浮动的设置，“后边”的实际显示位置可能是右边或左边），一行放不下则挤到下一行。<br>但是，如果浮动元素后面的元素是在标准流中的，那么后面的元素会紧跟浮动元素（一行放不下则挤到下一行）。如果我们想让后面元素从新的一行按正常流显示，则需要清除浮动。</p>
 <h2 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h2><p>清除浮动可以理解为通过下移来打破浮动元素的横向排列规则（实际是增加了清除浮动元素的上边的空间）。<br>对浮动元素设置clear属性：</p>
 <ul>
@@ -184,42 +998,99 @@
 <li>浮动外部元素</li>
 </ul>
 
+          
+        
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/04/CSS的浮动笔记/" data-id="cioa6z1u8000ahsodg6i7zuku" class="article-share-link">Share</a>
+
+    <div>
       
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
       
     </footer>
-  </div>
-  
-</article>
+  </article>
 
 
+    
+      
+
   
-    <article id="post-JavaScript的Object对象" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/10/20/JavaScript的Object对象/" class="article-date">
-  <time datetime="2015-10-20T09:59:29.000Z" itemprop="datePublished">2015-10-20</time>
-</a>
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+      <header class="post-header">
+
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/10/20/JavaScript的Object对象/">JavaScript的Object对象</a>
-    </h1>
-  
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/10/20/JavaScript的Object对象/" itemprop="url">
+                  JavaScript的Object对象
+                </a>
+              
+            
+          </h1>
+        
 
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-10-20T17:59:29+08:00" content="2015-10-20">
+              2015-10-20
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+
+    <div class="post-body" itemprop="articleBody">
+
       
-        <p>JS中所有对象都继承自Object对象，所以不论是普通对象还是函数对象都会继承一些公共的属性和方法，这里记录下比较有用的几个。</p>
+      
+
+      
+        
+          
+            <p>JS中所有对象都继承自Object对象，所以不论是普通对象还是函数对象都会继承一些公共的属性和方法，这里记录下比较有用的几个。</p>
 <h2 id="可用于所有对象实例的属性和方法"><a href="#可用于所有对象实例的属性和方法" class="headerlink" title="可用于所有对象实例的属性和方法"></a>可用于所有对象实例的属性和方法</h2><ul>
 <li><em>constructor</em>属性，指向当前对象的构造函数对象。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">a.constructor; <span class="comment">// function Object() &#123; *[native code]* &#125;</span></span><br><span class="line"><span class="keyword">var</span> b = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">a.constructor === b.constructor; <span class="comment">// true</span></span><br><span class="line"><span class="keyword">var</span> F = <span class="keyword">new</span> <span class="built_in">Function</span>();</span><br><span class="line">F.constructor; <span class="comment">// function Function() &#123; *[native code]* &#125;</span></span><br></pre></td></tr></table></figure>
 </li>
@@ -258,44 +1129,99 @@
 </ul>
 <p>}</p>
 
+          
+        
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/10/20/JavaScript的Object对象/" data-id="cioa6z1wu0010hsodi12atsjc" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Object/">Object</a></li></ul>
 
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
     </footer>
-  </div>
-  
-</article>
+  </article>
 
 
+    
+      
+
   
-    <article id="post-JavaScript的对象和继承" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/10/12/JavaScript的对象和继承/" class="article-date">
-  <time datetime="2015-10-12T10:52:42.000Z" itemprop="datePublished">2015-10-12</time>
-</a>
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+      <header class="post-header">
+
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/10/12/JavaScript的对象和继承/">JavaScript的对象和继承</a>
-    </h1>
-  
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/10/12/JavaScript的对象和继承/" itemprop="url">
+                  JavaScript的对象和继承
+                </a>
+              
+            
+          </h1>
+        
 
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-10-12T18:52:42+08:00" content="2015-10-12">
+              2015-10-12
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+
+    <div class="post-body" itemprop="articleBody">
+
       
-        <h1 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h1><p>对象是JavaScript中的核心概念，也是种重要的数据类型。JavaScript中所有数据都可以看作是对象。ECMA-262中定义对象是一种无序的数据集合，类似哈希表。</p>
+      
+
+      
+        
+          
+            <h1 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h1><p>对象是JavaScript中的核心概念，也是种重要的数据类型。JavaScript中所有数据都可以看作是对象。ECMA-262中定义对象是一种无序的数据集合，类似哈希表。</p>
 <h2 id="对象构成"><a href="#对象构成" class="headerlink" title="对象构成"></a>对象构成</h2><p>实际操作中，对象组成比较复杂，主要由自定义的属性（名值对）、内部属性以及继承的属性组成。<br>一个比较重要的内部属性就是原型指针（通常是<em>__proto__</em>）。js中，每个对象都会通过原型指针指向对象的原型对象（也简称原型）。<br>在查找对象的属性时，如果对象本身没有，则通过<em>__proto__</em>继续查找它的原型对象，因此可以理解为对象通过<em>__proto__</em>继承它的原型的属性。<br>在继承的属性中，比较重要的有<em>constructor</em>属性，它指向对象的构造函数对象。</p>
 <ul>
 <li>对象的<em>constructor</em>属性<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line"><span class="keyword">var</span> foo = <span class="keyword">new</span> F();</span><br><span class="line">foo.hasOwnProperty(<span class="keyword">constructor</span>); // false（继承下来的）</span><br><span class="line">foo.<span class="keyword">constructor</span> === F; // true（函数名F也只是个指针，指向堆区里的真正完成功能的匿名的函数对象）</span><br></pre></td></tr></table></figure>
@@ -394,343 +1320,236 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//体现寄生式</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">inheritPrototype</span>(<span class="params">subType, superType</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> prototype = <span class="built_in">Object</span>.create(superType.prototype); <span class="comment">//创建对象</span></span><br><span class="line">	prototype.constructor = subType; <span class="comment">//增强对象</span></span><br><span class="line">	subType.prototype = prototype; <span class="comment">//指定对象</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SuperType</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line">SuperType.prototype.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	alert(<span class="keyword">this</span>.name);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//体现组合式</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SubType</span>(<span class="params">name, age</span>)</span>&#123;</span><br><span class="line">	SuperType.call(<span class="keyword">this</span>, name);</span><br><span class="line">	<span class="keyword">this</span>.age = age;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//混合</span></span><br><span class="line">inheritPrototype(SubType, SuperType); <span class="comment">// 在产生原型时少调用了一次父类的构造函数</span></span><br><span class="line"></span><br><span class="line">SubType.prototype.sayAge = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	alert(<span class="keyword">this</span>.age);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
 </ul>
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/10/12/JavaScript的对象和继承/" data-id="cioa6z1y5001fhsodg8v8l0lv" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-JavaScript实现常用排序算法" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/09/27/JavaScript实现常用排序算法/" class="article-date">
-  <time datetime="2015-09-27T04:19:41.000Z" itemprop="datePublished">2015-09-27</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/09/27/JavaScript实现常用排序算法/">JavaScript实现常用排序算法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Array</span>.prototype.bubbleSort = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> i, j, temp;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>.length - <span class="number">1</span>; i++)</span><br><span class="line">        <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; <span class="keyword">this</span>.length - <span class="number">1</span> - i; j++)</span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">this</span>[j] &gt; <span class="keyword">this</span>[j + <span class="number">1</span>]) &#123;</span><br><span class="line">                temp = <span class="keyword">this</span>[j];</span><br><span class="line">                <span class="keyword">this</span>[j] = <span class="keyword">this</span>[j + <span class="number">1</span>];</span><br><span class="line">                <span class="keyword">this</span>[j + <span class="number">1</span>] = temp;</span><br><span class="line">            &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> num = [<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">5</span>,<span class="number">3</span>,<span class="number">6</span>];</span><br><span class="line">num.bubbleSort(); <span class="comment">// [1, 2, 3, 3, 5, 6]</span></span><br></pre></td></tr></table></figure>
-<h2 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Array</span>.prototype.insertionSort = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> i, j, temp;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">1</span>; i &lt; <span class="keyword">this</span>.length; i++) &#123;</span><br><span class="line">		temp = <span class="keyword">this</span>[i];</span><br><span class="line">		<span class="keyword">for</span> (j = i - <span class="number">1</span>; j &gt;= <span class="number">0</span> &amp;&amp; <span class="keyword">this</span>[j] &gt; temp; j--)</span><br><span class="line">			<span class="keyword">this</span>[j + <span class="number">1</span>] = <span class="keyword">this</span>[j];</span><br><span class="line">		<span class="keyword">this</span>[j + <span class="number">1</span>] = temp;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> num = [<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">5</span>,<span class="number">3</span>,<span class="number">6</span>];</span><br><span class="line">num.insertionSort(); <span class="comment">// [1, 2, 3, 3, 5, 6]</span></span><br></pre></td></tr></table></figure>
-<h2 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h2><h2 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h2><h2 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h2><h2 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Array</span>.prototype.quick_sort = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> len = <span class="keyword">this</span>.length;</span><br><span class="line">    <span class="keyword">if</span> (len &lt;= <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.slice(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">var</span> left = [];</span><br><span class="line">    <span class="keyword">var</span> right = [];</span><br><span class="line">    <span class="keyword">var</span> mid = [<span class="keyword">this</span>[<span class="number">0</span>]];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt; len; i++)</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>[i] &lt; mid[<span class="number">0</span>])</span><br><span class="line">            left.push(<span class="keyword">this</span>[i]);</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            right.push(<span class="keyword">this</span>[i]);</span><br><span class="line">    <span class="keyword">return</span> left.quick_sort().concat(mid.concat(right.quick_sort()));</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">5</span>, <span class="number">3</span>, <span class="number">7</span>, <span class="number">4</span>, <span class="number">1</span>, <span class="number">9</span>, <span class="number">8</span>, <span class="number">6</span>, <span class="number">2</span>];</span><br><span class="line">arr = arr.quick_sort();</span><br></pre></td></tr></table></figure>
-<h2 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Array</span>.prototype.heap_sort = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> arr = <span class="keyword">this</span>.slice(<span class="number">0</span>);</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">swap</span>(<span class="params">i, j</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> tmp = arr[i];</span><br><span class="line">        arr[i] = arr[j];</span><br><span class="line">        arr[j] = tmp;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">max_heapify</span>(<span class="params">start, end</span>) </span>&#123;</span><br><span class="line">        <span class="comment">//建立父節點指標和子節點指標</span></span><br><span class="line">        <span class="keyword">var</span> dad = start;</span><br><span class="line">        <span class="keyword">var</span> son = dad * <span class="number">2</span> + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (son &gt;= end)<span class="comment">//若子節點指標超過範圍直接跳出函數</span></span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">if</span> (son + <span class="number">1</span> &lt; end &amp;&amp; arr[son] &lt; arr[son + <span class="number">1</span>])<span class="comment">//先比較兩個子節點大小，選擇最大的</span></span><br><span class="line">            son++;</span><br><span class="line">        <span class="keyword">if</span> (arr[dad] &lt;= arr[son]) &#123;<span class="comment">//如果父節點小於子節點時，交換父子內容再繼續子節點和孫節點比較</span></span><br><span class="line">            swap(dad, son);</span><br><span class="line">            max_heapify(son, end);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> len = arr.length;</span><br><span class="line">    <span class="comment">//初始化，i從最後一個父節點開始調整</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="built_in">Math</span>.floor(len / <span class="number">2</span>) - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--)</span><br><span class="line">        max_heapify(i, len);</span><br><span class="line">    <span class="comment">//先將第一個元素和已排好元素前一位做交換，再從新調整，直到排序完畢</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = len - <span class="number">1</span>; i &gt; <span class="number">0</span>; i--) &#123;</span><br><span class="line">        swap(<span class="number">0</span>, i);</span><br><span class="line">        max_heapify(<span class="number">0</span>, i);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> arr;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> a = [<span class="number">3</span>, <span class="number">5</span>, <span class="number">3</span>, <span class="number">0</span>, <span class="number">8</span>, <span class="number">6</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">6</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="number">4</span>, <span class="number">7</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">7</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">5</span>, <span class="number">9</span>, <span class="number">7</span>, <span class="number">4</span>, <span class="number">0</span>, <span class="number">2</span>, <span class="number">6</span>];</span><br><span class="line"><span class="built_in">console</span>.log(a.heap_sort());</span><br></pre></td></tr></table></figure>
-<h2 id="计数排序"><a href="#计数排序" class="headerlink" title="计数排序"></a>计数排序</h2><h2 id="基数排序"><a href="#基数排序" class="headerlink" title="基数排序"></a>基数排序</h2>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/09/27/JavaScript实现常用排序算法/" data-id="cioa6z1vz000khsodt70ksg6q" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithm/">Algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sort/">sort</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-JavaScript数组操作" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/09/12/JavaScript数组操作/" class="article-date">
-  <time datetime="2015-09-12T04:09:29.000Z" itemprop="datePublished">2015-09-12</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/09/12/JavaScript数组操作/">JavaScript数组操作</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="常用原生数组操作"><a href="#常用原生数组操作" class="headerlink" title="常用原生数组操作"></a>常用原生数组操作</h2><ul>
-<li><em>array</em>.concat(<em>item,…</em>) 将数组浅复制，拼接<em>item</em>（按元素），返回新数组<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>];</span><br><span class="line">arr.concat(<span class="string">'d'</span>,[<span class="string">'e'</span>,<span class="string">'f'</span>],<span class="literal">true</span>); <span class="comment">// ["a", "b", "c", "d", "e", "f", true]</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-        
-          <p class="article-more-link">
-            <a href="/2015/09/12/JavaScript数组操作/#more">Read More</a>
-          </p>
+          
         
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/09/12/JavaScript数组操作/" data-id="cioa6z1vz000phsodh771eue1" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
 
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-JavaScript字符串处理方法" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/09/05/JavaScript字符串处理方法/" class="article-date">
-  <time datetime="2015-09-05T05:11:03.000Z" itemprop="datePublished">2015-09-05</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/09/05/JavaScript字符串处理方法/">JavaScript字符串处理方法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="常用原生字符串处理函数"><a href="#常用原生字符串处理函数" class="headerlink" title="常用原生字符串处理函数"></a>常用原生字符串处理函数</h2><ul>
-<li><em>string</em>.charAt(<em>pos</em>) 返回<em>pos</em>位置的字符组成的字符串，越界则返回空串<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"hello,world!"</span>;</span><br><span class="line">str.charAt(<span class="number">0</span>); <span class="comment">// "h"</span></span><br><span class="line">str.charAt(<span class="number">-1</span>); <span class="comment">// ""</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-        
-          <p class="article-more-link">
-            <a href="/2015/09/05/JavaScript字符串处理方法/#more">Read More</a>
-          </p>
-        
+    <div>
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/09/05/JavaScript字符串处理方法/" data-id="cioa6z1vz000lhsodr5d79uwa" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
 
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-JavaScript原型链初探" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/08/10/JavaScript原型链初探/" class="article-date">
-  <time datetime="2015-08-10T14:52:24.000Z" itemprop="datePublished">2015-08-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/08/10/JavaScript原型链初探/">JavaScript原型链初探</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>JavaScript 不包含传统的类继承模型，而是使用 prototype 原型模型。<br>虽然这经常被当作是 JavaScript 的缺点被提及，其实基于原型的继承模型比传统的类继承还要强大。 实现传统的类继承模型是很简单，但是实现 JavaScript 中的原型继承则要困难的多。</p>
-
+    <div>
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/08/10/JavaScript原型链初探/" data-id="cioa6z1u8000chsods2wuvebz" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
 
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
     </footer>
-  </div>
-  
-</article>
+  </article>
 
 
-  
-    <article id="post-使用JavaScript的点和中括号操作符访问对象属性的比较" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/07/30/使用JavaScript的点和中括号操作符访问对象属性的比较/" class="article-date">
-  <time datetime="2015-07-30T05:17:03.000Z" itemprop="datePublished">2015-07-30</time>
-</a>
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/07/30/使用JavaScript的点和中括号操作符访问对象属性的比较/">使用JavaScript的点和中括号操作符访问对象属性的比较</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>JavaScript中对象的属性可以用<em>点操作符</em>（.）和<em>中括号操作符</em>（[]）访问，在正常访问和给属性赋值时，两者是等价的。</p>
-<ul>
-<li>正常操作时效果一样（访问和赋值）<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> foo = &#123;name: <span class="string">'lm'</span>&#125;</span><br><span class="line">foo.name; <span class="comment">// "lm"</span></span><br><span class="line">foo[<span class="string">'name'</span>]; <span class="comment">// "lm"</span></span><br><span class="line">foo.age = <span class="number">20</span>; <span class="comment">// 20</span></span><br><span class="line">foo[<span class="string">'hobby'</span>] = <span class="string">'coding'</span>; <span class="comment">// "coding"</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>他们的区别在于：<strong>用点操作符的时候，后面必须是一个指定的有效的属性名</strong>！所以下面两种场景中，点操作符不会正常运行，而中括号依然有效。<br>
-        
-          <p class="article-more-link">
-            <a href="/2015/07/30/使用JavaScript的点和中括号操作符访问对象属性的比较/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/07/30/使用JavaScript的点和中括号操作符访问对象属性的比较/" data-id="cioa6z1xp0017hsodrsidz0o6" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
+  </section>
 
   
-
-
-  <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/page/4/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span>
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right"></i></a>
   </nav>
-</section>
-        
-          <aside id="sidebar">
-  
-    
 
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
   
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm/">Algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Object/">Object</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sort/">sort</a></li></ul>
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
     </div>
   </div>
 
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/Algorithm/" style="font-size: 10px;">Algorithm</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Object/" style="font-size: 10px;">Object</a> <a href="/tags/sort/" style="font-size: 10px;">sort</a>
+      
+
+      
+
+      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="LiMing" />
+          <p class="site-author-name" itemprop="name">LiMing</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">55</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+
     </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a></li></ul>
-    </div>
-  </div>
+  </aside>
 
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2016/05/16/内存对齐/">内存对齐</a>
-          </li>
-        
-          <li>
-            <a href="/2016/05/13/STL常见容器及操作/">STL常见容器及操作</a>
-          </li>
-        
-          <li>
-            <a href="/2016/05/05/大数运算之加减乘除/">大数运算之加减乘除</a>
-          </li>
-        
-          <li>
-            <a href="/2016/05/04/字符串的排列组合/">字符串的排列组合、递归和非递归形式</a>
-          </li>
-        
-          <li>
-            <a href="/2016/05/04/数据库join操作/">数据库join操作</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
         
       </div>
-      <footer id="footer">
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
   
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2016 LiMing<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LiMing</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
     </div>
   </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
+
   
-    <a href="/" class="mobile-nav-link">Home</a>
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
   
-    <a href="/archives" class="mobile-nav-link">Archives</a>
+
+
+
   
-</nav>
-    
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  
 
 
-<script src="/js/script.js"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
 
-  </div>
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
 </body>
 </html>

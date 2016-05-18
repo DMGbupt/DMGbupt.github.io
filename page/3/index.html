@@ -1,11 +1,90 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
+<!doctype html>
+
+
+
   
-  <title>liming&#39;s cookbook</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description">
 <meta property="og:type" content="website">
 <meta property="og:title" content="liming's cookbook">
 <meta property="og:url" content="http://yoursite.com/page/3/index.html">
@@ -14,192 +93,1052 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="liming's cookbook">
 <meta name="twitter:description">
-  
-    <link rel="alternate" href="/atom.xml" title="liming&#39;s cookbook" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
-  
 
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> liming's cookbook </title>
 </head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">liming&#39;s cookbook</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-js数组去重" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/04/16/js数组去重/" class="article-date">
-  <time datetime="2016-04-16T15:07:44.000Z" itemprop="datePublished">2016-04-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/16/js数组去重/">js数组去重</a>
-    </h1>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
   
 
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left 
+   page-home 
+ ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">liming's cookbook</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/04/23/引入css/" itemprop="url">
+                  未命名
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-23T10:59:02+08:00" content="2016-04-23">
+              2016-04-23
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>第1、2种方法利用indexOf()方法，第3种利用对象的hash特性。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Array</span>.prototype.unique1 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> n = []; <span class="comment">//一个新的临时数组</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>.length; i++) <span class="comment">//遍历当前数组</span></span><br><span class="line">  &#123;</span><br><span class="line">    <span class="comment">//如果当前数组的第i已经保存进了临时数组，那么跳过，</span></span><br><span class="line">    <span class="comment">//否则把当前项push到临时数组里面</span></span><br><span class="line">    <span class="keyword">if</span> (n.indexOf(<span class="keyword">this</span>[i]) == <span class="number">-1</span>) n.push(<span class="keyword">this</span>[i]);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> n;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Array</span>.prototype.unique2 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">var</span> n = [<span class="keyword">this</span>[<span class="number">0</span>]]; <span class="comment">//结果数组</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">1</span>; i &lt; <span class="keyword">this</span>.length; i++) <span class="comment">//从第二项开始遍历</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//如果当前数组的第i项在当前数组中第一次出现的位置不是i，</span></span><br><span class="line">        <span class="comment">//那么表示第i项是重复的，忽略掉。否则存入结果数组</span></span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>.indexOf(<span class="keyword">this</span>[i]) == i) n.push(<span class="keyword">this</span>[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> n;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Array</span>.prototype.unique3 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">var</span> h = &#123;&#125;,n=[]; <span class="comment">//h为hash表，n为结果数组</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>.length; i++) <span class="comment">//遍历当前数组</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (!h[<span class="keyword">this</span>[i]]) <span class="comment">//如果hash表中没有当前项</span></span><br><span class="line">        &#123;</span><br><span class="line">            h[<span class="keyword">this</span>[i]] = <span class="literal">true</span>; <span class="comment">//存入hash表</span></span><br><span class="line">            n.push(<span class="keyword">this</span>[i]); <span class="comment">//把当前数组的当前项push到结果数组里面</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> n;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+
+    <div class="post-body" itemprop="articleBody">
 
       
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/16/js数组去重/" data-id="cioa6z1xp0019hsodga5fhhom" class="article-share-link">Share</a>
       
+
+      
+        
+          
+            <h2 id="外部样式表"><a href="#外部样式表" class="headerlink" title="外部样式表"></a>外部样式表</h2><p>当样式需要被应用到很多页面的时候，外部样式表将是理想的选择。使用link标签在头部引入。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">&lt;link rel="stylesheet" type="text/css" href="mystyle.css"&gt;</span><br><span class="line">&lt;/head&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="内部样式表"><a href="#内部样式表" class="headerlink" title="内部样式表"></a>内部样式表</h2><p>当单个文件需要特别样式时，就可以使用内部样式表。你可以在 head 部分通过 <style> 标签定义内部样式表。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">&lt;style type="text/css"&gt;</span><br><span class="line">body &#123;background-color: red;&#125;</span><br><span class="line">p &#123;margin-left: 20px;&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="内联样式"><a href="#内联样式" class="headerlink" title="内联样式"></a>内联样式</h2><p>当特殊的样式需要应用到个别元素时，就可以使用内联样式。 使用内联样式的方法是在相关的标签中使用样式属性。样式属性可以包含任何 CSS 属性。以下实例显示出如何改变段落的颜色和左外边距。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;p style="color: red; margin-left: 20px"&gt;</span><br><span class="line">This is a paragraph</span><br><span class="line">&lt;/p&gt;</span><br></pre></td></tr></table></figure></p>
+</style></p>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
       
     </footer>
-  </div>
-  
-</article>
+  </article>
 
 
+    
+      
+
   
-    <article id="post-原生js写通用事件侦听器" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/04/16/原生js写通用事件侦听器/" class="article-date">
-  <time datetime="2016-04-16T14:55:00.000Z" itemprop="datePublished">2016-04-16</time>
-</a>
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+      <header class="post-header">
+
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/16/原生js写通用事件侦听器/">原生js写通用事件侦听器</a>
-    </h1>
-  
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/04/23/4月5号阿里面/" itemprop="url">
+                  未命名
+                </a>
+              
+            
+          </h1>
+        
 
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-23T10:59:02+08:00" content="2016-04-23">
+              2016-04-23
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+
+    <div class="post-body" itemprop="articleBody">
+
       
-        <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// event(事件)工具集，来源：github.com/markyun</span></span><br><span class="line">    markyun.Event = &#123;</span><br><span class="line">        <span class="comment">// 页面加载完成后</span></span><br><span class="line">        readyEvent : <span class="function"><span class="keyword">function</span>(<span class="params">fn</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (fn==<span class="literal">null</span>) &#123;</span><br><span class="line">                fn=<span class="built_in">document</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">var</span> oldonload = <span class="built_in">window</span>.onload;</span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="built_in">window</span>.onload != <span class="string">'function'</span>) &#123;</span><br><span class="line">                <span class="built_in">window</span>.onload = fn;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">                    oldonload();</span><br><span class="line">                    fn();</span><br><span class="line">                &#125;;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 视能力分别使用dom0||dom2||IE方式 来绑定事件</span></span><br><span class="line">        <span class="comment">// 参数： 操作的元素,事件名称 ,事件处理程序</span></span><br><span class="line">        addEvent : <span class="function"><span class="keyword">function</span>(<span class="params">element, type, handler</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (element.addEventListener) &#123;</span><br><span class="line">                <span class="comment">//事件类型、需要执行的函数、是否捕捉</span></span><br><span class="line">                element.addEventListener(type, handler, <span class="literal">false</span>);</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (element.attachEvent) &#123;</span><br><span class="line">                element.attachEvent(<span class="string">'on'</span> + type, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">                    handler.call(element);</span><br><span class="line">                &#125;);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                element[<span class="string">'on'</span> + type] = handler;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 移除事件</span></span><br><span class="line">        removeEvent : <span class="function"><span class="keyword">function</span>(<span class="params">element, type, handler</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (element.removeEnentListener) &#123;</span><br><span class="line">                element.removeEnentListener(type, handler, <span class="literal">false</span>);</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (element.datachEvent) &#123;</span><br><span class="line">                element.detachEvent(<span class="string">'on'</span> + type, handler);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                element[<span class="string">'on'</span> + type] = <span class="literal">null</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;, </span><br><span class="line"></span><br><span class="line">        <span class="comment">// 阻止事件 (主要是事件冒泡，因为IE不支持事件捕获)</span></span><br><span class="line">        stopPropagation : <span class="function"><span class="keyword">function</span>(<span class="params">ev</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (ev.stopPropagation) &#123;</span><br><span class="line">                ev.stopPropagation();</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                ev.cancelBubble = <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 取消事件的默认行为</span></span><br><span class="line">        preventDefault : <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (event.preventDefault) &#123;</span><br><span class="line">                event.preventDefault();</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                event.returnValue = <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 获取事件目标</span></span><br><span class="line">        getTarget : <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> event.target || event.srcElement;</span><br><span class="line">        &#125;,</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 获取event对象的引用，取到事件的所有信息，确保随时能使用event；</span></span><br><span class="line">        getEvent : <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> ev = e || <span class="built_in">window</span>.event;</span><br><span class="line">            <span class="keyword">if</span> (!ev) &#123;</span><br><span class="line">                <span class="keyword">var</span> c = <span class="keyword">this</span>.getEvent.caller;</span><br><span class="line">                <span class="keyword">while</span> (c) &#123;</span><br><span class="line">                    ev = c.arguments[<span class="number">0</span>];</span><br><span class="line">                    <span class="keyword">if</span> (ev &amp;&amp; Event == ev.constructor) &#123;</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    c = c.caller;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> ev;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br></pre></td></tr></table></figure>
+      
+
+      
+        
+          
+            <p>1.用过什么？哪个最好玩？<br>2.写b继承a，prototype<br>3.new string 和直接调string区别<br>4.清除浮动<br>5.div隐藏（block:none 和visibility:hidden）<br>6.跨域手段<br>7.html5用过什么<br>8.数组的操作<br>9.阻止冒泡。preventDefault和stopPropagation区别<br>10.apply 和call区别，第一个参数。作用域<br>11.区块的宽度有什么组成(w3c和ie区别)<br>12.四种position<br>13.hasOwnProperty()<br>14.this指向</p>
+
+          
+        
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/16/原生js写通用事件侦听器/" data-id="cioa6z2jj001qhsod99ybxskx" class="article-share-link">Share</a>
+
+    <div>
       
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
       
     </footer>
-  </div>
-  
-</article>
+  </article>
 
 
+    
+      
+
   
-    <article id="post-CSRF" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/04/16/CSRF/" class="article-date">
-  <time datetime="2016-04-16T14:53:11.000Z" itemprop="datePublished">2016-04-16</time>
-</a>
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+      <header class="post-header">
+
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/16/CSRF/">CSRF</a>
-    </h1>
-  
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/04/23/4月17号腾讯面/" itemprop="url">
+                  未命名
+                </a>
+              
+            
+          </h1>
+        
 
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-23T10:59:02+08:00" content="2016-04-23">
+              2016-04-23
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+
+    <div class="post-body" itemprop="articleBody">
+
       
-        <p>CSRF：是跨站请求伪造，很明显根据刚刚的解释，他的核心也就是请求伪造，通过伪造身份提交POST和GET请求来进行跨域的攻击。</p>
+      
+
+      
+        
+          
+            <p>angularjs：<br>1.如何写依赖注入<br>2.ng-route:如何获取路由参数<br>3.SPA如何切换切换视图？下拉框会重置吗？后退时需要重新加载吗？用缓存吗？<br>4.数据双向绑定原理<br>CSS：<br>1.写屏幕居中div<br>已知宽200px,高100px<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">position</span><span class="selector-pseudo">:absolute</span>;</span><br><span class="line"><span class="selector-tag">left</span><span class="selector-pseudo">:50</span>%;<span class="selector-tag">top</span><span class="selector-pseudo">:50</span>%;</span><br><span class="line"><span class="selector-tag">margin-left</span><span class="selector-pseudo">:-100px</span>;<span class="selector-tag">margin-top</span><span class="selector-pseudo">:-50px</span>;</span><br></pre></td></tr></table></figure></p>
+<p>未知宽高<br>jquery：<br>1.怎么写插件<br>js：<br>1.写二分查找和快排<br>正则：<br>1.写网址正则匹配表达式</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/04/19/js中null和undefined区别/" itemprop="url">
+                  js中null和undefined区别
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-19T21:23:59+08:00" content="2016-04-19">
+              2016-04-19
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在JAVASCRIPT里，null和undefined都表示不存在的数据，并且undefined也是从null中继承而来，那null是什么？undefined又是什么？它们两个又有什么共性和区别呢，请看下面的描述：<br>1.null和undefined都是表示没有的、不存在的值。它们两个在进行逻辑转换时都是false，这两个值进行比较是true。<br>2.null表示空引用，它是object类型。undefined表示未定义， 它是undefined类型。<br>3.如果一个变量的值是null，那么必须主动的给它赋值null。<br>4.一个变量未定义，或一个变量定义了未赋值，则是undefined。需要注意的是：一个变量如果没有定义，是不能直接在程序里使用的（就不是不能直接读取这个变量，但可以赋值）。比如说：本来没有定义一个叫a的变量  但我直接去alert(a);//在浏览器里这样是个语法错误，但是可用typeof去运算  但如果a定义了，未赋值，可以读，它的值就是undefined,如果用typeof去运算，那它的类型也是undefined。<br>5.对说属性来说：如果原来没有这个属性，根本就不存在这个属性，那么它的值就是undefined。对象的属性不需要定义，如果不存在也可以直接去读，不会报错，而会给出一个undefined的值来。<br>6.如果这个对象以后要用，但是现在还没有值，一般情况下，会给它一个null值。<br>7.在函数（方法）里，如果必须返回值，但是值又计算不出来，那就返回一个null（这是规范，而不是语法规定，JAVASCRIPT里遵循这一规范）。比如网页中没有一个id是div2的元素，则下面的这句脚本则返回null  document.getElementById(‘div2’);//返回null。 但是，没有返回值的函数，它的返回值都是undefined。</p>
+<h2 id="判断undefined"><a href="#判断undefined" class="headerlink" title="判断undefined"></a>判断undefined</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> a == <span class="string">"undefined"</span>;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/04/19/4月19网易游戏面/" itemprop="url">
+                  4月19网易游戏面
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-19T21:02:35+08:00" content="2016-04-19">
+              2016-04-19
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1.项目介绍，学到什么。<br>2.angularjs写服务，写指令。route可以有更好的替换吗，http模块呢。对angular理解。<br>3.css选择器。盒模型。background影响的区域。三栏布局（圣杯）。<br>4.css项目管理<br>5.输入网址到页面呈现过程。页面解析。css查找。优先级计算。css重绘与重排。<br>6.访问页面卡，优化性能。<br>7.http方法。用get传数据好吗。<br>8.js：null和undefined区别。如何检测是否undefined。全等的意义。<br>9.原型链实现方案。<br>10.一个ul里面很多li，js怎么获取点击的li的index。<br>11.js增加和删除节点。<br>12.可复用的表格<br>13.http怎么与后台交互做缓存。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/04/16/js对象深度克隆/" itemprop="url">
+                  js对象深度克隆
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-16T23:17:56+08:00" content="2016-04-16">
+              2016-04-16
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>深度克隆，非指针。采用递归形式。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">clone</span>(<span class="params">Obj</span>) </span>&#123;   </span><br><span class="line">    <span class="keyword">if</span> (Obj <span class="keyword">instanceof</span> <span class="built_in">Array</span>) &#123;   </span><br><span class="line">        <span class="keyword">var</span> buf = [];  <span class="comment">//创建一个空的数组 </span></span><br><span class="line">        <span class="keyword">var</span> i = Obj.length;   </span><br><span class="line">        <span class="keyword">while</span> (i--) &#123;   </span><br><span class="line">            buf[i] = clone(Obj[i]);   </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> buf;</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span> (Obj <span class="keyword">instanceof</span> <span class="built_in">Object</span>)&#123;   </span><br><span class="line">        <span class="keyword">var</span> buf = &#123;&#125;;  <span class="comment">//创建一个空对象 </span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> k <span class="keyword">in</span> Obj) &#123;  <span class="comment">//为这个对象添加新的属性 </span></span><br><span class="line">            buf[k] = clone(Obj[k]);   </span><br><span class="line">        &#125;   </span><br><span class="line">        <span class="keyword">return</span> buf;   </span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;   </span><br><span class="line">        <span class="keyword">return</span> Obj;   </span><br><span class="line">    &#125;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/04/16/js数组去重/" itemprop="url">
+                  js数组去重
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-16T23:07:44+08:00" content="2016-04-16">
+              2016-04-16
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>第1、2种方法利用indexOf()方法，第3种利用对象的hash特性。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Array</span>.prototype.unique1 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> n = []; <span class="comment">//一个新的临时数组</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>.length; i++) <span class="comment">//遍历当前数组</span></span><br><span class="line">  &#123;</span><br><span class="line">    <span class="comment">//如果当前数组的第i已经保存进了临时数组，那么跳过，</span></span><br><span class="line">    <span class="comment">//否则把当前项push到临时数组里面</span></span><br><span class="line">    <span class="keyword">if</span> (n.indexOf(<span class="keyword">this</span>[i]) == <span class="number">-1</span>) n.push(<span class="keyword">this</span>[i]);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> n;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Array</span>.prototype.unique2 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">var</span> n = [<span class="keyword">this</span>[<span class="number">0</span>]]; <span class="comment">//结果数组</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">1</span>; i &lt; <span class="keyword">this</span>.length; i++) <span class="comment">//从第二项开始遍历</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//如果当前数组的第i项在当前数组中第一次出现的位置不是i，</span></span><br><span class="line">        <span class="comment">//那么表示第i项是重复的，忽略掉。否则存入结果数组</span></span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>.indexOf(<span class="keyword">this</span>[i]) == i) n.push(<span class="keyword">this</span>[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> n;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Array</span>.prototype.unique3 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">var</span> h = &#123;&#125;,n=[]; <span class="comment">//h为hash表，n为结果数组</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>.length; i++) <span class="comment">//遍历当前数组</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (!h[<span class="keyword">this</span>[i]]) <span class="comment">//如果hash表中没有当前项</span></span><br><span class="line">        &#123;</span><br><span class="line">            h[<span class="keyword">this</span>[i]] = <span class="literal">true</span>; <span class="comment">//存入hash表</span></span><br><span class="line">            n.push(<span class="keyword">this</span>[i]); <span class="comment">//把当前数组的当前项push到结果数组里面</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> n;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/04/16/原生js写通用事件侦听器/" itemprop="url">
+                  原生js写通用事件侦听器
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-16T22:55:00+08:00" content="2016-04-16">
+              2016-04-16
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// event(事件)工具集，来源：github.com/markyun</span></span><br><span class="line">    markyun.Event = &#123;</span><br><span class="line">        <span class="comment">// 页面加载完成后</span></span><br><span class="line">        readyEvent : <span class="function"><span class="keyword">function</span>(<span class="params">fn</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (fn==<span class="literal">null</span>) &#123;</span><br><span class="line">                fn=<span class="built_in">document</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">var</span> oldonload = <span class="built_in">window</span>.onload;</span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="built_in">window</span>.onload != <span class="string">'function'</span>) &#123;</span><br><span class="line">                <span class="built_in">window</span>.onload = fn;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">                    oldonload();</span><br><span class="line">                    fn();</span><br><span class="line">                &#125;;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 视能力分别使用dom0||dom2||IE方式 来绑定事件</span></span><br><span class="line">        <span class="comment">// 参数： 操作的元素,事件名称 ,事件处理程序</span></span><br><span class="line">        addEvent : <span class="function"><span class="keyword">function</span>(<span class="params">element, type, handler</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (element.addEventListener) &#123;</span><br><span class="line">                <span class="comment">//事件类型、需要执行的函数、是否捕捉</span></span><br><span class="line">                element.addEventListener(type, handler, <span class="literal">false</span>);</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (element.attachEvent) &#123;</span><br><span class="line">                element.attachEvent(<span class="string">'on'</span> + type, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">                    handler.call(element);</span><br><span class="line">                &#125;);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                element[<span class="string">'on'</span> + type] = handler;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 移除事件</span></span><br><span class="line">        removeEvent : <span class="function"><span class="keyword">function</span>(<span class="params">element, type, handler</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (element.removeEnentListener) &#123;</span><br><span class="line">                element.removeEnentListener(type, handler, <span class="literal">false</span>);</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (element.datachEvent) &#123;</span><br><span class="line">                element.detachEvent(<span class="string">'on'</span> + type, handler);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                element[<span class="string">'on'</span> + type] = <span class="literal">null</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;, </span><br><span class="line"></span><br><span class="line">        <span class="comment">// 阻止事件 (主要是事件冒泡，因为IE不支持事件捕获)</span></span><br><span class="line">        stopPropagation : <span class="function"><span class="keyword">function</span>(<span class="params">ev</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (ev.stopPropagation) &#123;</span><br><span class="line">                ev.stopPropagation();</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                ev.cancelBubble = <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 取消事件的默认行为</span></span><br><span class="line">        preventDefault : <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (event.preventDefault) &#123;</span><br><span class="line">                event.preventDefault();</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                event.returnValue = <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 获取事件目标</span></span><br><span class="line">        getTarget : <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> event.target || event.srcElement;</span><br><span class="line">        &#125;,</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 获取event对象的引用，取到事件的所有信息，确保随时能使用event；</span></span><br><span class="line">        getEvent : <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> ev = e || <span class="built_in">window</span>.event;</span><br><span class="line">            <span class="keyword">if</span> (!ev) &#123;</span><br><span class="line">                <span class="keyword">var</span> c = <span class="keyword">this</span>.getEvent.caller;</span><br><span class="line">                <span class="keyword">while</span> (c) &#123;</span><br><span class="line">                    ev = c.arguments[<span class="number">0</span>];</span><br><span class="line">                    <span class="keyword">if</span> (ev &amp;&amp; Event == ev.constructor) &#123;</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    c = c.caller;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> ev;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/04/16/CSRF/" itemprop="url">
+                  CSRF
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-16T22:53:11+08:00" content="2016-04-16">
+              2016-04-16
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>CSRF：是跨站请求伪造，很明显根据刚刚的解释，他的核心也就是请求伪造，通过伪造身份提交POST和GET请求来进行跨域的攻击。</p>
 <p>完成CSRF需要两个步骤：</p>
 <p>1.登陆受信任的网站A，在本地生成COOKIE</p>
 <p>2.在不登出A的情况下，或者本地COOKIE没有过期的情况下，访问危险网站B。</p>
 
+          
+        
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/16/CSRF/" data-id="cioa6z1tt0008hsodl6b9dpa1" class="article-share-link">Share</a>
+
+    <div>
       
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
       
     </footer>
-  </div>
-  
-</article>
+  </article>
 
 
+    
+      
+
   
-    <article id="post-原生js写ajax" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/04/16/原生js写ajax/" class="article-date">
-  <time datetime="2016-04-16T14:36:22.000Z" itemprop="datePublished">2016-04-16</time>
-</a>
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+      <header class="post-header">
+
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/16/原生js写ajax/">原生js写ajax</a>
-    </h1>
-  
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/04/16/原生js写ajax/" itemprop="url">
+                  原生js写ajax
+                </a>
+              
+            
+          </h1>
+        
 
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-16T22:36:22+08:00" content="2016-04-16">
+              2016-04-16
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+
+    <div class="post-body" itemprop="articleBody">
+
       
-        <p>ajax过程:</p>
+      
+
+      
+        
+          
+            <p>ajax过程:</p>
 <p>(1)创建XMLHttpRequest对象,也就是创建一个异步调用对象.</p>
 <p>(2)创建一个新的HTTP请求,并指定该HTTP请求的方法、URL及验证信息.</p>
 <p>(3)设置响应HTTP请求状态变化的函数.</p>
@@ -208,369 +1147,236 @@
 <p>(6)使用JavaScript和DOM实现局部刷新.</p>
 <p>原生代码：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ajax</span>(<span class="params"></span>)</span>&#123;  </span><br><span class="line">    <span class="keyword">var</span> xmlhttp;  </span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">window</span>.XMLHttpRequest)&#123;  </span><br><span class="line">        xmlhttp = <span class="keyword">new</span> XMLHttpRequest();  </span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;  </span><br><span class="line">        <span class="comment">// code for IE6, IE5  </span></span><br><span class="line">        xmlhttp = ActionXObject(<span class="string">"Microsoft.XMLHTTP"</span>);  </span><br><span class="line">    &#125;  </span><br><span class="line">      </span><br><span class="line">    <span class="comment">//判定执行状态  </span></span><br><span class="line">    xmlhttp.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  </span><br><span class="line">        <span class="comment">/* </span><br><span class="line">        readyState </span><br><span class="line">            0: 请求未初始化 </span><br><span class="line">            1: 服务器连接已建立 </span><br><span class="line">            2: 请求已接收 </span><br><span class="line">            3: 请求处理中 </span><br><span class="line">            4: 请求已完成，且响应已就绪 </span><br><span class="line">        status </span><br><span class="line">            200:请求成功 </span><br><span class="line">            404:未找到 </span><br><span class="line">            500:服务器内部错误 </span><br><span class="line">        */</span>  </span><br><span class="line">        <span class="keyword">if</span> (xmlhttp.readyState==<span class="number">4</span> &amp;&amp; xmlhttp.status==<span class="number">200</span>)&#123;  </span><br><span class="line">            <span class="built_in">document</span>.getElementById(<span class="string">"myDiv"</span>).innerHTML=xmlhttp.responseText;<span class="comment">//获得字符串形式的响应数据，如果返回的是XML需要单独解析  </span></span><br><span class="line">            <span class="comment">//responseXML       获得 XML 形式的响应数据  </span></span><br><span class="line">            <span class="keyword">var</span> xmlDoc = xmlhttp.responseXML;  </span><br><span class="line">            <span class="keyword">var</span> txt = <span class="string">""</span>;  </span><br><span class="line">            <span class="keyword">var</span> num = xmlDoc.getElementsByName(<span class="string">"value"</span>);<span class="comment">//获取节点name=value的值  </span></span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;num.length;i++)&#123;  </span><br><span class="line">                txt = txt+num[i].childNodes[<span class="number">0</span>].nodeValue+<span class="string">"&lt;br /&gt;"</span>;  </span><br><span class="line">            &#125;  </span><br><span class="line">            <span class="built_in">document</span>.getElementById(<span class="string">"myDiv2"</span>).innerHTML = txt;  </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">      </span><br><span class="line">    <span class="comment">//@param 最后一个参数表示是否是异步提交，为了避免使用缓存我们加上一个时间戳  </span></span><br><span class="line">    xmlhttp.open(<span class="string">"Get"</span>,<span class="string">"url"</span>+  </span><br><span class="line">        (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  </span><br><span class="line">            <span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>();  </span><br><span class="line">            <span class="keyword">return</span> date.getSeconds();     </span><br><span class="line">        &#125;)  </span><br><span class="line">    ,<span class="literal">true</span>);  </span><br><span class="line">      </span><br><span class="line">    <span class="comment">//设置头信息  </span></span><br><span class="line">    xmlhttp.setRequestHeader(<span class="string">"Content-type"</span>,<span class="string">"application/x-www-form-urlencoded"</span>);  </span><br><span class="line">      </span><br><span class="line">    <span class="comment">//将信息发送到服务器  </span></span><br><span class="line">    xmlhttp.send();   </span><br><span class="line">      </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/16/原生js写ajax/" data-id="cioa6z1y5001ghsod273omhcc" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-http状态码" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/04/16/http状态码/" class="article-date">
-  <time datetime="2016-04-16T14:21:55.000Z" itemprop="datePublished">2016-04-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+          
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/16/http状态码/">http状态码</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="常用状态码"><a href="#常用状态码" class="headerlink" title="常用状态码"></a>常用状态码</h1><p>100  Continue  继续，一般在发送post请求时，已发送了http header之后服务端将返回此信息，表示确认，之后发送具体参数信息<br>200  OK   正常返回信息<br>201  Created  请求成功并且服务器创建了新的资源<br>202  Accepted  服务器已接受请求，但尚未处理<br>301  Moved Permanently  请求的网页已永久移动到新位置。<br>302 Found  临时性重定向。<br>303 See Other  临时性重定向，且总是使用 GET 请求新的 URI。<br>304  Not Modified  自从上次请求后，请求的网页未修改过。</p>
-<p>400 Bad Request  服务器无法理解请求的格式，客户端不应当尝试再次使用相同的内容发起请求。<br>401 Unauthorized  请求未授权。<br>403 Forbidden  禁止访问。<br>404 Not Found  找不到如何与 URI 相匹配的资源。</p>
-<p>500 Internal Server Error  最常见的服务器端错误。<br>503 Service Unavailable 服务器端暂时无法处理请求（可能是过载或维护）。</p>
-<h1 id="全部状态码"><a href="#全部状态码" class="headerlink" title="全部状态码"></a>全部状态码</h1><p>1xx（临时响应）<br>表示临时响应并需要请求者继续执行操作的状态代码。</p>
-<p>代码 说明<br>100 （继续） 请求者应当继续提出请求。 服务器返回此代码表示已收到请求的第一部分，正在等待其余部分。<br>101 （切换协议） 请求者已要求服务器切换协议，服务器已确认并准备切换。 </p>
-<p>2xx （成功）<br>表示成功处理了请求的状态代码。<br>代码 说明<br>200 （成功） 服务器已成功处理了请求。 通常，这表示服务器提供了请求的网页。<br>201 （已创建） 请求成功并且服务器创建了新的资源。<br>202 （已接受） 服务器已接受请求，但尚未处理。<br>203 （非授权信息） 服务器已成功处理了请求，但返回的信息可能来自另一来源。<br>204 （无内容） 服务器成功处理了请求，但没有返回任何内容。<br>205 （重置内容） 服务器成功处理了请求，但没有返回任何内容。<br>206 （部分内容） 服务器成功处理了部分 GET 请求。 </p>
-<p>3xx （重定向）<br>表示要完成请求，需要进一步操作。 通常，这些状态代码用来重定向。</p>
-<p>代码 说明<br>300 （多种选择） 针对请求，服务器可执行多种操作。 服务器可根据请求者 (user agent) 选择一项操作，或提供操作列表供请求者选择。<br>301 （永久移动） 请求的网页已永久移动到新位置。 服务器返回此响应（对 GET 或 HEAD 请求的响应）时，会自动将请求者转到新位置。<br>302 （临时移动） 服务器目前从不同位置的网页响应请求，但请求者应继续使用原有位置来进行以后的请求。<br>303 （查看其他位置） 请求者应当对不同的位置使用单独的 GET 请求来检索响应时，服务器返回此代码。<br>304 （未修改） 自从上次请求后，请求的网页未修改过。 服务器返回此响应时，不会返回网页内容。<br>305 （使用代理） 请求者只能使用代理访问请求的网页。 如果服务器返回此响应，还表示请求者应使用代理。<br>307 （临时重定向） 服务器目前从不同位置的网页响应请求，但请求者应继续使用原有位置来进行以后的请求。 </p>
-<p>4xx（请求错误）<br>这些状态代码表示请求可能出错，妨碍了服务器的处理。</p>
-<p>代码 说明<br>400 （错误请求） 服务器不理解请求的语法。<br>401 （未授权） 请求要求身份验证。 对于需要登录的网页，服务器可能返回此响应。<br>403 （禁止） 服务器拒绝请求。<br>404 （未找到） 服务器找不到请求的网页。<br>405 （方法禁用） 禁用请求中指定的方法。<br>406 （不接受） 无法使用请求的内容特性响应请求的网页。<br>407 （需要代理授权） 此状态代码与 401（未授权）类似，但指定请求者应当授权使用代理。<br>408 （请求超时） 服务器等候请求时发生超时。<br>409 （冲突） 服务器在完成请求时发生冲突。 服务器必须在响应中包含有关冲突的信息。<br>410 （已删除） 如果请求的资源已永久删除，服务器就会返回此响应。<br>411 （需要有效长度） 服务器不接受不含有效内容长度标头字段的请求。<br>412 （未满足前提条件） 服务器未满足请求者在请求中设置的其中一个前提条件。<br>413 （请求实体过大） 服务器无法处理请求，因为请求实体过大，超出服务器的处理能力。<br>414 （请求的 URI 过长） 请求的 URI（通常为网址）过长，服务器无法处理。<br>415 （不支持的媒体类型） 请求的格式不受请求页面的支持。<br>416 （请求范围不符合要求） 如果页面无法提供请求的范围，则服务器会返回此状态代码。<br>417 （未满足期望值） 服务器未满足”期望”请求标头字段的要求。 </p>
-<p>5xx（服务器错误）<br>这些状态代码表示服务器在尝试处理请求时发生内部错误。 这些错误可能是服务器本身的错误，而不是请求出错。</p>
-<p>代码 说明<br>500 （服务器内部错误） 服务器遇到错误，无法完成请求。<br>501 （尚未实施） 服务器不具备完成请求的功能。 例如，服务器无法识别请求方法时可能会返回此代码。<br>502 （错误网关） 服务器作为网关或代理，从上游服务器收到无效响应。<br>503 （服务不可用） 服务器目前无法使用（由于超载或停机维护）。 通常，这只是暂时状态。<br>504 （网关超时） 服务器作为网关或代理，但是没有及时从上游服务器收到请求。<br>505 （HTTP 版本不受支持） 服务器不支持请求中所用的 HTTP 协议版本。</p>
-
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/16/http状态码/" data-id="cioa6z1we000thsod8swzvghk" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
 
-
-  
-    <article id="post-从地址栏输入网址后发生的事" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/04/16/从地址栏输入网址后发生的事/" class="article-date">
-  <time datetime="2016-04-16T14:16:03.000Z" itemprop="datePublished">2016-04-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/16/从地址栏输入网址后发生的事/">从地址栏输入网址后发生的事</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>分为4个步骤：<br>（1）当发送一个URL请求时，不管这个URL是Web页面的URL还是Web页面上每个资源的URL，浏览器都会开启一个线程来处理这个请求，同时在远程DNS服务器上启动一个DNS查询。这能使浏览器获得请求对应的IP地址。<br>（2）浏览器与远程Web服务器通过TCP三次握手协商来建立一个TCP/IP连接。该握手包括一个同步报文，一个同步-应答报文和一个应答报文，这三个报文在 浏览器和服务器之间传递。该握手首先由客户端尝试建立起通信，而后服务器应答并接受客户端的请求，最后由客户端发出该请求已经被接受的报文。<br>（3）一旦TCP/IP连接建立，浏览器会通过该连接向远程服务器发送HTTP的GET请求。远程服务器找到资源并使用HTTP响应返回该资源，值为200的HTTP响应状态表示一个正确的响应。<br>（4）此时，Web服务器提供资源服务，客户端开始下载资源。请求返回后，便进入了我们关注的前端模块<br>简单来说，浏览器会解析HTML生成DOM Tree，其次会根据CSS生成CSS Rule Tree，而javascript又可以根据DOM API操作DOM</p>
-
+    <div>
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/16/从地址栏输入网址后发生的事/" data-id="cioa6z1x90011hsod1vp9y6qb" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
 
-
-  
-    <article id="post-性能优化方法" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/04/16/性能优化方法/" class="article-date">
-  <time datetime="2016-04-16T14:14:53.000Z" itemprop="datePublished">2016-04-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/16/性能优化方法/">性能优化方法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>（1） 减少http请求次数：CSS Sprites, JS、CSS源码压缩、图片大小控制合适；网页Gzip，CDN托管，data缓存 ，图片服务器。</p>
-<p>（2） 前端模板 JS+数据，减少由于HTML标签导致的带宽浪费，前端用变量保存AJAX请求结果，每次操作本地变量，不用请求，减少请求次数</p>
-<p>（3） 用innerHTML代替DOM操作，减少DOM操作次数，优化javascript性能。</p>
-<p>（4） 当需要设置的样式很多时设置className而不是直接操作style。</p>
-<p>（5） 少用全局变量、缓存DOM节点查找的结果。减少IO读取操作。</p>
-<p>（6） 避免使用CSS Expression（css表达式)又称Dynamic properties(动态属性)。</p>
-<p>（7） 图片预加载，将样式表放在顶部，将脚本放在底部  加上时间戳。</p>
-
+    <div>
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/16/性能优化方法/" data-id="cioa6z1zf001mhsod2rb3la67" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
 
-
-  
-    <article id="post-前端职位理解" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/04/16/前端职位理解/" class="article-date">
-  <time datetime="2016-04-16T14:13:53.000Z" itemprop="datePublished">2016-04-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/16/前端职位理解/">前端职位理解</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
+    <footer class="post-footer">
       
-        <p>前端是最贴近用户的程序员，比后端、数据库、产品经理、运营、安全都近。<br>1、实现界面交互<br>2、提升用户体验<br>3、有了Node.js，前端可以实现服务端的一些事情</p>
 
       
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/16/前端职位理解/" data-id="cioa6z1x90014hsod1hr1vvse" class="article-share-link">Share</a>
+
       
+      
+        <div class="post-eof"></div>
       
     </footer>
-  </div>
-  
-</article>
+  </article>
 
 
-  
-    <article id="post-网站资源优化" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/04/16/网站资源优化/" class="article-date">
-  <time datetime="2016-04-16T14:10:59.000Z" itemprop="datePublished">2016-04-16</time>
-</a>
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/16/网站资源优化/">网站资源优化</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>文件合并<br>文件最小化/文件压缩<br>使用 CDN 托管<br>缓存的使用（多个域名来提供缓存）</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/16/网站资源优化/" data-id="cioa6z2i8001phsodqk2x78uw" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
+  </section>
 
   
-    <article id="post-CSS定位与浮动" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/04/16/CSS定位与浮动/" class="article-date">
-  <time datetime="2016-04-16T07:42:57.000Z" itemprop="datePublished">2016-04-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/16/CSS定位与浮动/">CSS定位与浮动</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h2><p><em>position</em>属性值：</p>
-<ul>
-<li>static：默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right z-index 声明）。</li>
-<li>relative：生成相对定位的元素，相对于其在普通流中的位置进行定位。</li>
-<li>absolute：生成绝对定位的元素，相对于 static 定位以外的第一个祖先元素进行定位。 </li>
-<li>fixed：生成绝对定位的元素，相对于浏览器窗口进行定位（老IE不支持）。 </li>
-<li>inherit 规定从父元素继承 position 属性的值。</li>
-</ul>
-<h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h2><p><a href="http://www.360doc.com/content/12/0328/15/306547_198606737.shtml" target="_blank" rel="external">http://www.360doc.com/content/12/0328/15/306547_198606737.shtml</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/16/CSS定位与浮动/" data-id="cioa6z1vj000ghsody0vxg2j6" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
-
-  <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/page/2/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">__('next') &raquo;</a>
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
   </nav>
-</section>
-        
-          <aside id="sidebar">
-  
-    
 
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
   
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm/">Algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Object/">Object</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sort/">sort</a></li></ul>
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
     </div>
   </div>
 
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/Algorithm/" style="font-size: 10px;">Algorithm</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Object/" style="font-size: 10px;">Object</a> <a href="/tags/sort/" style="font-size: 10px;">sort</a>
+      
+
+      
+
+      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="LiMing" />
+          <p class="site-author-name" itemprop="name">LiMing</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">55</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+
     </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a></li></ul>
-    </div>
-  </div>
+  </aside>
 
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2016/05/16/内存对齐/">内存对齐</a>
-          </li>
-        
-          <li>
-            <a href="/2016/05/13/STL常见容器及操作/">STL常见容器及操作</a>
-          </li>
-        
-          <li>
-            <a href="/2016/05/05/大数运算之加减乘除/">大数运算之加减乘除</a>
-          </li>
-        
-          <li>
-            <a href="/2016/05/04/字符串的排列组合/">字符串的排列组合、递归和非递归形式</a>
-          </li>
-        
-          <li>
-            <a href="/2016/05/04/数据库join操作/">数据库join操作</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
         
       </div>
-      <footer id="footer">
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
   
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2016 LiMing<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LiMing</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
     </div>
   </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
+
   
-    <a href="/" class="mobile-nav-link">Home</a>
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
   
-    <a href="/archives" class="mobile-nav-link">Archives</a>
+
+
+
   
-</nav>
-    
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  
 
 
-<script src="/js/script.js"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
 
-  </div>
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
 </body>
 </html>
