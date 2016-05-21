@@ -84,16 +84,19 @@
 
 
 
-<meta name="description" content="好文：http://blog.csdn.net/hackbuteer1/article/details/7722667">
+<meta name="description" content="大于一个字节的结构（例如int）存储数据时，会产生不同字节序。小端模式：内存低地址存数据的低位。大端模式：内存低地址存数据的高位。
+可以使用union判断处理器的大小端。12345678bool checkLittleEndian() &amp;#123;	union u &amp;#123;		int a;		char b;	&amp;#125;;	u c = &amp;#123;1&amp;#125;; // 提供值，会初始化第一个">
 <meta property="og:type" content="article">
 <meta property="og:title" content="大端和小端模式">
 <meta property="og:url" content="http://yoursite.com/2016/05/03/大端和小端模式/index.html">
 <meta property="og:site_name" content="liming's cookbook">
-<meta property="og:description" content="好文：http://blog.csdn.net/hackbuteer1/article/details/7722667">
-<meta property="og:updated_time" content="2016-05-05T15:01:51.861Z">
+<meta property="og:description" content="大于一个字节的结构（例如int）存储数据时，会产生不同字节序。小端模式：内存低地址存数据的低位。大端模式：内存低地址存数据的高位。
+可以使用union判断处理器的大小端。12345678bool checkLittleEndian() &amp;#123;	union u &amp;#123;		int a;		char b;	&amp;#125;;	u c = &amp;#123;1&amp;#125;; // 提供值，会初始化第一个">
+<meta property="og:updated_time" content="2016-05-21T12:01:27.596Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="大端和小端模式">
-<meta name="twitter:description" content="好文：http://blog.csdn.net/hackbuteer1/article/details/7722667">
+<meta name="twitter:description" content="大于一个字节的结构（例如int）存储数据时，会产生不同字节序。小端模式：内存低地址存数据的低位。大端模式：内存低地址存数据的高位。
+可以使用union判断处理器的大小端。12345678bool checkLittleEndian() &amp;#123;	union u &amp;#123;		int a;		char b;	&amp;#125;;	u c = &amp;#123;1&amp;#125;; // 提供值，会初始化第一个">
 
 
 
@@ -281,7 +284,10 @@
       
 
       
-        <p>好文：<a href="http://blog.csdn.net/hackbuteer1/article/details/7722667" target="_blank" rel="external">http://blog.csdn.net/hackbuteer1/article/details/7722667</a></p>
+        <p>大于一个字节的结构（例如int）存储数据时，会产生不同字节序。<br>小端模式：内存低地址存数据的低位。<br>大端模式：内存低地址存数据的高位。</p>
+<p>可以使用union判断处理器的大小端。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">checkLittleEndian</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">union</span> u &#123;</span><br><span class="line">		<span class="keyword">int</span> a;</span><br><span class="line">		<span class="keyword">char</span> b;</span><br><span class="line">	&#125;;</span><br><span class="line">	u c = &#123;<span class="number">1</span>&#125;; <span class="comment">// 提供值，会初始化第一个成员a</span></span><br><span class="line">	<span class="keyword">return</span> (c.b == <span class="number">1</span>) ? <span class="literal">true</span> : <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>union中的成员都是从低地址开始存放。本例中union共分配了4个字节，存a成员时使用内存地址从低到高的4个字节，存b成员时使用内存地址最低的一个字节，所以可以从b的值来看出低地址端存的是什么值。<br>1的存储形式是0x00 00 00 01，所以数据的最低位是01，最高位是00。若是小端存储，则低地址端存01，若是大端存储，则低地址端存00。由此，b的值为1时是小端模式，为0时是大端模式。</p>
+<p>好文：<a href="http://blog.csdn.net/hackbuteer1/article/details/7722667" target="_blank" rel="external">http://blog.csdn.net/hackbuteer1/article/details/7722667</a></p>
 
       
     </div>
@@ -306,16 +312,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/05/03/C-中new和malloc区别/" rel="next" title="C++中new和malloc区别">
-                <i class="fa fa-chevron-left"></i> C++中new和malloc区别
+              <a href="/2016/05/03/数据库索引/" rel="next" title="数据库索引">
+                <i class="fa fa-chevron-left"></i> 数据库索引
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/05/03/数据库索引/" rel="prev" title="数据库索引">
-                数据库索引 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/05/04/C-虚析构函数/" rel="prev" title="C++虚析构函数">
+                C++虚析构函数 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -384,7 +390,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">55</span>
+              <span class="site-state-item-count">57</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
