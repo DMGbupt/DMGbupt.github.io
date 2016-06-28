@@ -243,6 +243,691 @@
             
               
                 
+                <a class="post-title-link" href="/2015/06/04/引入css的方式/" itemprop="url">
+                  引入css的方式
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-06-04T22:46:28+08:00" content="2015-06-04">
+              2015-06-04
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="外部样式表"><a href="#外部样式表" class="headerlink" title="外部样式表"></a>外部样式表</h2><p>当样式需要被应用到很多页面的时候，外部样式表将是理想的选择。使用link标签在头部引入。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">&lt;link rel="stylesheet" type="text/css" href="mystyle.css"&gt;</span><br><span class="line">&lt;/head&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="内部样式表"><a href="#内部样式表" class="headerlink" title="内部样式表"></a>内部样式表</h2><p>当单个文件需要特别样式时，就可以使用内部样式表。你可以在 head 部分通过 <style> 标签定义内部样式表。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">&lt;style type="text/css"&gt;</span><br><span class="line">body &#123;background-color: red;&#125;</span><br><span class="line">p &#123;margin-left: 20px;&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="内联样式"><a href="#内联样式" class="headerlink" title="内联样式"></a>内联样式</h2><p>当特殊的样式需要应用到个别元素时，就可以使用内联样式。 使用内联样式的方法是在相关的标签中使用样式属性。样式属性可以包含任何 CSS 属性。以下实例显示出如何改变段落的颜色和左外边距。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;p style="color: red; margin-left: 20px"&gt;</span><br><span class="line">This is a paragraph</span><br><span class="line">&lt;/p&gt;</span><br></pre></td></tr></table></figure></p>
+</style></p>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/05/30/使用JavaScript的点和中括号操作符访问对象属性的比较/" itemprop="url">
+                  使用JavaScript的点和中括号操作符访问对象属性的比较
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-05-30T13:17:03+08:00" content="2015-05-30">
+              2015-05-30
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>JavaScript中对象的属性可以用<em>点操作符</em>（.）和<em>中括号操作符</em>（[]）访问，在正常访问和给属性赋值时，两者是等价的。</p>
+<ul>
+<li>正常操作时效果一样（访问和赋值）<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> foo = &#123;name: <span class="string">'lm'</span>&#125;</span><br><span class="line">foo.name; <span class="comment">// "lm"</span></span><br><span class="line">foo[<span class="string">'name'</span>]; <span class="comment">// "lm"</span></span><br><span class="line">foo.age = <span class="number">20</span>; <span class="comment">// 20</span></span><br><span class="line">foo[<span class="string">'hobby'</span>] = <span class="string">'coding'</span>; <span class="comment">// "coding"</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>他们的区别在于：<strong>用点操作符的时候，后面必须是一个指定的有效的属性名</strong>！所以下面两种场景中，点操作符不会正常运行，而中括号依然有效。<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/05/30/使用JavaScript的点和中括号操作符访问对象属性的比较/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/05/19/CSS的display常用属性值/" itemprop="url">
+                  CSS的display常用属性值
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-05-19T14:42:06+08:00" content="2015-05-19">
+              2015-05-19
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ul>
+<li>none：不显示，文档流中不存在。（相对来说，<em>visibility:hidden</em>会在文档流中保留原来位置）</li>
+<li>block：块级元素<br>block元素会独占一行，多个block元素会各自新起一行。默认情况下，block元素宽度自动填满其父元素宽度。<br>block元素可以设置width,height属性。块级元素即使设置了宽度,仍然是独占一行。<br>block元素可以设置margin和padding属性。</li>
+<li>inline：行内元素<br>inline元素不会独占一行，多个相邻的行内元素会排列在同一行里，直到一行排列不下，才会新换一行，其宽度随元素的内容而变化。<br>inline元素设置width,height属性无效。<br>inline元素的margin和padding属性，水平方向的padding-left, padding-right, margin-left, margin-right都产生边距效果；但竖直方向的padding-top, padding-bottom, margin-top, margin-bottom不会产生边距效果。</li>
+<li>inline-block：行内块元素<br>对象表现为inline，但是内容表现为block。之后的内联对象会被排列在同一行内。<br>比如我们可以给a标签设置inline-block值，使其既具有block的宽度高度特性又具有inline的同行特性。<br>有点像浮动，但是不从文档流中删除。</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/04/30/CSS伪类和伪元素/" itemprop="url">
+                  CSS伪类和伪元素
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-04-30T10:52:39+08:00" content="2015-04-30">
+              2015-04-30
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="伪类"><a href="#伪类" class="headerlink" title="伪类"></a>伪类</h1><h2 id="锚伪类（CSS1）"><a href="#锚伪类（CSS1）" class="headerlink" title="锚伪类（CSS1）"></a>锚伪类（CSS1）</h2><p>LVHA顺序：:link, :visited, :hover, :active。对大小写不敏感。</p>
+<h2 id="first-child-伪类（CSS2）"><a href="#first-child-伪类（CSS2）" class="headerlink" title=":first-child 伪类（CSS2）"></a>:first-child 伪类（CSS2）</h2><p>举例：<em>p:first-child</em>选择DOM中所有的作为第一个子元素的p标签元素。它会先遍历DOM中所有子结构中的第一个元素，判断是不是p元素，然后改变样式。<br>所以<em>:first-child</em>伪类是指元素作为第一个孩子，而不是指元素的第一个孩子。</p>
+<h2 id="nth-child-n-选择器（CSS3）"><a href="#nth-child-n-选择器（CSS3）" class="headerlink" title=":nth-child(n) 选择器（CSS3）"></a>:nth-child(<em>n</em>) 选择器（CSS3）</h2><p>作为<em>first-child</em>的升级版，选择作为某个元素的第<em>n</em>个子元素，n可以是数字或者表达式，如<em>3n+1</em>遍历从0开始的整数n。<br>举例：<em>p:nth-child(2)</em>，选择DOM中所有元素的第2个子元素，判断如果是p标签则起作用。<br>同理，<em>:nth-last-child(n)</em>选择某个元素的倒数第n个子元素。<br>CSS3中还有<em>:last-child</em>和<em>:only-child</em>。<br>比较有趣的是<em>p:only-child</em>，选择作为独生子的p标签~</p>
+<h2 id="nth-of-type-n-选择器（CSS3）"><a href="#nth-of-type-n-选择器（CSS3）" class="headerlink" title=":nth-of-type(n) 选择器（CSS3）"></a>:nth-of-type(<em>n</em>) 选择器（CSS3）</h2><p>和<em>:nth-child()</em>和类似，但是区别在于选择DOM中某个元素的指定类型的子元素中的第<em>n</em>个元素。<br>举例，<em>p:nth-of-type(2)</em>，选择DOM中所有子结构里的p元素集合里的第2个。<br>同理，<em>:nth-last-of-type(n)</em>是倒数的。<br>CSS3中还有<em>:first-of-type</em>、<em>:last-of-type</em>和<em>:only-of-type</em>。</p>
+<h1 id="伪元素"><a href="#伪元素" class="headerlink" title="伪元素"></a>伪元素</h1><h2 id="first-line-伪元素（CSS1）"><a href="#first-line-伪元素（CSS1）" class="headerlink" title=":first-line 伪元素（CSS1）"></a>:first-line 伪元素（CSS1）</h2><p><em>p:first-line</em>给p中的文本首行设置样式。</p>
+<h2 id="first-letter-伪元素（CSS1）"><a href="#first-letter-伪元素（CSS1）" class="headerlink" title=":first-letter 伪元素（CSS1）"></a>:first-letter 伪元素（CSS1）</h2><p><em>p:first-letter</em>给p中的文本首个字母设置样式。</p>
+<h2 id="before-伪元素"><a href="#before-伪元素" class="headerlink" title=":before 伪元素"></a>:before 伪元素</h2><p><em>p:before</em>伪元素在p元素的内容前面插入新内容。</p>
+<h2 id="after-伪元素"><a href="#after-伪元素" class="headerlink" title=":after 伪元素"></a>:after 伪元素</h2><p><em>p:after{<br>    clear:both;<br>    content:”.”;<br>    display:block;<br>    height:0;width:0;<br>    visibility:hidden;<br>}</em><br>元素后插入伪元素，清除浮动。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/04/16/原生js写通用事件侦听器/" itemprop="url">
+                  原生js写通用事件侦听器
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-04-16T22:55:00+08:00" content="2015-04-16">
+              2015-04-16
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// event(事件)工具集，来源：github.com/markyun</span></span><br><span class="line">    markyun.Event = &#123;</span><br><span class="line">        <span class="comment">// 页面加载完成后</span></span><br><span class="line">        readyEvent : <span class="function"><span class="keyword">function</span>(<span class="params">fn</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (fn==<span class="literal">null</span>) &#123;</span><br><span class="line">                fn=<span class="built_in">document</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">var</span> oldonload = <span class="built_in">window</span>.onload;</span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="built_in">window</span>.onload != <span class="string">'function'</span>) &#123;</span><br><span class="line">                <span class="built_in">window</span>.onload = fn;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">                    oldonload();</span><br><span class="line">                    fn();</span><br><span class="line">                &#125;;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 视能力分别使用dom0||dom2||IE方式 来绑定事件</span></span><br><span class="line">        <span class="comment">// 参数： 操作的元素,事件名称 ,事件处理程序</span></span><br><span class="line">        addEvent : <span class="function"><span class="keyword">function</span>(<span class="params">element, type, handler</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (element.addEventListener) &#123;</span><br><span class="line">                <span class="comment">//事件类型、需要执行的函数、是否捕捉</span></span><br><span class="line">                element.addEventListener(type, handler, <span class="literal">false</span>);</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (element.attachEvent) &#123;</span><br><span class="line">                element.attachEvent(<span class="string">'on'</span> + type, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">                    handler.call(element);</span><br><span class="line">                &#125;);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                element[<span class="string">'on'</span> + type] = handler;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 移除事件</span></span><br><span class="line">        removeEvent : <span class="function"><span class="keyword">function</span>(<span class="params">element, type, handler</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (element.removeEnentListener) &#123;</span><br><span class="line">                element.removeEnentListener(type, handler, <span class="literal">false</span>);</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (element.datachEvent) &#123;</span><br><span class="line">                element.detachEvent(<span class="string">'on'</span> + type, handler);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                element[<span class="string">'on'</span> + type] = <span class="literal">null</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;, </span><br><span class="line"></span><br><span class="line">        <span class="comment">// 阻止事件 (主要是事件冒泡，因为IE不支持事件捕获)</span></span><br><span class="line">        stopPropagation : <span class="function"><span class="keyword">function</span>(<span class="params">ev</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (ev.stopPropagation) &#123;</span><br><span class="line">                ev.stopPropagation();</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                ev.cancelBubble = <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 取消事件的默认行为</span></span><br><span class="line">        preventDefault : <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (event.preventDefault) &#123;</span><br><span class="line">                event.preventDefault();</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                event.returnValue = <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 获取事件目标</span></span><br><span class="line">        getTarget : <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> event.target || event.srcElement;</span><br><span class="line">        &#125;,</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 获取event对象的引用，取到事件的所有信息，确保随时能使用event；</span></span><br><span class="line">        getEvent : <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> ev = e || <span class="built_in">window</span>.event;</span><br><span class="line">            <span class="keyword">if</span> (!ev) &#123;</span><br><span class="line">                <span class="keyword">var</span> c = <span class="keyword">this</span>.getEvent.caller;</span><br><span class="line">                <span class="keyword">while</span> (c) &#123;</span><br><span class="line">                    ev = c.arguments[<span class="number">0</span>];</span><br><span class="line">                    <span class="keyword">if</span> (ev &amp;&amp; Event == ev.constructor) &#123;</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    c = c.caller;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> ev;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/04/16/原生js写ajax/" itemprop="url">
+                  原生js写ajax
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-04-16T22:36:22+08:00" content="2015-04-16">
+              2015-04-16
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>ajax过程:</p>
+<p>(1)创建XMLHttpRequest对象,也就是创建一个异步调用对象.</p>
+<p>(2)创建一个新的HTTP请求,并指定该HTTP请求的方法、URL及验证信息.</p>
+<p>(3)设置响应HTTP请求状态变化的函数.</p>
+<p>(4)发送HTTP请求.</p>
+<p>(5)获取异步调用返回的数据.</p>
+<p>(6)使用JavaScript和DOM实现局部刷新.</p>
+<p>原生代码：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ajax</span>(<span class="params"></span>)</span>&#123;  </span><br><span class="line">    <span class="keyword">var</span> xmlhttp;  </span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">window</span>.XMLHttpRequest)&#123;  </span><br><span class="line">        xmlhttp = <span class="keyword">new</span> XMLHttpRequest();  </span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;  </span><br><span class="line">        <span class="comment">// code for IE6, IE5  </span></span><br><span class="line">        xmlhttp = ActionXObject(<span class="string">"Microsoft.XMLHTTP"</span>);  </span><br><span class="line">    &#125;  </span><br><span class="line">      </span><br><span class="line">    <span class="comment">//判定执行状态  </span></span><br><span class="line">    xmlhttp.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  </span><br><span class="line">        <span class="comment">/* </span><br><span class="line">        readyState </span><br><span class="line">            0: 请求未初始化 </span><br><span class="line">            1: 服务器连接已建立 </span><br><span class="line">            2: 请求已接收 </span><br><span class="line">            3: 请求处理中 </span><br><span class="line">            4: 请求已完成，且响应已就绪 </span><br><span class="line">        status </span><br><span class="line">            200:请求成功 </span><br><span class="line">            404:未找到 </span><br><span class="line">            500:服务器内部错误 </span><br><span class="line">        */</span>  </span><br><span class="line">        <span class="keyword">if</span> (xmlhttp.readyState==<span class="number">4</span> &amp;&amp; xmlhttp.status==<span class="number">200</span>)&#123;  </span><br><span class="line">            <span class="built_in">document</span>.getElementById(<span class="string">"myDiv"</span>).innerHTML=xmlhttp.responseText;<span class="comment">//获得字符串形式的响应数据，如果返回的是XML需要单独解析  </span></span><br><span class="line">            <span class="comment">//responseXML       获得 XML 形式的响应数据  </span></span><br><span class="line">            <span class="keyword">var</span> xmlDoc = xmlhttp.responseXML;  </span><br><span class="line">            <span class="keyword">var</span> txt = <span class="string">""</span>;  </span><br><span class="line">            <span class="keyword">var</span> num = xmlDoc.getElementsByName(<span class="string">"value"</span>);<span class="comment">//获取节点name=value的值  </span></span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;num.length;i++)&#123;  </span><br><span class="line">                txt = txt+num[i].childNodes[<span class="number">0</span>].nodeValue+<span class="string">"&lt;br /&gt;"</span>;  </span><br><span class="line">            &#125;  </span><br><span class="line">            <span class="built_in">document</span>.getElementById(<span class="string">"myDiv2"</span>).innerHTML = txt;  </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">      </span><br><span class="line">    <span class="comment">//@param 最后一个参数表示是否是异步提交，为了避免使用缓存我们加上一个时间戳  </span></span><br><span class="line">    xmlhttp.open(<span class="string">"Get"</span>,<span class="string">"url"</span>+  </span><br><span class="line">        (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  </span><br><span class="line">            <span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>();  </span><br><span class="line">            <span class="keyword">return</span> date.getSeconds();     </span><br><span class="line">        &#125;)  </span><br><span class="line">    ,<span class="literal">true</span>);  </span><br><span class="line">      </span><br><span class="line">    <span class="comment">//设置头信息  </span></span><br><span class="line">    xmlhttp.setRequestHeader(<span class="string">"Content-type"</span>,<span class="string">"application/x-www-form-urlencoded"</span>);  </span><br><span class="line">      </span><br><span class="line">    <span class="comment">//将信息发送到服务器  </span></span><br><span class="line">    xmlhttp.send();   </span><br><span class="line">      </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/04/16/从地址栏输入网址后发生的事/" itemprop="url">
+                  从地址栏输入网址后发生的事
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-04-16T22:16:03+08:00" content="2015-04-16">
+              2015-04-16
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>分为4个步骤：<br>（1）当发送一个URL请求时，不管这个URL是Web页面的URL还是Web页面上每个资源的URL，浏览器都会开启一个线程来处理这个请求，同时在远程DNS服务器上启动一个DNS查询。这能使浏览器获得请求对应的IP地址。<br>（2）浏览器与远程Web服务器通过TCP三次握手协商来建立一个TCP/IP连接。该握手包括一个同步报文，一个同步-应答报文和一个应答报文，这三个报文在 浏览器和服务器之间传递。该握手首先由客户端尝试建立起通信，而后服务器应答并接受客户端的请求，最后由客户端发出该请求已经被接受的报文。<br>（3）一旦TCP/IP连接建立，浏览器会通过该连接向远程服务器发送HTTP的GET请求。远程服务器找到资源并使用HTTP响应返回该资源，值为200的HTTP响应状态表示一个正确的响应。<br>（4）此时，Web服务器提供资源服务，客户端开始下载资源。请求返回后，便进入了我们关注的前端模块<br>简单来说，浏览器会解析HTML生成DOM Tree，其次会根据CSS生成CSS Rule Tree，而javascript又可以根据DOM API操作DOM</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2015/04/16/CSS定位与浮动/" itemprop="url">
                   CSS定位与浮动
                 </a>
@@ -296,6 +981,101 @@
 <li>inherit 规定从父元素继承 position 属性的值。</li>
 </ul>
 <h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h2><p><a href="http://www.360doc.com/content/12/0328/15/306547_198606737.shtml" target="_blank" rel="external">http://www.360doc.com/content/12/0328/15/306547_198606737.shtml</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/04/10/待解决/" itemprop="url">
+                  待解决
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-04-10T22:17:58+08:00" content="2015-04-10">
+              2015-04-10
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> F = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line">F.hasOwnProperty(<span class="string">"constructor"</span>); <span class="comment">// false</span></span><br><span class="line">F.hasOwnProperty(<span class="string">"prototype"</span>); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<p>F是个函数对象，创建时继承原型链上的constructor，这没问题。但是F.prototype不是继承自原型链的，那它是在什么时候创建的？</p>
 
           
         
@@ -431,124 +1211,11 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/04/04/CSS水平居中和垂直居中/" itemprop="url">
-                  CSS水平居中和垂直居中
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-04-04T13:28:32+08:00" content="2015-04-04">
-              2015-04-04
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="垂直居中"><a href="#垂直居中" class="headerlink" title="垂直居中"></a>垂直居中</h2><ul>
-<li>最土的表格法<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;table&gt;</span><br><span class="line">	&lt;tr&gt;</span><br><span class="line">	&lt;/tr&gt;</span><br><span class="line">	&lt;td style="vertical-align:middle;"&gt;</span><br><span class="line">		&lt;div&gt;content&lt;/div&gt;</span><br><span class="line">	&lt;/td&gt;</span><br><span class="line">&lt;/table&gt;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>使用一行一列的表格，把div内容放到td里，利用td的vertical-align属性垂直居中。<br>或者是div表现为单元格，完成水平和垂直居中。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: table-cell;</span><br><span class="line">  <span class="attribute">text-align</span>: center;</span><br><span class="line">  <span class="attribute">vertical-align</span>: middle;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>需要较多hack的inline-block法<br>基本思路是在父容器里设置行高line-height等于整体高度height</li>
-<li>绝对定位<br>最早的实现方法需要知道元素宽高。<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">margin-top</span>: -<span class="number">3em</span>; <span class="comment">/* 6/2 = 3 */</span></span><br><span class="line">    <span class="attribute">margin-left</span>: -<span class="number">9em</span>; <span class="comment">/* 18/2 = 9 */</span></span><br><span class="line">    <span class="attribute">width</span>: <span class="number">18em</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">6em</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>使用CSS3的transform属性可以操作未知宽高的元素移动相对自身宽高的距离。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translate</span>(-50%, -50%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>FlexBox，最好的解决方案<br>在需要垂直居中的父元素上设置<em>display:flex</em>并在垂直居中的元素上设置<em>margin:auto</em>，就完成了水平垂直居中。<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span><span class="selector-id">#sup</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">margin</span>: auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="水平居中"><a href="#水平居中" class="headerlink" title="水平居中"></a>水平居中</h2><ul>
-<li>行内元素，在其父元素上设置<em>text-align:center;</em></li>
-<li>块级元素，直接使用<em>margin: 0 auto;</em></li>
-</ul>
-<p>参考：<a href="http://www.tuicool.com/articles/INRzayM" target="_blank" rel="external">http://www.tuicool.com/articles/INRzayM</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span>
+    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -589,7 +1256,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">53</span>
+              <span class="site-state-item-count">61</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -599,7 +1266,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
