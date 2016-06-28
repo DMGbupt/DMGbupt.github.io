@@ -1,0 +1,589 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="标准流中，块级元素总是独占一行。而复杂布局中，最基本的一个问题就是如何一行显示多个块级元素。显然标准流无法满足要求，所以我们才引入浮动。浮动，正如其名字一样，使块级元素脱离标准流，“漂浮”在标准流之上，标准流中不再保存该元素位置，和标准流不在一个层次。
+定义浮动我们通过定义float属性值来控制浮动。float默认是none，可以设置left和right。如果浮动元素的前一个元素仍在标准流中，那么">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS的浮动笔记">
+<meta property="og:url" content="http://yoursite.com/2015/07/31/CSS的浮动笔记/index.html">
+<meta property="og:site_name" content="liming's cookbook">
+<meta property="og:description" content="标准流中，块级元素总是独占一行。而复杂布局中，最基本的一个问题就是如何一行显示多个块级元素。显然标准流无法满足要求，所以我们才引入浮动。浮动，正如其名字一样，使块级元素脱离标准流，“漂浮”在标准流之上，标准流中不再保存该元素位置，和标准流不在一个层次。
+定义浮动我们通过定义float属性值来控制浮动。float默认是none，可以设置left和right。如果浮动元素的前一个元素仍在标准流中，那么">
+<meta property="og:updated_time" content="2016-06-28T15:39:54.657Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS的浮动笔记">
+<meta name="twitter:description" content="标准流中，块级元素总是独占一行。而复杂布局中，最基本的一个问题就是如何一行显示多个块级元素。显然标准流无法满足要求，所以我们才引入浮动。浮动，正如其名字一样，使块级元素脱离标准流，“漂浮”在标准流之上，标准流中不再保存该元素位置，和标准流不在一个层次。
+定义浮动我们通过定义float属性值来控制浮动。float默认是none，可以设置left和right。如果浮动元素的前一个元素仍在标准流中，那么">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> CSS的浮动笔记 | liming's cookbook </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">liming's cookbook</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                CSS的浮动笔记
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-07-31T12:24:23+08:00" content="2015-07-31">
+              2015-07-31
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>标准流中，块级元素总是独占一行。而复杂布局中，最基本的一个问题就是如何一行显示多个块级元素。显然标准流无法满足要求，所以我们才引入浮动。<br>浮动，正如其名字一样，使块级元素脱离标准流，“漂浮”在标准流之上，标准流中不再保存该元素位置，和标准流不在一个层次。</p>
+<h2 id="定义浮动"><a href="#定义浮动" class="headerlink" title="定义浮动"></a>定义浮动</h2><p>我们通过定义float属性值来控制浮动。float默认是none，可以设置left和right。<br>如果浮动元素的前一个元素仍在标准流中，那么浮动元素相对垂直位置不会改变，也就是说浮动的顶部总是和上一个元素的底部对齐，左右则根据浮动设置相应贴边；如果前一个也是浮动元素，那就紧跟在前一个元素后边（根据浮动的设置，“后边”的实际显示位置可能是右边或左边），一行放不下则挤到下一行。<br>但是，如果浮动元素后面的元素是在标准流中的，那么后面的元素会紧跟浮动元素（一行放不下则挤到下一行）。如果我们想让后面元素从新的一行按正常流显示，则需要清除浮动。</p>
+<h2 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h2><p>清除浮动可以理解为通过下移来打破浮动元素的横向排列规则（实际是增加了清除浮动元素的上边的空间）。<br>对浮动元素设置clear属性：</p>
+<ul>
+<li>none  :  默认值，允许元素两边都可以有浮动对象</li>
+<li>left  :  操作元素使其左边没有浮动对象</li>
+<li>right :  操作元素使其右边没有浮动对象</li>
+<li>both  :  操作元素使其两边没有浮动对象<br>这个clear属性只能影响使用的元素本身，不能操作其他元素。例如两个左浮动的元素，想让第二个元素下移一行，则需要对第二个元素设置<em>clear：left</em>，使其下移一行来满足左边没浮动对象。如果对第一个元素使用<em>clear：right</em>，似乎按照字面来说能清除第一个元素右边的浮动元素，其实不然，因为<em>clear：right</em>仅对第一个元素起作用，而第一个元素不论怎么下移都不会使二个元素相对下移。<br>所以对左浮动的元素使用<em>clear：left</em>，对右浮动的元素使用<em>clear：right</em>。</li>
+</ul>
+<h2 id="浮动问题总结"><a href="#浮动问题总结" class="headerlink" title="浮动问题总结"></a>浮动问题总结</h2><p>浮动元素引起的问题：</p>
+<ul>
+<li>父元素的高度无法被撑开，影响与父元素同级的元素</li>
+<li>与浮动元素同级的非浮动元素会跟随其后</li>
+<li>若非第一个元素浮动，则该元素之前的元素也需要浮动，否则会影响页面显示的结构</li>
+</ul>
+<h2 id="清除浮动方法总结"><a href="#清除浮动方法总结" class="headerlink" title="清除浮动方法总结"></a>清除浮动方法总结</h2><p>清除浮动的几种方法：</p>
+<ul>
+<li>额外标签法，<div style="clear:both;"></div>（缺点：不过这个办法会增加额外的标签使HTML结构看起来不够简洁。）</li>
+<li><p>使用after伪类</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#parent</span><span class="selector-pseudo">:after</span>&#123;</span><br><span class="line">    <span class="attribute">content</span>:<span class="string">"."</span>;</span><br><span class="line">    <span class="attribute">height</span>:<span class="number">0</span>;</span><br><span class="line">    <span class="attribute">visibility</span>:hidden;</span><br><span class="line">    <span class="attribute">display</span>:block;</span><br><span class="line">    <span class="attribute">clear</span>:both;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>设置父元素的<em>overflow</em>为<em>hidden</em>或者<em>auto</em>（触发BFC）</p>
+</li>
+<li>浮动外部元素</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/07/25/JavaScript的new关键字/" rel="next" title="JavaScript的new关键字">
+                <i class="fa fa-chevron-left"></i> JavaScript的new关键字
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/08/10/JavaScript原型链初探/" rel="prev" title="JavaScript原型链初探">
+                JavaScript原型链初探 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="LiMing" />
+          <p class="site-author-name" itemprop="name">LiMing</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">53</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义浮动"><span class="nav-number">1.</span> <span class="nav-text">定义浮动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#清除浮动"><span class="nav-number">2.</span> <span class="nav-text">清除浮动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#浮动问题总结"><span class="nav-number">3.</span> <span class="nav-text">浮动问题总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#清除浮动方法总结"><span class="nav-number">4.</span> <span class="nav-text">清除浮动方法总结</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LiMing</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
