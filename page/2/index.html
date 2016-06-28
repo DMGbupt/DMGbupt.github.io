@@ -997,8 +997,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/05/03/大端和小端模式/" itemprop="url">
-                  大端和小端模式
+                <a class="post-title-link" href="/2016/05/03/数据库索引/" itemprop="url">
+                  数据库索引
                 </a>
               
             
@@ -1041,10 +1041,7 @@
       
         
           
-            <p>大于一个字节的结构（例如int）存储数据时，会产生不同字节序。<br>小端模式：内存低地址存数据的低位。<br>大端模式：内存低地址存数据的高位。</p>
-<p>可以使用union判断处理器的大小端。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">checkLittleEndian</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">union</span> u &#123;</span><br><span class="line">		<span class="keyword">int</span> a;</span><br><span class="line">		<span class="keyword">char</span> b;</span><br><span class="line">	&#125;;</span><br><span class="line">	u c = &#123;<span class="number">1</span>&#125;; <span class="comment">// 提供值，会初始化第一个成员a</span></span><br><span class="line">	<span class="keyword">return</span> (c.b == <span class="number">1</span>) ? <span class="literal">true</span> : <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>union中的成员都是从低地址开始存放。本例中union共分配了4个字节，存a成员时使用内存地址从低到高的4个字节，存b成员时使用内存地址最低的一个字节，所以可以从b的值来看出低地址端存的是什么值。<br>1的存储形式是0x00 00 00 01，所以数据的最低位是01，最高位是00。若是小端存储，则低地址端存01，若是大端存储，则低地址端存00。由此，b的值为1时是小端模式，为0时是大端模式。</p>
-<p>好文：<a href="http://blog.csdn.net/hackbuteer1/article/details/7722667" target="_blank" rel="external">http://blog.csdn.net/hackbuteer1/article/details/7722667</a></p>
+            <p>好文章：<a href="http://kb.cnblogs.com/page/45712/" target="_blank" rel="external">http://kb.cnblogs.com/page/45712/</a></p>
 
           
         
@@ -1094,8 +1091,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/05/03/数据库索引/" itemprop="url">
-                  数据库索引
+                <a class="post-title-link" href="/2016/05/03/大端和小端模式/" itemprop="url">
+                  大端和小端模式
                 </a>
               
             
@@ -1138,7 +1135,10 @@
       
         
           
-            <p>好文章：<a href="http://kb.cnblogs.com/page/45712/" target="_blank" rel="external">http://kb.cnblogs.com/page/45712/</a></p>
+            <p>大于一个字节的结构（例如int）存储数据时，会产生不同字节序。<br>小端模式：内存低地址存数据的低位。<br>大端模式：内存低地址存数据的高位。</p>
+<p>可以使用union判断处理器的大小端。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">checkLittleEndian</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">union</span> u &#123;</span><br><span class="line">		<span class="keyword">int</span> a;</span><br><span class="line">		<span class="keyword">char</span> b;</span><br><span class="line">	&#125;;</span><br><span class="line">	u c = &#123;<span class="number">1</span>&#125;; <span class="comment">// 提供值，会初始化第一个成员a</span></span><br><span class="line">	<span class="keyword">return</span> (c.b == <span class="number">1</span>) ? <span class="literal">true</span> : <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>union中的成员都是从低地址开始存放。本例中union共分配了4个字节，存a成员时使用内存地址从低到高的4个字节，存b成员时使用内存地址最低的一个字节，所以可以从b的值来看出低地址端存的是什么值。<br>1的存储形式是0x00 00 00 01，所以数据的最低位是01，最高位是00。若是小端存储，则低地址端存01，若是大端存储，则低地址端存00。由此，b的值为1时是小端模式，为0时是大端模式。</p>
+<p>好文：<a href="http://blog.csdn.net/hackbuteer1/article/details/7722667" target="_blank" rel="external">http://blog.csdn.net/hackbuteer1/article/details/7722667</a></p>
 
           
         
