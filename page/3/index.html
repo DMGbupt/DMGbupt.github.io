@@ -337,6 +337,103 @@
             
               
                 
+                <a class="post-title-link" href="/2016/05/03/大端和小端模式/" itemprop="url">
+                  大端和小端模式
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-03T22:46:28+08:00" content="2016-05-03">
+              2016-05-03
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>大于一个字节的结构（例如int）存储数据时，会产生不同字节序。<br>小端模式：内存低地址存数据的低位。<br>大端模式：内存低地址存数据的高位。</p>
+<p>可以使用union判断处理器的大小端。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">checkLittleEndian</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">union</span> u &#123;</span><br><span class="line">		<span class="keyword">int</span> a;</span><br><span class="line">		<span class="keyword">char</span> b;</span><br><span class="line">	&#125;;</span><br><span class="line">	u c = &#123;<span class="number">1</span>&#125;; <span class="comment">// 提供值，会初始化第一个成员a</span></span><br><span class="line">	<span class="keyword">return</span> (c.b == <span class="number">1</span>) ? <span class="literal">true</span> : <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>union中的成员都是从低地址开始存放。本例中union共分配了4个字节，存a成员时使用内存地址从低到高的4个字节，存b成员时使用内存地址最低的一个字节，所以可以从b的值来看出低地址端存的是什么值。<br>1的存储形式是0x00 00 00 01，所以数据的最低位是01，最高位是00。若是小端存储，则低地址端存01，若是大端存储，则低地址端存00。由此，b的值为1时是小端模式，为0时是大端模式。</p>
+<p>好文：<a href="http://blog.csdn.net/hackbuteer1/article/details/7722667" target="_blank" rel="external">http://blog.csdn.net/hackbuteer1/article/details/7722667</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/05/03/C-中new和malloc区别/" itemprop="url">
                   C++中new和malloc区别
                 </a>
@@ -1077,101 +1174,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/03/23/数据库事务要点/" itemprop="url">
-                  数据库事务要点
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-23T13:03:17+08:00" content="2016-03-23">
-              2016-03-23
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>ACID：指数据库事务正确执行的四个基本要素的缩写。包含：<br>原子性（Atomicity）：事务必须是原子工作单元；对于其数据修改，要么全都执行，要么全都不执行。<br>一致性（Consistency）:事务在完成时，必须使所有的数据都保持一致状态。<br>隔离性（Isolation）:事务查看数据时数据所处的状态，要么是另一并发事务修改它之前的状态，要么是另一事务修改它之后的状态，事务不会查看中间状态的数据。<br>持久性（Durability）：事务完成之后，它对于系统的影响是永久性的。</p>
-<p>对于隔离性：<br>由于高度隔离会限制可并行执行的事务数，所以一些应用程序降低隔离级别以换取更大的吞吐量。<br>mysql中事务隔离级别：Read Uncommitted，Read Committed，Repeatable Read（MySQL的默认事务隔离级别）和Serializable。具体参考：<a href="http://blog.csdn.net/tonyxf121/article/details/8437284" target="_blank" rel="external">http://blog.csdn.net/tonyxf121/article/details/8437284</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1217,7 +1219,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">63</span>
+              <span class="site-state-item-count">64</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
