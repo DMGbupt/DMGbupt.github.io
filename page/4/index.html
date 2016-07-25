@@ -243,6 +243,103 @@
             
               
                 
+                <a class="post-title-link" href="/2016/03/28/C++类中的const修饰符/" itemprop="url">
+                  C++类中的const修饰符
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-28T11:16:55+08:00" content="2016-03-28">
+              2016-03-28
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1.const修饰成员变量<br>const修饰类的成员变量，表示成员是常量，不能被修改，同时它只能在初始化列表中赋值。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> A</span><br><span class="line">&#123; </span><br><span class="line">    …</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> nValue;         <span class="comment">//成员常量不能被修改</span></span><br><span class="line">    …</span><br><span class="line">    A(<span class="keyword">int</span> x): nValue(x) &#123; &#125; ; <span class="comment">//只能在初始化列表中赋值</span></span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
+<p>2.const修饰成员函数<br>const修饰类的成员函数，则该成员函数不能修改类中任何成员。一般写在函数的最后来修饰。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">class</span> A</span><br><span class="line">    &#123; </span><br><span class="line">        …</span><br><span class="line">       <span class="function"><span class="keyword">void</span> <span class="title">function</span><span class="params">()</span><span class="keyword">const</span></span>; <span class="comment">//常成员函数, 它不改变对象的成员变量。也不能调用类中任何非const成员函数。</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>如果非要在const修饰的函数里改变某成员变量，则只需用mutable修饰该成员变量即可。</p>
+<p>3.const修饰类对象/对象指针/对象引用<br>const修饰类对象表示该对象为常量对象，其中的任何成员都不能被修改，且该对象的任何非const成员函数都不能被调用，因为任何非const成员函数会有修改成员变量的企图。对于对象指针和对象引用也是一样。<br>例如：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> AAA</span><br><span class="line">&#123; </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">func1</span><span class="params">()</span></span>; </span><br><span class="line">　　<span class="function"><span class="keyword">void</span> <span class="title">func2</span><span class="params">()</span> <span class="keyword">const</span></span>; </span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">const</span> AAA aObj; </span><br><span class="line">aObj.func1(); <span class="comment">//×</span></span><br><span class="line">aObj.func2(); <span class="comment">//正确</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">const</span> AAA* aObj = <span class="keyword">new</span> AAA(); </span><br><span class="line">aObj-&gt; func1(); <span class="comment">//×</span></span><br><span class="line">aObj-&gt; func2(); <span class="comment">//正确</span></span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/03/23/数据库事务要点/" itemprop="url">
                   数据库事务要点
                 </a>
@@ -1123,99 +1220,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/08/19/jQuery的事件代理/" itemprop="url">
-                  jQuery的事件代理
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-08-19T12:26:45+08:00" content="2015-08-19">
-              2015-08-19
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1261,7 +1265,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">64</span>
+              <span class="site-state-item-count">65</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

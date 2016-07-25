@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="JavaScript," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -84,16 +84,16 @@
 
 
 
-<meta name="description" content="JavaScript 不包含传统的类继承模型，而是使用 prototype 原型模型。虽然这经常被当作是 JavaScript 的缺点被提及，其实基于原型的继承模型比传统的类继承还要强大。 实现传统的类继承模型是很简单，但是实现 JavaScript 中的原型继承则要困难的多。">
+<meta name="description" content="对于一个十进制正整数，计算它所有数位的值的平方和得到一个新值，对新值继续计算平方和，直到平方和为1或者进入无限循环。为1时即为happy number。如果不为1，则最终都会进入4-&amp;gt;16-&amp;gt;37-&amp;gt;58-&amp;gt;89-&amp;gt;145-&amp;gt;42-&amp;gt;20-&amp;gt;4这样的“4”循环。为什么最后都会进入循环呢？证明很简单，因为操作可以无限进行，但每次操作输出的新值却有一个范">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript原型链初探">
-<meta property="og:url" content="http://yoursite.com/2015/08/10/JavaScript原型链初探/index.html">
+<meta property="og:title" content="happy number">
+<meta property="og:url" content="http://yoursite.com/2016/06/17/happy number/index.html">
 <meta property="og:site_name" content="liming's cookbook">
-<meta property="og:description" content="JavaScript 不包含传统的类继承模型，而是使用 prototype 原型模型。虽然这经常被当作是 JavaScript 的缺点被提及，其实基于原型的继承模型比传统的类继承还要强大。 实现传统的类继承模型是很简单，但是实现 JavaScript 中的原型继承则要困难的多。">
-<meta property="og:updated_time" content="2016-03-30T15:18:06.376Z">
+<meta property="og:description" content="对于一个十进制正整数，计算它所有数位的值的平方和得到一个新值，对新值继续计算平方和，直到平方和为1或者进入无限循环。为1时即为happy number。如果不为1，则最终都会进入4-&amp;gt;16-&amp;gt;37-&amp;gt;58-&amp;gt;89-&amp;gt;145-&amp;gt;42-&amp;gt;20-&amp;gt;4这样的“4”循环。为什么最后都会进入循环呢？证明很简单，因为操作可以无限进行，但每次操作输出的新值却有一个范">
+<meta property="og:updated_time" content="2016-07-25T04:34:50.203Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript原型链初探">
-<meta name="twitter:description" content="JavaScript 不包含传统的类继承模型，而是使用 prototype 原型模型。虽然这经常被当作是 JavaScript 的缺点被提及，其实基于原型的继承模型比传统的类继承还要强大。 实现传统的类继承模型是很简单，但是实现 JavaScript 中的原型继承则要困难的多。">
+<meta name="twitter:title" content="happy number">
+<meta name="twitter:description" content="对于一个十进制正整数，计算它所有数位的值的平方和得到一个新值，对新值继续计算平方和，直到平方和为1或者进入无限循环。为1时即为happy number。如果不为1，则最终都会进入4-&amp;gt;16-&amp;gt;37-&amp;gt;58-&amp;gt;89-&amp;gt;145-&amp;gt;42-&amp;gt;20-&amp;gt;4这样的“4”循环。为什么最后都会进入循环呢？证明很简单，因为操作可以无限进行，但每次操作输出的新值却有一个范">
 
 
 
@@ -111,7 +111,7 @@
   };
 </script>
 
-  <title> JavaScript原型链初探 | liming's cookbook </title>
+  <title> happy number | liming's cookbook </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -241,7 +241,7 @@
             
             
               
-                JavaScript原型链初探
+                happy number
               
             
           </h1>
@@ -253,8 +253,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-08-10T22:52:24+08:00" content="2015-08-10">
-              2015-08-10
+            <time itemprop="dateCreated" datetime="2016-06-17T10:41:30+08:00" content="2016-06-17">
+              2016-06-17
             </time>
           </span>
 
@@ -281,7 +281,17 @@
       
 
       
-        <p>JavaScript 不包含传统的类继承模型，而是使用 prototype 原型模型。<br>虽然这经常被当作是 JavaScript 的缺点被提及，其实基于原型的继承模型比传统的类继承还要强大。 实现传统的类继承模型是很简单，但是实现 JavaScript 中的原型继承则要困难的多。</p>
+        <p>对于一个十进制正整数，计算它所有数位的值的平方和得到一个新值，对新值继续计算平方和，直到平方和为1或者进入无限循环。为1时即为happy number。<br>如果不为1，则最终都会进入4-&gt;16-&gt;37-&gt;58-&gt;89-&gt;145-&gt;42-&gt;20-&gt;4这样的“4”循环。<br>为什么最后都会进入循环呢？证明很简单，因为操作可以无限进行，但每次操作输出的新值却有一个范围，不会无穷大，所以必定会出现循环。<br>那么给定一个数，如何判断它是否为happy number呢？可以有三种方法，下面上代码。</p>
+<ul>
+<li><p>无限循环直到平方和为1或者4</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 通用的计算平方和函数</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">calSquareSum</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(n) &#123;</span><br><span class="line">		sum += (n % <span class="number">10</span>) * (n % <span class="number">10</span>);</span><br><span class="line">		n /= <span class="number">10</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">happyNumber</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(num &lt; <span class="number">1</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	<span class="keyword">while</span>(<span class="literal">true</span>) &#123;</span><br><span class="line">		num = calSquareSum(num);</span><br><span class="line">		<span class="keyword">if</span>(num == <span class="number">1</span>) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(num == <span class="number">4</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">false</span>; <span class="comment">// 为了编译通过，实际永远执行不到这</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>转化成链表中有环的问题，使用快慢指针</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">happyNumber</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> fast = num, slow = num;</span><br><span class="line">	<span class="keyword">do</span> &#123;</span><br><span class="line">		fast = calSquareSum(fast);</span><br><span class="line">		fast = calSquareSum(fast);		</span><br><span class="line">		slow = calSquareSum(slow);</span><br><span class="line">	&#125; <span class="keyword">while</span>(fast != slow);</span><br><span class="line">	<span class="keyword">if</span>(fast == <span class="number">1</span>) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>前两种方法均会在“4”循环上重复计算多次，而这是没必要的，可以直接用哈希表记录“4”循环的元素</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">happyNumber</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(num &lt; <span class="number">1</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	<span class="built_in">unordered_set</span>&lt;<span class="keyword">int</span>&gt; hash&#123;<span class="number">4</span>,<span class="number">16</span>,<span class="number">37</span>,<span class="number">58</span>,<span class="number">89</span>,<span class="number">145</span>,<span class="number">42</span>,<span class="number">20</span>&#125;;</span><br><span class="line">	<span class="keyword">while</span>(<span class="literal">true</span>) &#123;</span><br><span class="line">		num = calSquareSum(num);</span><br><span class="line">		<span class="keyword">if</span>(num == <span class="number">1</span>) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(hash.find(num) != hash.end()) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
 
       
     </div>
@@ -301,27 +311,21 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
-          
-        </div>
-      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/07/31/CSS的浮动笔记/" rel="next" title="CSS的浮动笔记">
-                <i class="fa fa-chevron-left"></i> CSS的浮动笔记
+              <a href="/2016/06/17/进程和线程区别/" rel="next" title="进程和线程区别">
+                <i class="fa fa-chevron-left"></i> 进程和线程区别
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/08/12/JavaScript正则表达式/" rel="prev" title="JavaScript正则表达式">
-                JavaScript正则表达式 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/06/18/stl排序算法/" rel="prev" title="stl排序算法">
+                stl排序算法 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
