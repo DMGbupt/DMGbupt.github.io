@@ -243,6 +243,105 @@
             
               
                 
+                <a class="post-title-link" href="/2016/07/09/linux下core文件调试/" itemprop="url">
+                  linux下core文件调试
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-09T17:42:10+08:00" content="2016-07-09">
+              2016-07-09
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>linux下程序异常退出时，会在当前工作目录下生成一个core文件，记录内存转储的信息，有助于debug。可以用gdb调试core文件。</p>
+<ul>
+<li>开启core文件的生成<br><code>ulimit -c</code>命令可以查看core文件的大小，若为0，说明内核不生成core文件。<br>可以使用<code>ulimit -c size</code>设置core文件大小为<em>size</em>，或者使用<code>ulimit -c unlimited</code>不限制生成core文件大小。</li>
+<li>设置core文件名格式<br>若不设置core文件的扩展名，则会全部命名为core，新的core会覆盖旧的core。<br>在<em>/proc/sys/kernel</em>路径下的以<em>core_</em>开头的文件可以设置core文件的扩展名。<br>比较常用的是<em>core_uses_pid</em>文件。文件内容为0表示生成的core文件都命名为core；内容为1表示添加进程pid作为扩展名，生成的格式为core.pid。更多的格式可以在<em>core_pattern</em>中设置。</li>
+<li>调试core文件<br>可以使用gdb调试core文件（编译时需要加入-g选项，不然gdb无法查找变量符号，只会显示类型信息），命令<code>gdb program core_file</code>。<br>在gdb界面，可以使用bt查看程序出错时的堆栈信息。</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/07/04/学术的H指数计算/" itemprop="url">
                   学术的H指数计算
                 </a>
@@ -1086,102 +1185,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/05/16/同步异步和阻塞非阻塞/" itemprop="url">
-                  同步/异步和阻塞/非阻塞
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-16T21:30:22+08:00" content="2016-05-16">
-              2016-05-16
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>1.同步与异步<br>同步和异步关注的是消息通信机制 (synchronous communication/ asynchronous communication)<br>所谓同步，就是在发出一个<em>调用</em>时，在没有得到结果之前，该<em>调用</em>就不返回。但是一旦调用返回，就得到返回值了。<br>换句话说，就是由<em>调用者</em>主动等待这个<em>调用</em>的结果。<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/05/16/同步异步和阻塞非阻塞/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1227,7 +1230,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">65</span>
+              <span class="site-state-item-count">66</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

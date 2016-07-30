@@ -243,6 +243,137 @@
             
               
                 
+                <a class="post-title-link" href="/2015/08/20/JavaScript的Object对象/" itemprop="url">
+                  JavaScript的Object对象
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-08-20T17:59:29+08:00" content="2015-08-20">
+              2015-08-20
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>JS中所有对象都继承自Object对象，所以不论是普通对象还是函数对象都会继承一些公共的属性和方法，这里记录下比较有用的几个。</p>
+<h2 id="可用于所有对象实例的属性和方法"><a href="#可用于所有对象实例的属性和方法" class="headerlink" title="可用于所有对象实例的属性和方法"></a>可用于所有对象实例的属性和方法</h2><ul>
+<li><em>constructor</em>属性，指向当前对象的构造函数对象。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">a.constructor; <span class="comment">// function Object() &#123; *[native code]* &#125;</span></span><br><span class="line"><span class="keyword">var</span> b = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">a.constructor === b.constructor; <span class="comment">// true</span></span><br><span class="line"><span class="keyword">var</span> F = <span class="keyword">new</span> <span class="built_in">Function</span>();</span><br><span class="line">F.constructor; <span class="comment">// function Function() &#123; *[native code]* &#125;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>a和b都是Object()构造器创建的，所以它们的<em>constructor</em>都指向同一个构造函数对象。F是Function()构造的一个函数对象，它的<em>constructor</em>指向Function()函数对象。</p>
+<ul>
+<li><em>hasOwnProperty(Name)</em>方法，判断<em>Name</em>属性是否只存在当前对象中，而不在对象的原型链中。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [];</span><br><span class="line">arr.hasOwnProperty(<span class="string">"length"</span>); <span class="comment">// true</span></span><br><span class="line">arr.hasOwnProperty(<span class="string">"hasOwnProperty"</span>); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>arr是数组，拥有自己的属性<em>length</em>，但是<em>hasOwnProperty</em>方法却是从Object那继承的，所以是false。</p>
+<ul>
+<li><p><em>hasOwnProperty</em>和<em>for…in</em>结合，可以获取对象自己的所有属性。 </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">showOwnProperty</span>(<span class="params">obj</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> p =[];</span><br><span class="line">	<span class="keyword">for</span>(name <span class="keyword">in</span> obj)&#123;</span><br><span class="line">		<span class="keyword">if</span>(obj.hasOwnProperty(name))&#123;</span><br><span class="line">			p.push(name);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">console</span>.log(p);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> a = &#123;</span><br><span class="line">	id: <span class="number">1</span>, </span><br><span class="line">	sayId: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">			<span class="built_in">console</span>.log(<span class="keyword">this</span>.id);</span><br><span class="line">			&#125; </span><br><span class="line">&#125;;</span><br><span class="line">showOwnProperty(a); <span class="comment">// ["id", "sayId"]</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><em>propertyIsEnumerable(Name)</em>方法，判断<em>Name</em>属性是否可以被<em>for…in</em>枚举。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;&#125;;</span><br><span class="line">a.propertyIsEnumerable(<span class="string">"constructor"</span>); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>说明对象的<em>constructor</em>是不可被枚举的。</p>
+<ul>
+<li><em>isPrototypeOf(Obj)</em>方法，判断对象是否在<em>obj</em>的原型链上。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> F = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line"><span class="keyword">var</span> foo = <span class="keyword">new</span> F();</span><br><span class="line">F.prototype.isPrototypeOf(foo); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>foo由F()构造，所以F.prototype在foo的原型链上。</p>
+<ul>
+<li><p><em>toString()</em>方法，返回对象的字符串表示。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line">obj.toString(); <span class="comment">// "[object Object]"</span></span><br><span class="line"><span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">date.toString(); <span class="comment">// "Sun Oct 20 2015 18:40:36 GMT+0800 (中国标准时间)"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><em>toLocaleString()</em>方法，同样返回对象的字符串表示，跟所在地区有关。</p>
+</li>
+<li><em>valueOf()</em>方法，返回对象的原始值，可能是字符串、数值或bool值等。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a =&#123;</span><br><span class="line">	id:<span class="number">1</span>,</span><br><span class="line">	name:<span class="string">"A"</span></span><br><span class="line">&#125;</span><br><span class="line">a.valueOf(); <span class="comment">// Object &#123;id: 1, name: "A"&#125;</span></span><br><span class="line"><span class="keyword">typeof</span> a.valueOf() === <span class="string">"object"</span>; <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="定义在Object上的方法"><a href="#定义在Object上的方法" class="headerlink" title="定义在Object上的方法"></a>定义在Object上的方法</h2><ul>
+<li><em>Object.keys(obj)</em>方法，以数组形式返回<em>obj</em>自己的可枚举的属性名。<br>```js<br>function A(){<br>  this.id = 1;<br>}<br>function B(){</li>
+</ul>
+<p>}</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2015/08/19/jQuery的事件代理/" itemprop="url">
                   jQuery的事件代理
                 </a>
@@ -1193,99 +1324,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/07/14/CSS的BFC初探/" itemprop="url">
-                  CSS的BFC初探
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-07-14T12:25:05+08:00" content="2015-07-14">
-              2015-07-14
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1331,7 +1369,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">65</span>
+              <span class="site-state-item-count">66</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
