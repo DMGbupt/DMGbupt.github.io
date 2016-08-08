@@ -84,15 +84,25 @@
 
 
 
-<meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="liming's cookbook">
-<meta property="og:url" content="http://yoursite.com/archives/2015/06/index.html">
+<meta name="description" content="CSRF：是跨站请求伪造，核心也就是请求伪造，通过伪造身份提交POST和GET请求来进行跨域的攻击。
+完成CSRF需要两个步骤：
+1.登陆受信任的网站A，在本地生成COOKIE
+2.在不登出A的情况下，或者本地COOKIE没有过期的情况下，访问危险网站B。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSRF攻击">
+<meta property="og:url" content="http://yoursite.com/2015/06/23/CSRF攻击/index.html">
 <meta property="og:site_name" content="liming's cookbook">
-<meta property="og:description">
+<meta property="og:description" content="CSRF：是跨站请求伪造，核心也就是请求伪造，通过伪造身份提交POST和GET请求来进行跨域的攻击。
+完成CSRF需要两个步骤：
+1.登陆受信任的网站A，在本地生成COOKIE
+2.在不登出A的情况下，或者本地COOKIE没有过期的情况下，访问危险网站B。">
+<meta property="og:updated_time" content="2016-08-08T13:16:42.079Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="liming's cookbook">
-<meta name="twitter:description">
+<meta name="twitter:title" content="CSRF攻击">
+<meta name="twitter:description" content="CSRF：是跨站请求伪造，核心也就是请求伪造，通过伪造身份提交POST和GET请求来进行跨域的攻击。
+完成CSRF需要两个步骤：
+1.登陆受信任的网站A，在本地生成COOKIE
+2.在不登出A的情况下，或者本地COOKIE没有过期的情况下，访问危险网站B。">
 
 
 
@@ -110,7 +120,7 @@
   };
 </script>
 
-  <title> 归档 | liming's cookbook </title>
+  <title> CSRF攻击 | liming's cookbook </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -131,7 +141,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  page-archive  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -219,176 +229,122 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
-
-    <span class="archive-page-counter">
-      
-      
-       
-        
-      好! 目前共计 59 篇日志。 继续努力。
-    </span>
-
+  <div id="posts" class="posts-expand">
     
-
-      
-      
-      
-
-      
-        
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2015">2015</h2>
-        </div>
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2015/06/23/CSRF攻击/" itemprop="url">
-              
-                <span itemprop="name">CSRF攻击</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2015-06-23T22:53:11+08:00"
-              content="2015-06-23" >
-          06-23
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2015/06/21/页面内跳转/" itemprop="url">
-              
-                <span itemprop="name">网页内跳转</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2015-06-21T21:45:39+08:00"
-              content="2015-06-21" >
-          06-21
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2015/06/04/引入css的方式/" itemprop="url">
-              
-                <span itemprop="name">引入css的方式</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2015-06-04T22:46:28+08:00"
-              content="2015-06-04" >
-          06-04
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2015/06/02/哈希表和冲突处理/" itemprop="url">
-              
-                <span itemprop="name">哈希表和冲突处理</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2015-06-02T13:48:14+08:00"
-              content="2015-06-02" >
-          06-02
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-  </section>
 
   
+  
 
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                CSRF攻击
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-06-23T22:53:11+08:00" content="2015-06-23">
+              2015-06-23
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>CSRF：是跨站请求伪造，核心也就是请求伪造，通过伪造身份提交POST和GET请求来进行跨域的攻击。</p>
+<p>完成CSRF需要两个步骤：</p>
+<p>1.登陆受信任的网站A，在本地生成COOKIE</p>
+<p>2.在不登出A的情况下，或者本地COOKIE没有过期的情况下，访问危险网站B。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/06/21/页面内跳转/" rel="next" title="网页内跳转">
+                <i class="fa fa-chevron-left"></i> 网页内跳转
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/07/09/JavaScript跨域原理/" rel="prev" title="JavaScript跨域原理">
+                JavaScript跨域原理 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -396,6 +352,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -415,8 +375,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -459,6 +428,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -562,11 +542,9 @@
 
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
 
 
   
