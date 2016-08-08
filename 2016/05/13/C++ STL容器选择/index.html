@@ -84,16 +84,19 @@
 
 
 
-<meta name="description" content="1,malloc与free是C++/C语言的标准库函数，new/delete是C++的运算符。它们都可用于申请动态内存和释放内存。2,对于非内部数据类型的对象而言，光用maloc/free无法满足动态对象的要求。对象在创建的同时要自动执行构造函数，对象在消亡之前要自动执行析构函数。由于malloc/free是库函数而不是运算符，不在编译器控制权限之内，不能够把执行构造函数和析构函数的任务强加于ma">
+<meta name="description" content="STL（标准模板库）主要由以下部分组成：容器（vector，list，deque，set，map）、容器适配器（stack，queue，priority_queue），迭代器（五种迭代器），算法，函数对象（functor），lambda等。由于各种容器都有各自优缺点，所以选择适当容器会事半功倍。
+顺序容器vector拥有一个连续的内存区块，支持随机访问，允许尾端的插入删除。如果需要高效的随机访问，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C++中new和malloc区别">
-<meta property="og:url" content="http://yoursite.com/2016/05/03/C-中new和malloc区别/index.html">
+<meta property="og:title" content="C++ STL容器选择">
+<meta property="og:url" content="http://yoursite.com/2016/05/13/C++ STL容器选择/index.html">
 <meta property="og:site_name" content="liming's cookbook">
-<meta property="og:description" content="1,malloc与free是C++/C语言的标准库函数，new/delete是C++的运算符。它们都可用于申请动态内存和释放内存。2,对于非内部数据类型的对象而言，光用maloc/free无法满足动态对象的要求。对象在创建的同时要自动执行构造函数，对象在消亡之前要自动执行析构函数。由于malloc/free是库函数而不是运算符，不在编译器控制权限之内，不能够把执行构造函数和析构函数的任务强加于ma">
-<meta property="og:updated_time" content="2016-05-03T12:20:34.329Z">
+<meta property="og:description" content="STL（标准模板库）主要由以下部分组成：容器（vector，list，deque，set，map）、容器适配器（stack，queue，priority_queue），迭代器（五种迭代器），算法，函数对象（functor），lambda等。由于各种容器都有各自优缺点，所以选择适当容器会事半功倍。
+顺序容器vector拥有一个连续的内存区块，支持随机访问，允许尾端的插入删除。如果需要高效的随机访问，">
+<meta property="og:updated_time" content="2016-08-08T12:56:18.309Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="C++中new和malloc区别">
-<meta name="twitter:description" content="1,malloc与free是C++/C语言的标准库函数，new/delete是C++的运算符。它们都可用于申请动态内存和释放内存。2,对于非内部数据类型的对象而言，光用maloc/free无法满足动态对象的要求。对象在创建的同时要自动执行构造函数，对象在消亡之前要自动执行析构函数。由于malloc/free是库函数而不是运算符，不在编译器控制权限之内，不能够把执行构造函数和析构函数的任务强加于ma">
+<meta name="twitter:title" content="C++ STL容器选择">
+<meta name="twitter:description" content="STL（标准模板库）主要由以下部分组成：容器（vector，list，deque，set，map）、容器适配器（stack，queue，priority_queue），迭代器（五种迭代器），算法，函数对象（functor），lambda等。由于各种容器都有各自优缺点，所以选择适当容器会事半功倍。
+顺序容器vector拥有一个连续的内存区块，支持随机访问，允许尾端的插入删除。如果需要高效的随机访问，">
 
 
 
@@ -111,7 +114,7 @@
   };
 </script>
 
-  <title> C++中new和malloc区别 | liming's cookbook </title>
+  <title> C++ STL容器选择 | liming's cookbook </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -241,7 +244,7 @@
             
             
               
-                C++中new和malloc区别
+                C++ STL容器选择
               
             
           </h1>
@@ -253,8 +256,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-03T20:18:53+08:00" content="2016-05-03">
-              2016-05-03
+            <time itemprop="dateCreated" datetime="2016-05-13T10:59:08+08:00" content="2016-05-13">
+              2016-05-13
             </time>
           </span>
 
@@ -281,7 +284,12 @@
       
 
       
-        <p>1,malloc与free是C++/C语言的标准库函数，new/delete是C++的运算符。它们都可用于申请动态内存和释放内存。<br>2,对于非内部数据类型的对象而言，光用maloc/free无法满足动态对象的要求。对象在创建的同时要自动执行构造函数，对象在消亡之前要自动执行析构函数。由于malloc/free是库函数而不是运算符，不在编译器控制权限之内，不能够把执行构造函数和析构函数的任务强加于malloc/free。<br>3,因此C++语言需要一个能完成动态内存分配和初始化工作的运算符new，以及一个能完成清理与释放内存工作的运算符delete。注意new/delete不是库函数。<br>4,new可以认为是malloc加构造函数的执行。new出来的指针是直接带类型信息的。而malloc返回的都是void指针。</p>
+        <p>STL（标准模板库）主要由以下部分组成：容器（vector，list，deque，set，map）、容器适配器（stack，queue，priority_queue），迭代器（五种迭代器），算法，函数对象（functor），lambda等。<br>由于各种容器都有各自优缺点，所以选择适当容器会事半功倍。</p>
+<h2 id="顺序容器"><a href="#顺序容器" class="headerlink" title="顺序容器"></a>顺序容器</h2><p>vector拥有一个连续的内存区块，支持随机访问，允许尾端的插入删除。如果需要高效的随机访问，而不在乎插入删除的效率，使用vector。当vector元素满了重新分配内存时，迭代器会失效。<br>如果经常在序列头、尾插入删除元素，可以采用deque。deque使用多个内存区块，支持随机访问。元素被移除时，deque会自动缩减内部内存用量，因此插入删除总会使迭代器失效。<br>当插入删除常发生在序列中段时，可以使用list。list是双向链表结构，拥有一段不连续的内存空间，不支持随机访问。但是只要元素还在list中，那么指向那些元素的迭代器就不会失效。</p>
+<h2 id="关联容器"><a href="#关联容器" class="headerlink" title="关联容器"></a>关联容器</h2><p>set和map基于红黑树实现，元素是有序的。如果想允许重复的key，可以使用multiset和multimap。<br>unordered_set和unordered_map是基于哈希表实现的，元素是无序的。如果想允许重复的key，可以使用unordered_multiset和unordered_multimap。典型的字典结构可以使用unordered_multimap。</p>
+<h2 id="容器适配器"><a href="#容器适配器" class="headerlink" title="容器适配器"></a>容器适配器</h2><p>准确的说，这些适配器并没有贡献新的容器，只是在现有容器上加了一层封装，形成更统一的抽象操作，使上层不用再关注不同容器的操作函数差异。<br>stack，完成堆栈抽象。从<code>&lt;stack&gt;</code>头文件的定义里可以看出stack底层默认容器是deque，当然也能用vector和list，实际上通常vector更好。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">namespace</span> <span class="built_in">std</span>&#123;</span><br><span class="line">	<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> Container = <span class="built_in">deque</span>&lt;T&gt;&gt; </span><br><span class="line">	<span class="keyword">class</span> <span class="built_in">stack</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>queue，完成队列抽象。看下<code>&lt;queue&gt;</code>头文件里的定义，底层默认也是deque，因为队列本身就是头尾操作，很符合deque容器。也可以使用list。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">namespace</span> <span class="built_in">std</span>&#123;</span><br><span class="line">	<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> Container = <span class="built_in">deque</span>&lt;T&gt;&gt; </span><br><span class="line">	<span class="keyword">class</span> <span class="built_in">queue</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>priority_queue，优先级队列，也是在<code>&lt;queue&gt;</code>中定义。底层默认是vector，因为用到了stl的堆排序，需要底层容器支持随机访问。也可以使用deque，但是list不行。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">namespace</span> <span class="built_in">std</span>&#123;</span><br><span class="line">	<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T,</span><br><span class="line">			  <span class="keyword">typename</span> Container = <span class="built_in">vector</span>&lt;T&gt;,</span><br><span class="line">			  <span class="keyword">typename</span> Compare = less&lt;<span class="keyword">typename</span> Container::value_type&gt;&gt; </span><br><span class="line">			 <span class="keyword">class</span> priority_queue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -306,16 +314,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/27/卡特兰数/" rel="next" title="卡特兰数">
-                <i class="fa fa-chevron-left"></i> 卡特兰数
+              <a href="/2016/05/12/C++对象内存模型/" rel="next" title="C++对象内存模型">
+                <i class="fa fa-chevron-left"></i> C++对象内存模型
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/05/03/大端和小端模式/" rel="prev" title="大端和小端模式">
-                大端和小端模式 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/05/16/同步异步和阻塞非阻塞/" rel="prev" title="同步/异步和阻塞/非阻塞">
+                同步/异步和阻塞/非阻塞 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -423,7 +431,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#顺序容器"><span class="nav-number">1.</span> <span class="nav-text">顺序容器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关联容器"><span class="nav-number">2.</span> <span class="nav-text">关联容器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#容器适配器"><span class="nav-number">3.</span> <span class="nav-text">容器适配器</span></a></li></ol></div>
             
           </div>
         </section>
