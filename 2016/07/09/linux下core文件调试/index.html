@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="blog, 李明, IT" />
+  <meta name="keywords" content="操作系统,C++," />
 
 
 
@@ -85,24 +85,21 @@
 
 
 <meta name="description" content="linux下程序异常退出时，会在当前工作目录下生成一个core文件，记录内存转储的信息，有助于debug。可以用gdb调试core文件。
-
 开启core文件的生成ulimit -c命令可以查看core文件的大小，若为0，说明内核不生成core文件。可以使用ulimit -c size设置core文件大小为size，或者使用ulimit -c unlimited不限制生成core文件大小。
-设置co">
+设置cor">
 <meta property="og:type" content="article">
 <meta property="og:title" content="linux下core文件调试">
 <meta property="og:url" content="http://yoursite.com/2016/07/09/linux下core文件调试/index.html">
 <meta property="og:site_name" content="lim's thinking">
 <meta property="og:description" content="linux下程序异常退出时，会在当前工作目录下生成一个core文件，记录内存转储的信息，有助于debug。可以用gdb调试core文件。
-
 开启core文件的生成ulimit -c命令可以查看core文件的大小，若为0，说明内核不生成core文件。可以使用ulimit -c size设置core文件大小为size，或者使用ulimit -c unlimited不限制生成core文件大小。
-设置co">
-<meta property="og:updated_time" content="2016-07-30T05:31:34.250Z">
+设置cor">
+<meta property="og:updated_time" content="2016-08-10T12:53:12.115Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux下core文件调试">
 <meta name="twitter:description" content="linux下程序异常退出时，会在当前工作目录下生成一个core文件，记录内存转储的信息，有助于debug。可以用gdb调试core文件。
-
 开启core文件的生成ulimit -c命令可以查看core文件的大小，若为0，说明内核不生成core文件。可以使用ulimit -c size设置core文件大小为size，或者使用ulimit -c unlimited不限制生成core文件大小。
-设置co">
+设置cor">
 
 
 
@@ -165,7 +162,7 @@
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
-  <p class="site-subtitle">厘米之思，终致千里</p>
+  <p class="site-subtitle">厘米之思，终至千里</p>
 </div>
 
 <div class="site-nav-toggle">
@@ -308,11 +305,9 @@
 
       
         <p>linux下程序异常退出时，会在当前工作目录下生成一个core文件，记录内存转储的信息，有助于debug。可以用gdb调试core文件。</p>
-<ul>
-<li>开启core文件的生成<br><code>ulimit -c</code>命令可以查看core文件的大小，若为0，说明内核不生成core文件。<br>可以使用<code>ulimit -c size</code>设置core文件大小为<em>size</em>，或者使用<code>ulimit -c unlimited</code>不限制生成core文件大小。</li>
-<li>设置core文件名格式<br>若不设置core文件的扩展名，则会全部命名为core，新的core会覆盖旧的core。<br>在<em>/proc/sys/kernel</em>路径下的以<em>core_</em>开头的文件可以设置core文件的扩展名。<br>比较常用的是<em>core_uses_pid</em>文件。文件内容为0表示生成的core文件都命名为core；内容为1表示添加进程pid作为扩展名，生成的格式为core.pid。更多的格式可以在<em>core_pattern</em>中设置。</li>
-<li>调试core文件<br>可以使用gdb调试core文件（编译时需要加入-g选项，不然gdb无法查找变量符号，只会显示类型信息），命令<code>gdb program core_file</code>。<br>在gdb界面，可以使用bt查看程序出错时的堆栈信息。</li>
-</ul>
+<h2 id="开启core文件的生成"><a href="#开启core文件的生成" class="headerlink" title="开启core文件的生成"></a>开启core文件的生成</h2><p><code>ulimit -c</code>命令可以查看core文件的大小，若为0，说明内核不生成core文件。<br>可以使用<code>ulimit -c size</code>设置core文件大小为<em>size</em>，或者使用<code>ulimit -c unlimited</code>不限制生成core文件大小。</p>
+<h2 id="设置core文件名格式"><a href="#设置core文件名格式" class="headerlink" title="设置core文件名格式"></a>设置core文件名格式</h2><p>若不设置core文件的扩展名，则会全部命名为core，新的core会覆盖旧的core。<br>在<em>/proc/sys/kernel</em>路径下的以<em>core_</em>开头的文件可以设置core文件的扩展名。<br>比较常用的是<em>core_uses_pid</em>文件。文件内容为0表示生成的core文件都命名为core；内容为1表示添加进程pid作为扩展名，生成的格式为core.pid。更多的格式可以在<em>core_pattern</em>中设置。</p>
+<h2 id="调试core文件"><a href="#调试core文件" class="headerlink" title="调试core文件"></a>调试core文件</h2><p>可以使用gdb调试core文件（编译时需要加入-g选项，不然gdb无法查找变量符号，只会显示类型信息），命令<code>gdb program core_file</code>。<br>在gdb界面，可以使用bt查看程序出错时的堆栈信息。</p>
 
       
     </div>
@@ -332,6 +327,14 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/操作系统/" rel="tag">#操作系统</a>
+          
+            <a href="/tags/C/" rel="tag">#C++</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
@@ -344,6 +347,10 @@
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/08/10/全排列生成算法/" rel="prev" title="全排列生成算法">
+                全排列生成算法 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -415,7 +422,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">59</span>
+              <span class="site-state-item-count">57</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -425,7 +432,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -465,7 +472,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#开启core文件的生成"><span class="nav-number">1.</span> <span class="nav-text">开启core文件的生成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置core文件名格式"><span class="nav-number">2.</span> <span class="nav-text">设置core文件名格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#调试core文件"><span class="nav-number">3.</span> <span class="nav-text">调试core文件</span></a></li></ol></div>
             
           </div>
         </section>
