@@ -304,8 +304,10 @@
       
         
           
-            <p>给定一个数组或者字符串（只要能表示一个序列就行），含有n个元素，则它共有n!种全排列方式。那么如何生成所有的全排列序列呢？可以有递归和非递归方法。递归的较简单，不说了，主要说下非递归方法。说之前，首先得先看看全排列序列有什么性质。<br>对于一个{1,2,3}序列，有6种全排列方式，按照朴素的交换相邻元素方法写出来：{1,2,3}，{1,3,2}，{2,1,3}，{2,3,1}，{3,1,2}，{3,2,1}。可以观察到，这6个全排列序列实际是按字典序递增的。因此，我们可以定义一个序列的“前一个”和“后一个”全排列序列概念：给定一个序列，在字典序小于它的所有全排列序列中，字典序最大的那个序列称为它的前一个全排列序列；在字典序大于它的所有全排列序列中，字典序最小的那个序列称为它的后一个全排列序列。为了能循环起来，可以定义所有全排列序列中，字典序最大的序列的后一个是字典序最小的那个序列，，字典序最小的序列的前一个是字典序最大的那个序列。对于{2,1,3}，它的前一个序列是{1,3,2}，后一个序列是{2,3,1}；而对于{3,2,1}来说，前一个序列是{3,1,2}，后一个序列是{1,2,3}。<br>这样，已知一个序列后，可以不断计算它的后一个序列直到该序列等于它自身，就可得到所有的全排列方式。那么如何计算前一个和后一个序列呢？其实也很简单，根据字典序的性质就可以推导出，下面以计算后一个序列为例。<br>观察一个序列的全排列，可以看出，字典序最小的那个序列，它的所有元素是一个非降序排列，而字典序最大的那个序列是个非升序排列。因此，当一个序列的元素已经是非升序排列时，它就已经是最大字典序的序列，否则总能通过交换元素位置找到更大字典序的序列。<br>由此，给定一个序列A={a[0],a[1],..,a[n-1]}。我们首先从序列末尾开始向前，找到最长的非升序子序列的起点坐标i，使得a[i-1] &lt; a[i]，且从a[i]到a[n-1]是一个非升序序列A[i,n-1]。这样，A[i,n-1]已经是字典序最大的子序列了，没法通过交换元素形成一个更大字典序的子序列，除非扩展子序列的边界。这时，考虑到A的后一个序列是字典序仅大于A的，因此A的后一个序列只能是从a[i-1]开始和A不同的序列。也就是说，需要在子序列A[i-1,n-1]中通过交换找到字典序仅大于原始的序列。<br>由于A[i-1,n-1]已经是a[i-1]开头的最大字典序的序列了，所以需要交换a[i-1]。那么a[i-1]和谁交换呢？很显然，为了保证字典序递增，需要找到A[i,n-1]子序列中仅大于a[i-1]的那项。于是，继续从A[i,n-1]的末尾开始向前，寻找第一个大于a[i-1]的元素。假设找到该元素是a[j]，则交换a[i-1]和a[j]，接着需要处理剩下的新的子序列A[i,n-1]部分。<br>由于以a[j]开头的序列已经比原来a[i-1]开头的序列字典序大了，所以为了后面的序列能够保证字典序递增，A[i,n-1]应当为最小字典序的排列方式，也就是非降序排列方式。正常情况下这里似乎需要一次排序，但实际上不用。因为原始的A[i,n-1]是一个非升序序列，而a[i-1]和a[j]交换后，依然保持着非升序性质，所以这里直接翻转A[i,n-1]就能得到一个非降序序列了。<br>这样处理完，就得到了后一个序列。算法还是很简明的，总结分四步：1.找到序列从尾到头最长非增子序列的开头a[i]；2.找到序列从尾到a[i]中的第一个大于a[i-1]的元素a[j];3.交换a[i-1]和a[j]；4.翻转a[i]到a[n-1]。下面上代码。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取后一个序列，直接在seq引用上操作</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">nextPermutation</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp; seq)</span> </span>&#123;</span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;::reverse_iterator i = seq.rbegin(), left = i + <span class="number">1</span>;</span><br><span class="line">	<span class="comment">// 找到最长非升序子区间A[i,n-1]</span></span><br><span class="line">	<span class="keyword">while</span>(left != seq.rend() &amp;&amp; *left &gt;= *i) &#123;</span><br><span class="line">		++i;</span><br><span class="line">		++left;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// 全部非升序，则已经是最大字典序，返回最小字典序序列</span></span><br><span class="line">	<span class="keyword">if</span>(i == seq.rend() - <span class="number">1</span>) reverse(seq.rbegin(), seq.rend()); 	</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;::reverse_iterator j = seq.rbegin();</span><br><span class="line">		<span class="keyword">while</span>(j != i &amp;&amp; *j &lt;= *left) ++j; <span class="comment">// 找到A[i,n-1]区间里仅大于a[i-1]的元素</span></span><br><span class="line">		swap(*left, *j); <span class="comment">// 交换</span></span><br><span class="line">		reverse(seq.rbegin(), left); <span class="comment">// 翻转</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>至于计算前一个序列，思路一样，只不过要反着来：1.找到序列从尾到头最长非减子序列的开头a[i]；2.找到序列从尾到a[i]中的第一个小于a[i-1]的元素a[j];3.交换a[i-1]和a[j]；4.翻转a[i]到a[n-1]。上代码。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取前一个序列，直接在seq引用上操作</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">prePermutation</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp; seq)</span> </span>&#123;</span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;::reverse_iterator i = seq.rbegin(), left = i + <span class="number">1</span>;</span><br><span class="line">	<span class="comment">// 找到最长非降序子区间A[i,n-1]</span></span><br><span class="line">	<span class="keyword">while</span>(left != seq.rend() &amp;&amp; *left &lt;= *i) &#123;</span><br><span class="line">		++i;</span><br><span class="line">		++left;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// 全部非降序序，则已经是最小字典序，返回最大字典序序列</span></span><br><span class="line">	<span class="keyword">if</span>(i == seq.rend() - <span class="number">1</span>) reverse(seq.rbegin(), seq.rend()); 	</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;::reverse_iterator j = seq.rbegin();</span><br><span class="line">		<span class="keyword">while</span>(j != i &amp;&amp; *j &gt;= *left) ++j; <span class="comment">// 找到A[i,n-1]区间里仅小于a[i-1]的元素</span></span><br><span class="line">		swap(*left, *j); <span class="comment">// 交换</span></span><br><span class="line">		reverse(seq.rbegin(), left); <span class="comment">// 翻转</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+            <p>给定一个数组或者字符串（只要能表示一个序列就行），含有n个元素，则它共有n!种全排列方式。那么如何生成所有的全排列序列呢？可以有递归和非递归方法。递归的较简单，不说了，主要说下非递归方法。说之前，首先得先看看全排列序列有什么性质。</p>
+<h2 id="基于字典序的全排列"><a href="#基于字典序的全排列" class="headerlink" title="基于字典序的全排列"></a>基于字典序的全排列</h2><p>对于一个{1,2,3}序列，有6种全排列方式，按照朴素的交换相邻元素方法写出来：{1,2,3}，{1,3,2}，{2,1,3}，{2,3,1}，{3,1,2}，{3,2,1}。可以观察到，这6个全排列序列实际是按字典序递增的。因此，我们可以定义一个序列的“前一个”和“后一个”全排列序列概念：给定一个序列，在字典序小于它的所有全排列序列中，字典序最大的那个序列称为它的前一个全排列序列；在字典序大于它的所有全排列序列中，字典序最小的那个序列称为它的后一个全排列序列。为了能循环起来，可以定义所有全排列序列中，字典序最大的序列的后一个是字典序最小的那个序列，，字典序最小的序列的前一个是字典序最大的那个序列。对于{2,1,3}，它的前一个序列是{1,3,2}，后一个序列是{2,3,1}；而对于{3,2,1}来说，前一个序列是{3,1,2}，后一个序列是{1,2,3}。<br>这样，已知一个序列后，可以不断计算它的后一个序列直到该序列等于它自身，就可得到所有的全排列方式。那么如何计算前一个和后一个序列呢？其实也很简单，根据字典序的性质就可以推导出，下面以计算后一个序列为例。</p>
+<h2 id="计算后一个序列"><a href="#计算后一个序列" class="headerlink" title="计算后一个序列"></a>计算后一个序列</h2><p>观察一个序列的全排列，可以看出，字典序最小的那个序列，它的所有元素是一个非降序排列，而字典序最大的那个序列是个非升序排列。因此，当一个序列的元素已经是非升序排列时，它就已经是最大字典序的序列，否则总能通过交换元素位置找到更大字典序的序列。<br>由此，给定一个序列A={a[0],a[1],..,a[n-1]}。我们首先从序列末尾开始向前，找到最长的非升序子序列的起点坐标i，使得a[i-1] &lt; a[i]，且从a[i]到a[n-1]是一个非升序序列A[i,n-1]。这样，A[i,n-1]已经是字典序最大的子序列了，没法通过交换元素形成一个更大字典序的子序列，除非扩展子序列的边界。这时，考虑到A的后一个序列是字典序仅大于A的，因此A的后一个序列只能是从a[i-1]开始和A不同的序列。也就是说，需要在子序列A[i-1,n-1]中通过交换找到字典序仅大于原始的序列。<br>由于A[i-1,n-1]已经是a[i-1]开头的最大字典序的序列了，所以需要交换a[i-1]。那么a[i-1]和谁交换呢？很显然，为了保证字典序递增，需要找到A[i,n-1]子序列中仅大于a[i-1]的那项。于是，继续从A[i,n-1]的末尾开始向前，寻找第一个大于a[i-1]的元素。假设找到该元素是a[j]，则交换a[i-1]和a[j]，接着需要处理剩下的新的子序列A[i,n-1]部分。<br>由于以a[j]开头的序列已经比原来a[i-1]开头的序列字典序大了，所以为了后面的序列能够保证字典序递增，A[i,n-1]应当为最小字典序的排列方式，也就是非降序排列方式。正常情况下这里似乎需要一次排序，但实际上不用。因为原始的A[i,n-1]是一个非升序序列，而a[i-1]和a[j]交换后，依然保持着非升序性质，所以这里直接翻转A[i,n-1]就能得到一个非降序序列了。<br>这样处理完，就得到了后一个序列。算法还是很简明的，总结分四步：1.找到序列从尾到头最长非增子序列的开头a[i]；2.找到序列从尾到a[i]中的第一个大于a[i-1]的元素a[j];3.交换a[i-1]和a[j]；4.翻转a[i]到a[n-1]。下面上代码。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取后一个序列，直接在seq引用上操作</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">nextPermutation</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp; seq)</span> </span>&#123;</span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;::reverse_iterator i = seq.rbegin(), left = i + <span class="number">1</span>;</span><br><span class="line">	<span class="comment">// 找到最长非升序子区间A[i,n-1]</span></span><br><span class="line">	<span class="keyword">while</span>(left != seq.rend() &amp;&amp; *left &gt;= *i) &#123;</span><br><span class="line">		++i;</span><br><span class="line">		++left;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// 全部非升序，则已经是最大字典序，返回最小字典序序列</span></span><br><span class="line">	<span class="keyword">if</span>(i == seq.rend() - <span class="number">1</span>) reverse(seq.rbegin(), seq.rend()); 	</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;::reverse_iterator j = seq.rbegin();</span><br><span class="line">		<span class="keyword">while</span>(j != i &amp;&amp; *j &lt;= *left) ++j; <span class="comment">// 找到A[i,n-1]区间里仅大于a[i-1]的元素</span></span><br><span class="line">		swap(*left, *j); <span class="comment">// 交换</span></span><br><span class="line">		reverse(seq.rbegin(), left); <span class="comment">// 翻转</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="计算前一个序列"><a href="#计算前一个序列" class="headerlink" title="计算前一个序列"></a>计算前一个序列</h2><p>至于计算前一个序列，思路一样，只不过要反着来：1.找到序列从尾到头最长非减子序列的开头a[i]；2.找到序列从尾到a[i]中的第一个小于a[i-1]的元素a[j];3.交换a[i-1]和a[j]；4.翻转a[i]到a[n-1]。上代码。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取前一个序列，直接在seq引用上操作</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">prePermutation</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp; seq)</span> </span>&#123;</span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;::reverse_iterator i = seq.rbegin(), left = i + <span class="number">1</span>;</span><br><span class="line">	<span class="comment">// 找到最长非降序子区间A[i,n-1]</span></span><br><span class="line">	<span class="keyword">while</span>(left != seq.rend() &amp;&amp; *left &lt;= *i) &#123;</span><br><span class="line">		++i;</span><br><span class="line">		++left;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// 全部非降序序，则已经是最小字典序，返回最大字典序序列</span></span><br><span class="line">	<span class="keyword">if</span>(i == seq.rend() - <span class="number">1</span>) reverse(seq.rbegin(), seq.rend()); 	</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;::reverse_iterator j = seq.rbegin();</span><br><span class="line">		<span class="keyword">while</span>(j != i &amp;&amp; *j &gt;= *left) ++j; <span class="comment">// 找到A[i,n-1]区间里仅小于a[i-1]的元素</span></span><br><span class="line">		swap(*left, *j); <span class="comment">// 交换</span></span><br><span class="line">		reverse(seq.rbegin(), left); <span class="comment">// 翻转</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>这样我们就得到了计算前一个和后一个全排列序列的方法。实际上，C++的STL里的<em>next_permutation</em>函数和<em>pre_permutation</em>函数就是用这种思路实现的。</p>
 
           
@@ -357,7 +359,7 @@
               
                 
                 <a class="post-title-link" href="/2016/07/09/linux下core文件调试/" itemprop="url">
-                  linux下core文件调试
+                  Linux下core文件调试
                 </a>
               
             
@@ -408,9 +410,9 @@
         
           
             <p>linux下程序异常退出时，会在当前工作目录下生成一个core文件，记录内存转储的信息，有助于debug。可以用gdb调试core文件。</p>
-<h2 id="开启core文件的生成"><a href="#开启core文件的生成" class="headerlink" title="开启core文件的生成"></a>开启core文件的生成</h2><p><code>ulimit -c</code>命令可以查看core文件的大小，若为0，说明内核不生成core文件。<br>可以使用<code>ulimit -c size</code>设置core文件大小为<em>size</em>，或者使用<code>ulimit -c unlimited</code>不限制生成core文件大小。</p>
-<h2 id="设置core文件名格式"><a href="#设置core文件名格式" class="headerlink" title="设置core文件名格式"></a>设置core文件名格式</h2><p>若不设置core文件的扩展名，则会全部命名为core，新的core会覆盖旧的core。<br>在<em>/proc/sys/kernel</em>路径下的以<em>core_</em>开头的文件可以设置core文件的扩展名。<br>比较常用的是<em>core_uses_pid</em>文件。文件内容为0表示生成的core文件都命名为core；内容为1表示添加进程pid作为扩展名，生成的格式为core.pid。更多的格式可以在<em>core_pattern</em>中设置。</p>
-<h2 id="调试core文件"><a href="#调试core文件" class="headerlink" title="调试core文件"></a>调试core文件</h2><p>可以使用gdb调试core文件（编译时需要加入-g选项，不然gdb无法查找变量符号，只会显示类型信息），命令<code>gdb program core_file</code>。<br>在gdb界面，可以使用bt查看程序出错时的堆栈信息。</p>
+<h2 id="开启core文件的生成"><a href="#开启core文件的生成" class="headerlink" title="开启core文件的生成"></a>开启core文件的生成</h2><p><code>ulimit -c</code>命令可以查看core文件的大小，若为0，说明内核不生成core文件。<br>可以使用<code>ulimit -c size</code>设置core文件大小为<em>size</em>，但是若文件大小超过<em>size</em>则会被截断，所以想获得完整的core文件的话，还是使用<code>ulimit -c unlimited</code>，这样就不会限制生成的core文件大小了。</p>
+<h2 id="设置core文件名格式"><a href="#设置core文件名格式" class="headerlink" title="设置core文件名格式"></a>设置core文件名格式</h2><p>若不设置core文件的扩展名，则会全部命名为core，新的core会覆盖旧的core。<br>在<em>/proc/sys/kernel</em>路径下的以<em>core_</em>开头的文件可以设置core文件的扩展名。<br>比较常用的是<em>core_uses_pid</em>文件。文件内容为0表示生成的core文件都命名为core；内容为1表示添加进程pid作为扩展名，生成的格式为core.pid。更多的格式可以在<em>core_pattern</em>文件中设置。</p>
+<h2 id="调试core文件"><a href="#调试core文件" class="headerlink" title="调试core文件"></a>调试core文件</h2><p>可以使用gdb调试core文件（编译时需要加入-g选项，不然gdb无法查找变量符号，只会显示类型信息），命令<code>gdb [exec_file] [core_file]</code>。<br>在gdb界面，可以使用bt查看程序出错时的堆栈信息。</p>
 
           
         
@@ -774,6 +776,107 @@
             
               
                 
+                <a class="post-title-link" href="/2016/06/12/TIME_WAIT状态存在意义/" itemprop="url">
+                  TIME_WAIT状态存在意义
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-12T11:40:18+08:00" content="2016-06-12">
+              2016-06-12
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/06/12/TIME_WAIT状态存在意义/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/12/TIME_WAIT状态存在意义/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>TCP关闭连接时，主动关闭的一端在发送最后一个ack后就会进入TIME_WAIT状态，停留2个MSL（max segment lifetime）时间。那么为什么不直接回到CLOSED状态呢？TCP/IP设计者为什么要这么设计呢？<br>主要有两个原因：<br>1.保证可靠的关闭TCP连接。在主动关闭方发送的最后一个ack(fin) ，有可能丢失，这时被动方会重新发fin, 如果这时主动方处于CLOSED 状态，就会响应rst而不是ack。所以主动方要处于TIME_WAIT状态，而不能是CLOSED 。<br>2.防止上一次连接中的包，迷路后重新出现，影响新连接（经过2MSL，上一次连接中所有的重复包都会消失）<br>附一个TCP状态转换图，来自《UNIX网络编程》。<br><img src="/uploads/exchange.jpg" alt=""></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/06/11/编程的一些随想/" itemprop="url">
                   编程的一些随想
                 </a>
@@ -826,113 +929,6 @@
         
           
             <p>随时记录一些编程中的感触，保持更新。<br>1.过早的优化是万恶之源！Knuth神说的。在没有出现瓶颈前，先专注更重要的事，first things first！<br>2.如果在项目中使用了自己写不出来的库，出问题是迟早的事。懂原理，而且自己能够实现才是最好的，当然并不是说非要再造一遍轮子。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/06/04/new数组初始化/" itemprop="url">
-                  new数组初始化
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-04T10:22:18+08:00" content="2016-06-04">
-              2016-06-04
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/06/04/new数组初始化/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/04/new数组初始化/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ul>
-<li><p>一维数组</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> * a = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2</span>]; <span class="comment">// 默认初始化</span></span><br><span class="line"><span class="keyword">int</span> * b = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2</span>](); <span class="comment">// 值初始化，必须是空括号</span></span><br><span class="line"><span class="keyword">int</span> * c = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2</span>]&#123;<span class="number">2</span>,<span class="number">1</span>&#125;; <span class="comment">// C++11，列表初始化</span></span><br><span class="line">...</span><br><span class="line"><span class="comment">// 当然，最后不要忘了</span></span><br><span class="line"><span class="keyword">delete</span> [] a;</span><br><span class="line">a = <span class="literal">NULL</span>;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>二维数组</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> ** d = <span class="keyword">new</span> <span class="keyword">int</span>*[m]; </span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; ++i) &#123;</span><br><span class="line">    d[i] = <span class="keyword">new</span> <span class="keyword">int</span>[n];</span><br><span class="line">&#125; </span><br><span class="line">... </span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++)</span><br><span class="line">    <span class="keyword">delete</span> [] d[i]; </span><br><span class="line"><span class="keyword">delete</span> [] d;</span><br></pre></td></tr></table></figure></li>
-</ul>
 
           
         
@@ -1316,7 +1312,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">58</span>
+              <span class="site-state-item-count">55</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1326,7 +1322,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

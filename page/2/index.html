@@ -873,8 +873,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/05/04/5月4号摩根电面/" itemprop="url">
-                  5月4号摩根电面
+                <a class="post-title-link" href="/2016/05/03/大端和小端模式/" itemprop="url">
+                  大端和小端模式
                 </a>
               
             
@@ -887,8 +887,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-04T14:02:55+08:00" content="2016-05-04">
-              2016-05-04
+            <time itemprop="dateCreated" datetime="2016-05-03T22:46:28+08:00" content="2016-05-03">
+              2016-05-03
             </time>
           </span>
 
@@ -898,8 +898,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/05/04/5月4号摩根电面/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/04/5月4号摩根电面/" itemprop="commentsCount"></span>
+                <a href="/2016/05/03/大端和小端模式/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/03/大端和小端模式/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -924,7 +924,10 @@
       
         
           
-            <p>全程英语，口语坑！<br>还记得的问题：<br>1.最有趣的项目，难点是什么<br>2.为啥来摩根<br>3.内存泄露，怎么阻止，智能指针，什么时候引用递增和递减，什么时候出作用域<br>4.传值，传引用<br>5.虚函数表，结构，继承时的表结构<br>6.哈希表，怎么实现，有冲突时怎么办<br>7.快排，归并，比归并好在哪<br>8.开放题：设计一个有效内存存储方式，存10亿电话号。（bit hash）怎么提升？（prefix？）<br>9.对hr提问。</p>
+            <p>大于一个字节的结构（例如int）存储数据时，会产生不同字节序。<br>小端模式：内存低地址存数据的低位。<br>大端模式：内存低地址存数据的高位。</p>
+<p>可以使用union判断处理器的大小端。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">checkLittleEndian</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">union</span> u &#123;</span><br><span class="line">		<span class="keyword">int</span> a;</span><br><span class="line">		<span class="keyword">char</span> b;</span><br><span class="line">	&#125;;</span><br><span class="line">	u c = &#123;<span class="number">1</span>&#125;; <span class="comment">// 提供值，会初始化第一个成员a</span></span><br><span class="line">	<span class="keyword">return</span> (c.b == <span class="number">1</span>) ? <span class="literal">true</span> : <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>union中的成员都是从低地址开始存放。本例中union共分配了4个字节，存a成员时使用内存地址从低到高的4个字节，存b成员时使用内存地址最低的一个字节，所以可以从b的值来看出低地址端存的是什么值。<br>1的存储形式是0x00 00 00 01，所以数据的最低位是01，最高位是00。若是小端存储，则低地址端存01，若是大端存储，则低地址端存00。由此，b的值为1时是小端模式，为0时是大端模式。</p>
+<p>好文：<a href="http://blog.csdn.net/hackbuteer1/article/details/7722667" target="_blank" rel="external">http://blog.csdn.net/hackbuteer1/article/details/7722667</a></p>
 
           
         
@@ -1075,110 +1078,6 @@
             
               
                 
-                <a class="post-title-link" href="/2016/05/03/大端和小端模式/" itemprop="url">
-                  大端和小端模式
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-03T22:46:28+08:00" content="2016-05-03">
-              2016-05-03
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/05/03/大端和小端模式/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/03/大端和小端模式/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>大于一个字节的结构（例如int）存储数据时，会产生不同字节序。<br>小端模式：内存低地址存数据的低位。<br>大端模式：内存低地址存数据的高位。</p>
-<p>可以使用union判断处理器的大小端。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">checkLittleEndian</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">union</span> u &#123;</span><br><span class="line">		<span class="keyword">int</span> a;</span><br><span class="line">		<span class="keyword">char</span> b;</span><br><span class="line">	&#125;;</span><br><span class="line">	u c = &#123;<span class="number">1</span>&#125;; <span class="comment">// 提供值，会初始化第一个成员a</span></span><br><span class="line">	<span class="keyword">return</span> (c.b == <span class="number">1</span>) ? <span class="literal">true</span> : <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>union中的成员都是从低地址开始存放。本例中union共分配了4个字节，存a成员时使用内存地址从低到高的4个字节，存b成员时使用内存地址最低的一个字节，所以可以从b的值来看出低地址端存的是什么值。<br>1的存储形式是0x00 00 00 01，所以数据的最低位是01，最高位是00。若是小端存储，则低地址端存01，若是大端存储，则低地址端存00。由此，b的值为1时是小端模式，为0时是大端模式。</p>
-<p>好文：<a href="http://blog.csdn.net/hackbuteer1/article/details/7722667" target="_blank" rel="external">http://blog.csdn.net/hackbuteer1/article/details/7722667</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
                 <a class="post-title-link" href="/2016/05/03/C-中new和malloc区别/" itemprop="url">
                   C++中new和malloc区别
                 </a>
@@ -1259,6 +1158,107 @@
 
 
     
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/04/27/卡特兰数/" itemprop="url">
+                  卡特兰数
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-27T00:07:34+08:00" content="2016-04-27">
+              2016-04-27
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/27/卡特兰数/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/27/卡特兰数/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>没空写了，感觉这个写的挺好，mark一下。<br><a href="http://blog.csdn.net/hackbuteer1/article/details/7450250" target="_blank" rel="external">http://blog.csdn.net/hackbuteer1/article/details/7450250</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
   </section>
 
   
@@ -1304,7 +1304,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">58</span>
+              <span class="site-state-item-count">55</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1314,7 +1314,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

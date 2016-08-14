@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="blog, 李明, IT" />
+  <meta name="keywords" content="Web," />
 
 
 
@@ -84,16 +84,18 @@
 
 
 
-<meta name="description" content="全程英语，口语坑！还记得的问题：1.最有趣的项目，难点是什么2.为啥来摩根3.内存泄露，怎么阻止，智能指针，什么时候引用递增和递减，什么时候出作用域4.传值，传引用5.虚函数表，结构，继承时的表结构6.哈希表，怎么实现，有冲突时怎么办7.快排，归并，比归并好在哪8.开放题：设计一个有效内存存储方式，存10亿电话号。（bit hash）怎么提升？（prefix？）9.对hr提问。">
+<meta name="description" content="TCP关闭连接时，主动关闭的一端在发送最后一个ack后就会进入TIME_WAIT状态，停留2个MSL（max segment lifetime）时间。那么为什么不直接回到CLOSED状态呢？TCP/IP设计者为什么要这么设计呢？主要有两个原因：1.保证可靠的关闭TCP连接。在主动关闭方发送的最后一个ack(fin) ，有可能丢失，这时被动方会重新发fin, 如果这时主动方处于CLOSED 状态，就">
 <meta property="og:type" content="article">
-<meta property="og:title" content="5月4号摩根电面">
-<meta property="og:url" content="http://yoursite.com/2016/05/04/5月4号摩根电面/index.html">
+<meta property="og:title" content="TIME_WAIT状态存在意义">
+<meta property="og:url" content="http://yoursite.com/2016/06/12/TIME_WAIT状态存在意义/index.html">
 <meta property="og:site_name" content="lim's thinking">
-<meta property="og:description" content="全程英语，口语坑！还记得的问题：1.最有趣的项目，难点是什么2.为啥来摩根3.内存泄露，怎么阻止，智能指针，什么时候引用递增和递减，什么时候出作用域4.传值，传引用5.虚函数表，结构，继承时的表结构6.哈希表，怎么实现，有冲突时怎么办7.快排，归并，比归并好在哪8.开放题：设计一个有效内存存储方式，存10亿电话号。（bit hash）怎么提升？（prefix？）9.对hr提问。">
-<meta property="og:updated_time" content="2016-05-21T12:01:27.544Z">
+<meta property="og:description" content="TCP关闭连接时，主动关闭的一端在发送最后一个ack后就会进入TIME_WAIT状态，停留2个MSL（max segment lifetime）时间。那么为什么不直接回到CLOSED状态呢？TCP/IP设计者为什么要这么设计呢？主要有两个原因：1.保证可靠的关闭TCP连接。在主动关闭方发送的最后一个ack(fin) ，有可能丢失，这时被动方会重新发fin, 如果这时主动方处于CLOSED 状态，就">
+<meta property="og:image" content="http://yoursite.com/uploads/exchange.jpg">
+<meta property="og:updated_time" content="2016-08-12T15:49:05.339Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="5月4号摩根电面">
-<meta name="twitter:description" content="全程英语，口语坑！还记得的问题：1.最有趣的项目，难点是什么2.为啥来摩根3.内存泄露，怎么阻止，智能指针，什么时候引用递增和递减，什么时候出作用域4.传值，传引用5.虚函数表，结构，继承时的表结构6.哈希表，怎么实现，有冲突时怎么办7.快排，归并，比归并好在哪8.开放题：设计一个有效内存存储方式，存10亿电话号。（bit hash）怎么提升？（prefix？）9.对hr提问。">
+<meta name="twitter:title" content="TIME_WAIT状态存在意义">
+<meta name="twitter:description" content="TCP关闭连接时，主动关闭的一端在发送最后一个ack后就会进入TIME_WAIT状态，停留2个MSL（max segment lifetime）时间。那么为什么不直接回到CLOSED状态呢？TCP/IP设计者为什么要这么设计呢？主要有两个原因：1.保证可靠的关闭TCP连接。在主动关闭方发送的最后一个ack(fin) ，有可能丢失，这时被动方会重新发fin, 如果这时主动方处于CLOSED 状态，就">
+<meta name="twitter:image" content="http://yoursite.com/uploads/exchange.jpg">
 
 
 
@@ -111,7 +113,7 @@
   };
 </script>
 
-  <title> 5月4号摩根电面 | lim's thinking </title>
+  <title> TIME_WAIT状态存在意义 | lim's thinking </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -251,7 +253,7 @@
             
             
               
-                5月4号摩根电面
+                TIME_WAIT状态存在意义
               
             
           </h1>
@@ -263,8 +265,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-04T14:02:55+08:00" content="2016-05-04">
-              2016-05-04
+            <time itemprop="dateCreated" datetime="2016-06-12T11:40:18+08:00" content="2016-06-12">
+              2016-06-12
             </time>
           </span>
 
@@ -274,8 +276,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/05/04/5月4号摩根电面/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/04/5月4号摩根电面/" itemprop="commentsCount"></span>
+                <a href="/2016/06/12/TIME_WAIT状态存在意义/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/12/TIME_WAIT状态存在意义/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -298,7 +300,7 @@
       
 
       
-        <p>全程英语，口语坑！<br>还记得的问题：<br>1.最有趣的项目，难点是什么<br>2.为啥来摩根<br>3.内存泄露，怎么阻止，智能指针，什么时候引用递增和递减，什么时候出作用域<br>4.传值，传引用<br>5.虚函数表，结构，继承时的表结构<br>6.哈希表，怎么实现，有冲突时怎么办<br>7.快排，归并，比归并好在哪<br>8.开放题：设计一个有效内存存储方式，存10亿电话号。（bit hash）怎么提升？（prefix？）<br>9.对hr提问。</p>
+        <p>TCP关闭连接时，主动关闭的一端在发送最后一个ack后就会进入TIME_WAIT状态，停留2个MSL（max segment lifetime）时间。那么为什么不直接回到CLOSED状态呢？TCP/IP设计者为什么要这么设计呢？<br>主要有两个原因：<br>1.保证可靠的关闭TCP连接。在主动关闭方发送的最后一个ack(fin) ，有可能丢失，这时被动方会重新发fin, 如果这时主动方处于CLOSED 状态，就会响应rst而不是ack。所以主动方要处于TIME_WAIT状态，而不能是CLOSED 。<br>2.防止上一次连接中的包，迷路后重新出现，影响新连接（经过2MSL，上一次连接中所有的重复包都会消失）<br>附一个TCP状态转换图，来自《UNIX网络编程》。<br><img src="/uploads/exchange.jpg" alt=""></p>
 
       
     </div>
@@ -318,21 +320,27 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Web/" rel="tag">#Web</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/05/03/数据库索引/" rel="next" title="数据库索引">
-                <i class="fa fa-chevron-left"></i> 数据库索引
+              <a href="/2016/06/11/编程的一些随想/" rel="next" title="编程的一些随想">
+                <i class="fa fa-chevron-left"></i> 编程的一些随想
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/05/04/数据库范式/" rel="prev" title="数据库范式">
-                数据库范式 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/06/17/进程和线程区别/" rel="prev" title="进程和线程区别">
+                进程和线程区别 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -359,8 +367,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/05/04/5月4号摩根电面/"
-           data-title="5月4号摩根电面" data-url="http://yoursite.com/2016/05/04/5月4号摩根电面/">
+      <div class="ds-thread" data-thread-key="2016/06/12/TIME_WAIT状态存在意义/"
+           data-title="TIME_WAIT状态存在意义" data-url="http://yoursite.com/2016/06/12/TIME_WAIT状态存在意义/">
       </div>
     
   </div>
@@ -405,7 +413,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">58</span>
+              <span class="site-state-item-count">55</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -415,7 +423,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
