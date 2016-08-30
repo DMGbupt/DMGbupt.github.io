@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="blog, 李明, IT" />
+  <meta name="keywords" content="C++," />
 
 
 
@@ -84,15 +84,16 @@
 
 
 
-<meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="lim's thinking">
-<meta property="og:url" content="http://yoursite.com/archives/2015/06/index.html">
+<meta name="description" content="volatile是一种类型修饰符，用它声明的变量表示可能会被某些编译器未知的因素更改，比如：操作系统、硬件或其它线程等。由于访问寄存器比访问内存快，所以编译器一般会对代码做一些优化，直接从寄存器中读取变量缓存以减少内存操作。而一旦用volatile声明某变量，编译器就不再优化对该变量的访问代码，直接从内存原始地址读取，从而可以提供对特殊地址的稳定访问。一般说来，volatile用在如下的几个地方：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++中的volatile关键字">
+<meta property="og:url" content="http://yoursite.com/2015/11/13/C++中的volatile关键字/index.html">
 <meta property="og:site_name" content="lim's thinking">
-<meta property="og:description">
+<meta property="og:description" content="volatile是一种类型修饰符，用它声明的变量表示可能会被某些编译器未知的因素更改，比如：操作系统、硬件或其它线程等。由于访问寄存器比访问内存快，所以编译器一般会对代码做一些优化，直接从寄存器中读取变量缓存以减少内存操作。而一旦用volatile声明某变量，编译器就不再优化对该变量的访问代码，直接从内存原始地址读取，从而可以提供对特殊地址的稳定访问。一般说来，volatile用在如下的几个地方：">
+<meta property="og:updated_time" content="2016-08-30T12:24:02.039Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="lim's thinking">
-<meta name="twitter:description">
+<meta name="twitter:title" content="C++中的volatile关键字">
+<meta name="twitter:description" content="volatile是一种类型修饰符，用它声明的变量表示可能会被某些编译器未知的因素更改，比如：操作系统、硬件或其它线程等。由于访问寄存器比访问内存快，所以编译器一般会对代码做一些优化，直接从寄存器中读取变量缓存以减少内存操作。而一旦用volatile声明某变量，编译器就不再优化对该变量的访问代码，直接从内存原始地址读取，从而可以提供对特殊地址的稳定访问。一般说来，volatile用在如下的几个地方：">
 
 
 
@@ -110,7 +111,7 @@
   };
 </script>
 
-  <title> 归档 | lim's thinking </title>
+  <title> C++中的volatile关键字 | lim's thinking </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -141,7 +142,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  page-archive  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -229,176 +230,132 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
-
-    <span class="archive-page-counter">
-      
-      
-       
-        
-      好! 目前共计 56 篇日志。 继续努力。
-    </span>
-
+  <div id="posts" class="posts-expand">
     
-
-      
-      
-      
-
-      
-        
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2015">2015</h2>
-        </div>
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2015/06/23/CSRF攻击/" itemprop="url">
-              
-                <span itemprop="name">CSRF攻击</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2015-06-23T22:53:11+08:00"
-              content="2015-06-23" >
-          06-23
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2015/06/21/页面内跳转/" itemprop="url">
-              
-                <span itemprop="name">网页内跳转</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2015-06-21T21:45:39+08:00"
-              content="2015-06-21" >
-          06-21
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2015/06/04/引入css的方式/" itemprop="url">
-              
-                <span itemprop="name">引入css的方式</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2015-06-04T22:46:28+08:00"
-              content="2015-06-04" >
-          06-04
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2015/06/02/哈希表和冲突处理/" itemprop="url">
-              
-                <span itemprop="name">哈希表和冲突处理</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2015-06-02T13:48:14+08:00"
-              content="2015-06-02" >
-          06-02
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-  </section>
 
   
+  
 
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                C++中的volatile关键字
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-11-13T18:50:43+08:00" content="2015-11-13">
+              2015-11-13
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/11/13/C++中的volatile关键字/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/11/13/C++中的volatile关键字/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>volatile是一种类型修饰符，用它声明的变量表示可能会被某些编译器未知的因素更改，比如：操作系统、硬件或其它线程等。<br>由于访问寄存器比访问内存快，所以编译器一般会对代码做一些优化，直接从寄存器中读取变量缓存以减少内存操作。而一旦用volatile声明某变量，编译器就不再优化对该变量的访问代码，直接从内存原始地址读取，从而可以<strong>提供对特殊地址的稳定访问</strong>。<br>一般说来，volatile用在如下的几个地方：<br>中断服务程序中修改的供其它程序检测的变量需要加volatile；<br>多任务环境下各任务间共享的标志应该加volatile；<br>存储器映射的硬件寄存器通常也要加volatile说明，因为每次对它的读写都可能有不同意义。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/C/" rel="tag">#C++</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/10/09/new数组初始化/" rel="next" title="new数组初始化">
+                <i class="fa fa-chevron-left"></i> new数组初始化
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/02/12/C++函数名疑问/" rel="prev" title="C++函数名疑问">
+                C++函数名疑问 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -406,6 +363,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2015/11/13/C++中的volatile关键字/"
+           data-title="C++中的volatile关键字" data-url="http://yoursite.com/2015/11/13/C++中的volatile关键字/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -425,8 +390,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -480,6 +454,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -583,11 +568,9 @@
 
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
 
 
   
