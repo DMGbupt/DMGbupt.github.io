@@ -511,10 +511,10 @@
       
         
           
-            <p>1.const修饰成员变量<br>const修饰类的成员变量，表示成员是常量，不能被修改，同时它只能在初始化列表中赋值。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> A</span><br><span class="line">&#123; </span><br><span class="line">    …</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> nValue;         <span class="comment">//成员常量不能被修改</span></span><br><span class="line">    …</span><br><span class="line">    A(<span class="keyword">int</span> x): nValue(x) &#123; &#125; ; <span class="comment">//只能在初始化列表中赋值</span></span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
-<p>2.const修饰成员函数<br>const修饰类的成员函数，则该成员函数不能修改类中任何成员。一般写在函数的最后来修饰。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">class</span> A</span><br><span class="line">    &#123; </span><br><span class="line">        …</span><br><span class="line">       <span class="function"><span class="keyword">void</span> <span class="title">function</span><span class="params">()</span><span class="keyword">const</span></span>; <span class="comment">//常成员函数, 它不改变对象的成员变量。也不能调用类中任何非const成员函数。</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+            <p>1.const修饰成员变量<br>const修饰类的成员变量，表示成员是常量，不能被修改，同时它只能在初始化列表中赋值。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> A &#123;</span><br><span class="line">    …</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> nValue;         <span class="comment">//成员常量不能被修改</span></span><br><span class="line">    …</span><br><span class="line">    A(<span class="keyword">int</span> x): nValue(x) &#123;&#125; ; <span class="comment">//只能在初始化列表中赋值</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>2.const修饰成员函数<br>const修饰类的成员函数，则该成员函数不能修改类中任何成员。一般写在函数的最后来修饰。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> A &#123; </span><br><span class="line">    …</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">function</span><span class="params">()</span> <span class="keyword">const</span></span>; <span class="comment">//常成员函数, 它不改变对象的成员变量。也不能调用类中任何非const成员函数。</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
 <p>如果非要在const修饰的函数里改变某成员变量，则只需用mutable修饰该成员变量即可。</p>
-<p>3.const修饰类对象/对象指针/对象引用<br>const修饰类对象表示该对象为常量对象，其中的任何成员都不能被修改，且该对象的任何非const成员函数都不能被调用，因为任何非const成员函数会有修改成员变量的企图。对于对象指针和对象引用也是一样。<br>例如：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> AAA</span><br><span class="line">&#123; </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">func1</span><span class="params">()</span></span>; </span><br><span class="line">　　<span class="function"><span class="keyword">void</span> <span class="title">func2</span><span class="params">()</span> <span class="keyword">const</span></span>; </span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">const</span> AAA aObj; </span><br><span class="line">aObj.func1(); <span class="comment">//×</span></span><br><span class="line">aObj.func2(); <span class="comment">//正确</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">const</span> AAA* aObj = <span class="keyword">new</span> AAA(); </span><br><span class="line">aObj-&gt; func1(); <span class="comment">//×</span></span><br><span class="line">aObj-&gt; func2(); <span class="comment">//正确</span></span><br></pre></td></tr></table></figure></p>
+<p>3.const修饰类对象/对象指针/对象引用<br>const修饰类对象表示该对象为常量对象，其中的任何成员都不能被修改，且该对象的任何非const成员函数都不能被调用，因为任何非const成员函数会有修改成员变量的企图。对于对象指针和对象引用也是一样。<br>例如：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> A &#123;</span><br><span class="line">    …</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">func1</span><span class="params">()</span></span>;</span><br><span class="line">　　<span class="function"><span class="keyword">void</span> <span class="title">func2</span><span class="params">()</span> <span class="keyword">const</span></span>;</span><br><span class="line">    …</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">const</span> A aObj;</span><br><span class="line">aObj.func1(); <span class="comment">//×</span></span><br><span class="line">aObj.func2(); <span class="comment">//正确</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> A* bObj = <span class="keyword">new</span> A();</span><br><span class="line">bObj-&gt; func1(); <span class="comment">//×</span></span><br><span class="line">bObj-&gt; func2(); <span class="comment">//正确</span></span><br></pre></td></tr></table></figure></p>
 
           
         
@@ -754,7 +754,7 @@
       
         
           
-            <p>区别：<br>1，MyISAM不支持事务，InnoDB支持事务<br>2，MyISAM不支持外键，InnoDB支持外键<br>3，MyISAM查询速度快，InnoDB查询速度慢<br>4, MyISAM支持表锁:<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">update</span> <span class="keyword">user</span> <span class="keyword">set</span> <span class="keyword">name</span> = <span class="string">'xiaobai'</span> <span class="keyword">where</span> <span class="keyword">id</span> = <span class="number">1</span>;</span><br></pre></td></tr></table></figure></p>
+            <p>区别：<br>1，MyISAM不支持事务，InnoDB支持事务<br>2，MyISAM不支持外键，InnoDB支持外键<br>3，MyISAM查询速度快，InnoDB查询速度慢<br>4，MyISAM支持表锁:<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">update</span> <span class="keyword">user</span> <span class="keyword">set</span> <span class="keyword">name</span> = <span class="string">'xiaobai'</span> <span class="keyword">where</span> <span class="keyword">id</span> = <span class="number">1</span>;</span><br></pre></td></tr></table></figure></p>
 <p>锁定整张表，不能插入，不能删除，不能修改，可以查询<br>InnoDB支持行锁:<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">update</span> <span class="keyword">user</span> <span class="keyword">set</span> <span class="keyword">name</span>=<span class="string">'xiaohua'</span> <span class="keyword">where</span> <span class="keyword">id</span> =<span class="number">2</span>;</span><br><span class="line"><span class="keyword">update</span> <span class="keyword">user</span> <span class="keyword">set</span> <span class="keyword">name</span> = <span class="string">'xiaohei'</span> <span class="keyword">where</span> <span class="keyword">id</span> = <span class="number">3</span>;</span><br></pre></td></tr></table></figure></p>
 <p>可以同时进行。</p>
 <p>实现：<br>MyISAM和InnoDB都是基于B+树实现，可参考：<a href="http://blog.csdn.net/tonyxf121/article/details/8393545" target="_blank" rel="external">http://blog.csdn.net/tonyxf121/article/details/8393545</a></p>
@@ -858,8 +858,8 @@
       
         
           
-            <p>函数名作为值时，自动转换为指针。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fun</span><span class="params">(<span class="keyword">int</span>, <span class="keyword">const</span> <span class="keyword">bool</span> &amp;)</span></span>; <span class="comment">// declare</span></span><br><span class="line"><span class="keyword">int</span> (*p)(<span class="keyword">int</span>, <span class="keyword">const</span> <span class="keyword">bool</span> &amp;);</span><br><span class="line">p = fun;</span><br><span class="line">p = &amp;fun;</span><br></pre></td></tr></table></figure></p>
-<p>两者等价。fun作为函数名，是一个指针，存储函数入口。直接把fun值赋给p可以理解，但是取fun地址为什么等价？fun存储了函数入口，难道fun本身的地址就是函数入口？</p>
+            <p>函数名是一个指针常量，存储函数入口地址。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fun</span><span class="params">(<span class="keyword">int</span>, <span class="keyword">const</span> <span class="keyword">bool</span> &amp;)</span></span>; <span class="comment">// declare</span></span><br><span class="line"><span class="keyword">int</span> (*p)(<span class="keyword">int</span>, <span class="keyword">const</span> <span class="keyword">bool</span> &amp;);</span><br><span class="line">p = fun;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; (<span class="keyword">unsigned</span>)p &lt;&lt; <span class="built_in">endl</span>; <span class="comment">// 4199392</span></span><br><span class="line">p = &amp;fun;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; (<span class="keyword">unsigned</span>)p &lt;&lt; <span class="built_in">endl</span>; <span class="comment">// 4199392</span></span><br></pre></td></tr></table></figure></p>
+<p>但是，将fun赋给p和取fun的地址赋给p，两者竟然都输出一样的函数地址。<br>fun作为一个指针，存储函数入口，直接把fun的值赋给p可以理解，但是取fun地址为什么等价？难道取地址符做了特殊处理？还是说fun的存储方式有所不同？</p>
 
           
         
@@ -909,109 +909,8 @@
             
               
                 
-                <a class="post-title-link" href="/2015/11/13/C++中的volatile关键字/" itemprop="url">
-                  C++中的volatile关键字
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-11-13T18:50:43+08:00" content="2015-11-13">
-              2015-11-13
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2015/11/13/C++中的volatile关键字/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/11/13/C++中的volatile关键字/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>volatile是一种类型修饰符，用它声明的变量表示可能会被某些编译器未知的因素更改，比如：操作系统、硬件或其它线程等。<br>由于访问寄存器比访问内存快，所以编译器一般会对代码做一些优化，直接从寄存器中读取变量缓存以减少内存操作。而一旦用volatile声明某变量，编译器就不再优化对该变量的访问代码，直接从内存原始地址读取，从而可以<strong>提供对特殊地址的稳定访问</strong>。<br>一般说来，volatile用在如下的几个地方：<br>中断服务程序中修改的供其它程序检测的变量需要加volatile；<br>多任务环境下各任务间共享的标志应该加volatile；<br>存储器映射的硬件寄存器通常也要加volatile说明，因为每次对它的读写都可能有不同意义。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/10/09/new数组初始化/" itemprop="url">
-                  new数组初始化
+                <a class="post-title-link" href="/2015/10/09/C++数组初始化/" itemprop="url">
+                  C++数组初始化
                 </a>
               
             
@@ -1035,8 +934,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/10/09/new数组初始化/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/09/new数组初始化/" itemprop="commentsCount"></span>
+                <a href="/2015/10/09/C++数组初始化/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/09/C++数组初始化/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -1306,6 +1205,112 @@
 
 
     
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/09/05/JavaScript字符串处理方法/" itemprop="url">
+                  JavaScript字符串处理方法
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-09-05T13:11:03+08:00" content="2015-09-05">
+              2015-09-05
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/09/05/JavaScript字符串处理方法/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/05/JavaScript字符串处理方法/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="常用原生字符串处理函数"><a href="#常用原生字符串处理函数" class="headerlink" title="常用原生字符串处理函数"></a>常用原生字符串处理函数</h2><ul>
+<li><em>string</em>.charAt(<em>pos</em>) 返回<em>pos</em>位置的字符组成的字符串，越界则返回空串<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"hello,world!"</span>;</span><br><span class="line">str.charAt(<span class="number">0</span>); <span class="comment">// "h"</span></span><br><span class="line">str.charAt(<span class="number">-1</span>); <span class="comment">// ""</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/09/05/JavaScript字符串处理方法/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
   </section>
 
   
@@ -1351,7 +1356,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">56</span>
+              <span class="site-state-item-count">52</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1361,7 +1366,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

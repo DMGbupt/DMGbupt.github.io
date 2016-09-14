@@ -253,112 +253,6 @@
             
               
                 
-                <a class="post-title-link" href="/2015/09/05/JavaScript字符串处理方法/" itemprop="url">
-                  JavaScript字符串处理方法
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-09-05T13:11:03+08:00" content="2015-09-05">
-              2015-09-05
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2015/09/05/JavaScript字符串处理方法/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/05/JavaScript字符串处理方法/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="常用原生字符串处理函数"><a href="#常用原生字符串处理函数" class="headerlink" title="常用原生字符串处理函数"></a>常用原生字符串处理函数</h2><ul>
-<li><em>string</em>.charAt(<em>pos</em>) 返回<em>pos</em>位置的字符组成的字符串，越界则返回空串<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"hello,world!"</span>;</span><br><span class="line">str.charAt(<span class="number">0</span>); <span class="comment">// "h"</span></span><br><span class="line">str.charAt(<span class="number">-1</span>); <span class="comment">// ""</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/09/05/JavaScript字符串处理方法/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
                 <a class="post-title-link" href="/2015/08/29/js数组去重/" itemprop="url">
                   js数组去重
                 </a>
@@ -511,7 +405,7 @@
       
         
           
-            <p>在JAVASCRIPT里，null和undefined都表示不存在的数据，并且undefined也是从null中继承而来，那null是什么？undefined又是什么？它们两个又有什么共性和区别呢，请看下面的描述：<br>1.null和undefined都是表示没有的、不存在的值。它们两个在进行逻辑转换时都是false，这两个值进行比较是true。<br>2.null表示空引用，它是object类型。undefined表示未定义， 它是undefined类型。<br>3.如果一个变量的值是null，那么必须主动的给它赋值null。<br>4.一个变量未定义，或一个变量定义了未赋值，则是undefined。需要注意的是：一个变量如果没有定义，是不能直接在程序里使用的（就不是不能直接读取这个变量，但可以赋值）。比如说：本来没有定义一个叫a的变量  但我直接去alert(a);//在浏览器里这样是个语法错误，但是可用typeof去运算  但如果a定义了，未赋值，可以读，它的值就是undefined,如果用typeof去运算，那它的类型也是undefined。<br>5.对说属性来说：如果原来没有这个属性，根本就不存在这个属性，那么它的值就是undefined。对象的属性不需要定义，如果不存在也可以直接去读，不会报错，而会给出一个undefined的值来。<br>6.如果这个对象以后要用，但是现在还没有值，一般情况下，会给它一个null值。<br>7.在函数（方法）里，如果必须返回值，但是值又计算不出来，那就返回一个null（这是规范，而不是语法规定，JAVASCRIPT里遵循这一规范）。比如网页中没有一个id是div2的元素，则下面的这句脚本则返回null  document.getElementById(‘div2’);//返回null。 但是，没有返回值的函数，它的返回值都是undefined。</p>
+            <p>在JavaScript里，null和undefined都表示不存在的数据，并且undefined也是从null中继承而来，那null是什么？undefined又是什么？它们两个又有什么共性和区别呢，请看下面的描述：<br>1.null和undefined都是表示没有的、不存在的值。它们两个在进行逻辑转换时都是false，这两个值进行比较是true。<br>2.null表示空引用，它是object类型。undefined表示未定义， 它是undefined类型。<br>3.如果一个变量的值是null，那么必须主动的给它赋值null。<br>4.一个变量未定义，或一个变量定义了未赋值，则是undefined。需要注意的是：一个变量如果没有定义，是不能直接在程序里使用的（就不是不能直接读取这个变量，但可以赋值）。比如说：本来没有定义一个叫a的变量  但我直接去alert(a);//在浏览器里这样是个语法错误，但是可用typeof去运算  但如果a定义了，未赋值，可以读，它的值就是undefined,如果用typeof去运算，那它的类型也是undefined。<br>5.对说属性来说：如果原来没有这个属性，根本就不存在这个属性，那么它的值就是undefined。对象的属性不需要定义，如果不存在也可以直接去读，不会报错，而会给出一个undefined的值来。<br>6.如果这个对象以后要用，但是现在还没有值，一般情况下，会给它一个null值。<br>7.在函数（方法）里，如果必须返回值，但是值又计算不出来，那就返回一个null（这是规范，而不是语法规定，JAVASCRIPT里遵循这一规范）。比如网页中没有一个id是div2的元素，则下面的这句脚本则返回null  document.getElementById(‘div2’);//返回null。 但是，没有返回值的函数，它的返回值都是undefined。</p>
 <h2 id="判断undefined"><a href="#判断undefined" class="headerlink" title="判断undefined"></a>判断undefined</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> a == <span class="string">"undefined"</span>;</span><br></pre></td></tr></table></figure>
           
         
@@ -998,107 +892,6 @@
             
               
                 
-                <a class="post-title-link" href="/2015/08/10/JavaScript原型链初探/" itemprop="url">
-                  JavaScript原型链初探
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-08-10T22:52:24+08:00" content="2015-08-10">
-              2015-08-10
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2015/08/10/JavaScript原型链初探/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/10/JavaScript原型链初探/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>JavaScript 不包含传统的类继承模型，而是使用 prototype 原型模型。<br>虽然这经常被当作是 JavaScript 的缺点被提及，其实基于原型的继承模型比传统的类继承还要强大。 实现传统的类继承模型是很简单，但是实现 JavaScript 中的原型继承则要困难的多。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
                 <a class="post-title-link" href="/2015/07/31/CSS的浮动笔记/" itemprop="url">
                   CSS的浮动笔记
                 </a>
@@ -1411,6 +1204,211 @@
 
 
     
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/07/16/网站资源优化/" itemprop="url">
+                  网站资源优化
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-07-16T22:10:59+08:00" content="2015-07-16">
+              2015-07-16
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/07/16/网站资源优化/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/16/网站资源优化/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>文件合并<br>文件最小化/文件压缩<br>使用 CDN 托管<br>缓存的使用（多个域名来提供缓存）</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/06/23/CSRF攻击/" itemprop="url">
+                  CSRF攻击
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-06-23T22:53:11+08:00" content="2015-06-23">
+              2015-06-23
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/06/23/CSRF攻击/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/23/CSRF攻击/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>CSRF：是跨站请求伪造，核心也就是请求伪造，通过伪造身份提交POST和GET请求来进行跨域的攻击。</p>
+<p>完成CSRF需要两个步骤：</p>
+<p>1.登陆受信任的网站A，在本地生成COOKIE</p>
+<p>2.在不登出A的情况下，或者本地COOKIE没有过期的情况下，访问危险网站B。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
   </section>
 
   
@@ -1456,7 +1454,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">56</span>
+              <span class="site-state-item-count">52</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1466,7 +1464,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

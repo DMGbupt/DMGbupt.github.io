@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="blog, 李明, IT" />
+  <meta name="keywords" content="C++," />
 
 
 
@@ -84,19 +84,16 @@
 
 
 
-<meta name="description" content="函数名作为值时，自动转换为指针。1234int fun(int, const bool &amp;amp;); // declareint (*p)(int, const bool &amp;amp;);p = fun;p = &amp;amp;fun;
-两者等价。fun作为函数名，是一个指针，存储函数入口。直接把fun值赋给p可以理解，但是取fun地址为什么等价？fun存储了函数入口，难道fun本身的地址就是函数入口？">
+<meta name="description" content="函数名是一个指针常量，存储函数入口地址。123456int fun(int, const bool &amp;amp;); // declareint (*p)(int, const bool &amp;amp;);p = fun;cout &amp;lt;&amp;lt; (unsigned)p &amp;lt;&amp;lt; endl; // 4199392p = &amp;amp;fun;cout &amp;lt;&amp;lt; (unsigned)p &amp;l">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C++函数名疑问">
 <meta property="og:url" content="http://yoursite.com/2016/02/12/C++函数名疑问/index.html">
 <meta property="og:site_name" content="lim's thinking">
-<meta property="og:description" content="函数名作为值时，自动转换为指针。1234int fun(int, const bool &amp;amp;); // declareint (*p)(int, const bool &amp;amp;);p = fun;p = &amp;amp;fun;
-两者等价。fun作为函数名，是一个指针，存储函数入口。直接把fun值赋给p可以理解，但是取fun地址为什么等价？fun存储了函数入口，难道fun本身的地址就是函数入口？">
-<meta property="og:updated_time" content="2016-05-21T16:27:52.626Z">
+<meta property="og:description" content="函数名是一个指针常量，存储函数入口地址。123456int fun(int, const bool &amp;amp;); // declareint (*p)(int, const bool &amp;amp;);p = fun;cout &amp;lt;&amp;lt; (unsigned)p &amp;lt;&amp;lt; endl; // 4199392p = &amp;amp;fun;cout &amp;lt;&amp;lt; (unsigned)p &amp;l">
+<meta property="og:updated_time" content="2016-09-14T05:04:36.424Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++函数名疑问">
-<meta name="twitter:description" content="函数名作为值时，自动转换为指针。1234int fun(int, const bool &amp;amp;); // declareint (*p)(int, const bool &amp;amp;);p = fun;p = &amp;amp;fun;
-两者等价。fun作为函数名，是一个指针，存储函数入口。直接把fun值赋给p可以理解，但是取fun地址为什么等价？fun存储了函数入口，难道fun本身的地址就是函数入口？">
+<meta name="twitter:description" content="函数名是一个指针常量，存储函数入口地址。123456int fun(int, const bool &amp;amp;); // declareint (*p)(int, const bool &amp;amp;);p = fun;cout &amp;lt;&amp;lt; (unsigned)p &amp;lt;&amp;lt; endl; // 4199392p = &amp;amp;fun;cout &amp;lt;&amp;lt; (unsigned)p &amp;l">
 
 
 
@@ -301,8 +298,8 @@
       
 
       
-        <p>函数名作为值时，自动转换为指针。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fun</span><span class="params">(<span class="keyword">int</span>, <span class="keyword">const</span> <span class="keyword">bool</span> &amp;)</span></span>; <span class="comment">// declare</span></span><br><span class="line"><span class="keyword">int</span> (*p)(<span class="keyword">int</span>, <span class="keyword">const</span> <span class="keyword">bool</span> &amp;);</span><br><span class="line">p = fun;</span><br><span class="line">p = &amp;fun;</span><br></pre></td></tr></table></figure></p>
-<p>两者等价。fun作为函数名，是一个指针，存储函数入口。直接把fun值赋给p可以理解，但是取fun地址为什么等价？fun存储了函数入口，难道fun本身的地址就是函数入口？</p>
+        <p>函数名是一个指针常量，存储函数入口地址。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fun</span><span class="params">(<span class="keyword">int</span>, <span class="keyword">const</span> <span class="keyword">bool</span> &amp;)</span></span>; <span class="comment">// declare</span></span><br><span class="line"><span class="keyword">int</span> (*p)(<span class="keyword">int</span>, <span class="keyword">const</span> <span class="keyword">bool</span> &amp;);</span><br><span class="line">p = fun;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; (<span class="keyword">unsigned</span>)p &lt;&lt; <span class="built_in">endl</span>; <span class="comment">// 4199392</span></span><br><span class="line">p = &amp;fun;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; (<span class="keyword">unsigned</span>)p &lt;&lt; <span class="built_in">endl</span>; <span class="comment">// 4199392</span></span><br></pre></td></tr></table></figure></p>
+<p>但是，将fun赋给p和取fun的地址赋给p，两者竟然都输出一样的函数地址。<br>fun作为一个指针，存储函数入口，直接把fun的值赋给p可以理解，但是取fun地址为什么等价？难道取地址符做了特殊处理？还是说fun的存储方式有所不同？</p>
 
       
     </div>
@@ -322,13 +319,19 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/C/" rel="tag">#C++</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/11/13/C++中的volatile关键字/" rel="next" title="C++中的volatile关键字">
-                <i class="fa fa-chevron-left"></i> C++中的volatile关键字
+              <a href="/2015/10/09/C++数组初始化/" rel="next" title="C++数组初始化">
+                <i class="fa fa-chevron-left"></i> C++数组初始化
               </a>
             
           </div>
@@ -409,7 +412,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">56</span>
+              <span class="site-state-item-count">52</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -419,7 +422,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

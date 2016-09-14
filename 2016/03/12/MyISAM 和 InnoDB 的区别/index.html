@@ -84,19 +84,19 @@
 
 
 
-<meta name="description" content="区别：1，MyISAM不支持事务，InnoDB支持事务2，MyISAM不支持外键，InnoDB支持外键3，MyISAM查询速度快，InnoDB查询速度慢4, MyISAM支持表锁:1update user set name = &apos;xiaobai&apos; where id = 1;
-锁定整张表，不能插入，不能删除，不能修改，可以查询InnoDB支持行锁:12update user set name=&apos;xi">
+<meta name="description" content="区别：1，MyISAM不支持事务，InnoDB支持事务2，MyISAM不支持外键，InnoDB支持外键3，MyISAM查询速度快，InnoDB查询速度慢4，MyISAM支持表锁:1update user set name = &apos;xiaobai&apos; where id = 1;
+锁定整张表，不能插入，不能删除，不能修改，可以查询InnoDB支持行锁:12update user set name=&apos;xia">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MyISAM 和 InnoDB 的区别">
 <meta property="og:url" content="http://yoursite.com/2016/03/12/MyISAM 和 InnoDB 的区别/index.html">
 <meta property="og:site_name" content="lim's thinking">
-<meta property="og:description" content="区别：1，MyISAM不支持事务，InnoDB支持事务2，MyISAM不支持外键，InnoDB支持外键3，MyISAM查询速度快，InnoDB查询速度慢4, MyISAM支持表锁:1update user set name = &apos;xiaobai&apos; where id = 1;
-锁定整张表，不能插入，不能删除，不能修改，可以查询InnoDB支持行锁:12update user set name=&apos;xi">
-<meta property="og:updated_time" content="2016-06-28T15:52:17.456Z">
+<meta property="og:description" content="区别：1，MyISAM不支持事务，InnoDB支持事务2，MyISAM不支持外键，InnoDB支持外键3，MyISAM查询速度快，InnoDB查询速度慢4，MyISAM支持表锁:1update user set name = &apos;xiaobai&apos; where id = 1;
+锁定整张表，不能插入，不能删除，不能修改，可以查询InnoDB支持行锁:12update user set name=&apos;xia">
+<meta property="og:updated_time" content="2016-09-14T05:34:38.402Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MyISAM 和 InnoDB 的区别">
-<meta name="twitter:description" content="区别：1，MyISAM不支持事务，InnoDB支持事务2，MyISAM不支持外键，InnoDB支持外键3，MyISAM查询速度快，InnoDB查询速度慢4, MyISAM支持表锁:1update user set name = &apos;xiaobai&apos; where id = 1;
-锁定整张表，不能插入，不能删除，不能修改，可以查询InnoDB支持行锁:12update user set name=&apos;xi">
+<meta name="twitter:description" content="区别：1，MyISAM不支持事务，InnoDB支持事务2，MyISAM不支持外键，InnoDB支持外键3，MyISAM查询速度快，InnoDB查询速度慢4，MyISAM支持表锁:1update user set name = &apos;xiaobai&apos; where id = 1;
+锁定整张表，不能插入，不能删除，不能修改，可以查询InnoDB支持行锁:12update user set name=&apos;xia">
 
 
 
@@ -301,7 +301,7 @@
       
 
       
-        <p>区别：<br>1，MyISAM不支持事务，InnoDB支持事务<br>2，MyISAM不支持外键，InnoDB支持外键<br>3，MyISAM查询速度快，InnoDB查询速度慢<br>4, MyISAM支持表锁:<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">update</span> <span class="keyword">user</span> <span class="keyword">set</span> <span class="keyword">name</span> = <span class="string">'xiaobai'</span> <span class="keyword">where</span> <span class="keyword">id</span> = <span class="number">1</span>;</span><br></pre></td></tr></table></figure></p>
+        <p>区别：<br>1，MyISAM不支持事务，InnoDB支持事务<br>2，MyISAM不支持外键，InnoDB支持外键<br>3，MyISAM查询速度快，InnoDB查询速度慢<br>4，MyISAM支持表锁:<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">update</span> <span class="keyword">user</span> <span class="keyword">set</span> <span class="keyword">name</span> = <span class="string">'xiaobai'</span> <span class="keyword">where</span> <span class="keyword">id</span> = <span class="number">1</span>;</span><br></pre></td></tr></table></figure></p>
 <p>锁定整张表，不能插入，不能删除，不能修改，可以查询<br>InnoDB支持行锁:<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">update</span> <span class="keyword">user</span> <span class="keyword">set</span> <span class="keyword">name</span>=<span class="string">'xiaohua'</span> <span class="keyword">where</span> <span class="keyword">id</span> =<span class="number">2</span>;</span><br><span class="line"><span class="keyword">update</span> <span class="keyword">user</span> <span class="keyword">set</span> <span class="keyword">name</span> = <span class="string">'xiaohei'</span> <span class="keyword">where</span> <span class="keyword">id</span> = <span class="number">3</span>;</span><br></pre></td></tr></table></figure></p>
 <p>可以同时进行。</p>
 <p>实现：<br>MyISAM和InnoDB都是基于B+树实现，可参考：<a href="http://blog.csdn.net/tonyxf121/article/details/8393545" target="_blank" rel="external">http://blog.csdn.net/tonyxf121/article/details/8393545</a></p>
@@ -417,7 +417,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">56</span>
+              <span class="site-state-item-count">52</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -427,7 +427,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
