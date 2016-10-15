@@ -90,7 +90,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/06/17/happy number/index.html">
 <meta property="og:site_name" content="lim's thinking">
 <meta property="og:description" content="对于一个十进制正整数，计算它所有数位的值的平方和得到一个新值，对新值继续计算平方和，直到平方和为1或者进入无限循环。为1时即为happy number。如果不为1，则最终都会进入4-&amp;gt;16-&amp;gt;37-&amp;gt;58-&amp;gt;89-&amp;gt;145-&amp;gt;42-&amp;gt;20-&amp;gt;4这样的“4”循环。为什么最后都会进入循环呢？证明很简单，因为操作可以无限进行，但每次操作输出的新值却有一个范">
-<meta property="og:updated_time" content="2016-08-15T02:20:53.890Z">
+<meta property="og:updated_time" content="2016-10-12T03:08:36.976Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="happy number">
 <meta name="twitter:description" content="对于一个十进制正整数，计算它所有数位的值的平方和得到一个新值，对新值继续计算平方和，直到平方和为1或者进入无限循环。为1时即为happy number。如果不为1，则最终都会进入4-&amp;gt;16-&amp;gt;37-&amp;gt;58-&amp;gt;89-&amp;gt;145-&amp;gt;42-&amp;gt;20-&amp;gt;4这样的“4”循环。为什么最后都会进入循环呢？证明很简单，因为操作可以无限进行，但每次操作输出的新值却有一个范">
@@ -287,6 +287,11 @@
           
 
           
+              &nbsp; | &nbsp;
+              <span class="page-pv"><i class="fa fa-file-o"></i>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+              </span>
+          
         </div>
       </header>
     
@@ -298,7 +303,7 @@
       
 
       
-        <p>对于一个十进制正整数，计算它所有数位的值的平方和得到一个新值，对新值继续计算平方和，直到平方和为1或者进入无限循环。为1时即为happy number。<br>如果不为1，则最终都会进入4-&gt;16-&gt;37-&gt;58-&gt;89-&gt;145-&gt;42-&gt;20-&gt;4这样的“4”循环。<br>为什么最后都会进入循环呢？证明很简单，因为操作可以无限进行，但每次操作输出的新值却有一个范围，不会无穷大，所以必定会出现循环。但是为什么总是循环到”4”就不知道了，猜想大概与进制有关。<br>那么给定一个数，如何判断它是否为happy number呢？可以有三种方法，下面上代码。</p>
+        <p>对于一个十进制正整数，计算它所有数位的值的平方和得到一个新值，对新值继续计算平方和，直到平方和为1或者进入无限循环。为1时即为happy number。<br>如果不为1，则最终都会进入4-&gt;16-&gt;37-&gt;58-&gt;89-&gt;145-&gt;42-&gt;20-&gt;4这样的“4”循环。<br>为什么最后都会进入循环呢？证明很简单，因为操作可以无限进行，但每次操作输出的新值却有一个范围，不会无穷大，所以必定会出现循环。但是为什么总是循环到”4”就不知道了，猜测大概与进制有关系。<br>那么给定一个数，如何判断它是否为happy number呢？可以有三种方法，下面上代码。</p>
 <ul>
 <li><p>无限循环直到平方和为1或者4</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 通用的计算平方和函数</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">calSquareSum</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(n) &#123;</span><br><span class="line">		sum += (n % <span class="number">10</span>) * (n % <span class="number">10</span>);</span><br><span class="line">		n /= <span class="number">10</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">happyNumber</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(num &lt; <span class="number">1</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	<span class="keyword">while</span>(<span class="literal">true</span>) &#123;</span><br><span class="line">		num = calSquareSum(num);</span><br><span class="line">		<span class="keyword">if</span>(num == <span class="number">1</span>) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(num == <span class="number">4</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">false</span>; <span class="comment">// 为了编译通过，实际永远执行不到这</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -372,6 +377,9 @@
 
           </div>
           
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
 
 
           
@@ -511,6 +519,22 @@
 </div>
 
         
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+  
+  
+</div>
+
+
 
         
       </div>
